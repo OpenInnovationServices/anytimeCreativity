@@ -1,0 +1,91 @@
+@font-face {
+  font-family: 'GT-Eesti-Display-Regular-2';
+  src: url('GT-Eesti-Display-Regular-2.eot');
+  src: url('GT-Eesti-Display-Regular-2.eot?#iefix') format('embedded-opentype'),
+       url('GT-Eesti-Display-Regular-2.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'GTEestiDisplay-Rg';
+  src: url('GTEestiDisplay-Rg.svg#GTEestiDisplay-Rg') format('svg'),
+       url('GTEestiDisplay-Rg.ttf') format('truetype'),
+       url('GTEestiDisplay-Rg.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'GTEestiDisplay-Lt';
+  src: url('GTEestiDisplay-Lt.eot');
+  src: url('GTEestiDisplay-Lt.eot?#iefix') format('embedded-opentype'),
+       url('GTEestiDisplay-Lt.svg#GTEestiDisplay-Lt') format('svg'),
+       url('GTEestiDisplay-Lt.ttf') format('truetype'),
+       url('GTEestiDisplay-Lt.woff') format('woff'),
+       url('GTEestiDisplay-Lt.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Inter-Regular';
+  src: url('Inter-Regular.svg#Inter-Regular') format('svg'),
+       url('Inter-Regular.ttf') format('truetype'),
+       url('Inter-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'gt-eesti-display';
+  src: url('gt-eesti-display.eot');
+  src: url('gt-eesti-display.eot?#iefix') format('embedded-opentype'),
+       url('gt-eesti-display.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'GTEestiDisplay-Bd';
+  src: url('GTEestiDisplay-Bd.svg#GTEestiDisplay-Bd') format('svg'),
+       url('GTEestiDisplay-Bd.ttf') format('truetype'),
+       url('GTEestiDisplay-Bd.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'gt-eesti-display-bold-2';
+  src: url('gt-eesti-display-bold-2.eot');
+  src: url('gt-eesti-display-bold-2.eot?#iefix') format('embedded-opentype'),
+       url('gt-eesti-display-bold-2.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'GTEestiDisplay-UBd';
+  src: url('GTEestiDisplay-UBd.eot');
+  src: url('GTEestiDisplay-UBd.eot?#iefix') format('embedded-opentype'),
+       url('GTEestiDisplay-UBd.svg#GTEestiDisplay-UBd') format('svg'),
+       url('GTEestiDisplay-UBd.ttf') format('truetype'),
+       url('GTEestiDisplay-UBd.woff') format('woff'),
+       url('GTEestiDisplay-UBd.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+.footer_color li{
+ font-size:16px;
+}
+#top #header .av-main-nav > li > a, li, p, a,
+#top #header .av-main-nav > li:hover a{
+	font-family: 'GT-Eesti-Display-Regular-2',Helvetica,Arial,sans-serif;
+}
+#top #wrap_all .all_colors h1, 
+#top #wrap_all .all_colors h2, 
+#top #wrap_all .all_colors h3,
+ #top #wrap_all .all_colors h4, 
+ #top #wrap_all .all_colors h5, 
+#top #wrap_all .all_colors h6{
+	font-family:'GTEestiDisplay-UBd',Helvetica,Arial,sans-serif;
+}
