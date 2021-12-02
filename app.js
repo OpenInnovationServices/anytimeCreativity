@@ -54,5 +54,3 @@ app.use(function(req, res, next) {
 app.listen(port, () => {
     console.log('app now listening for request on port 3000');
 });
-
-console.log('aa');
