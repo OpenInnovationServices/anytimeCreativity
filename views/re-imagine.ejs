@@ -1554,9 +1554,13 @@ PLAu:9
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-            <link rel="stylesheet" type="text/css" href="https://fergal-brophy-dev.herokuapp.com/assets/css/crazyCombination1.css">
+            <link rel="stylesheet" type="text/css" href="https://fergal-brophy-dev.herokuapp.com/assets/css/reImagine.css">
 
             <style>
+                body {
+                    /* background: transparent !important; */
+                }
+                
                 .form-control {
                     background-color: transparent !important;
                     border: transparent !important;
@@ -1573,16 +1577,15 @@ PLAu:9
                 }
             </style>
 
-            <div class="container-fluid main-container" style="background: #F6821D;">
-                <!-- NavBar -->
+            <div class="container-fluid main-container" style="background: #5DC640;">
                 <div class="row nav-row">
                     <div class="col-sm-12 col-md-12 col-lg-2 logo-div">
-                        <img src="https://fergal-brophy-dev.herokuapp.com//assets/images/crazyCombinationApp/crazyCombination.png" class="nav-img" />
+                        <img src="https://fergal-brophy-dev.herokuapp.com/assets/images/ReImagineApp/logo.png" class="nav-img" />
                     </div>
 
                     <div class="col-sm-12 col-md-12 col-lg-9 text-left inst-para-outer">
                         <p class="inst-para">
-                            Find a problem or bug related to one of the everyday objects. Then combine that object with the tech to create a fun new product or service. Drag & Drop to select your Crazy Combination idea. Give it a clever name, describe & submit it.
+                            Create as many alternative uses or reuses as you can for the everyday object that you Spin to Reveal. Select your favourite or freshest Reimagine & Repurpose idea from your list, give it a clever name, describe & submit it.
                         </p>
                     </div>
 
@@ -1595,358 +1598,239 @@ PLAu:9
                     </div>
                 </div>
 
-                <div class="container-fluid">
-                    <div class="row bg-img">
-                        <div class="col col-12 col-sm-12 col-md-12 col-lg col-xl mb-3 ">
-                            <div class="list">
-                                <ul id="group1" class="row">
-                                    <li class="col col-3 col-sm col-xs p-1" data-text="Transport" value="assets/images/crazyCombinationApp/icons/car1.png">
-                                        <div class="image-div">
-                                            <img src="https://fergal-brophy-dev.herokuapp.com//assets/images/crazyCombinationApp/icons/car1.png" style="max-width: 40px;">
-                                            <p class="image-text">Transport</p>
-                                        </div>
-                                    </li>
+                <div class="row justify-content-center mt-5">
+                    <div class="col-md-12 col-lg-3 col-xl-3 mt-3 text-center ">
+                        <div class='row justify-content-center'>
+                            <div class="col-sm-12 col-md-10 col-lg-10 col-xl-10 mb-3 ">
+                                <div class="bg-frame mb-3">
+                                    <div class="circle1">
+                                        <div class="innerDiv">
+                                            <ul class="slot1 ring" id="ring-11">
+                                                <li class="poster poster1" value="Ping Pong Balls" data-image-name="ping-pong">
+                                                    <div class="image-div">
+                                                        <img src="https://fergal-brophy-dev.herokuapp.com/assets/images/ReImagineApp/icons/ping-pong.png" class="img-responsive img-center rounded mx-auto d-block" />
+                                                        <p class="image-text1 m-0">Ping Pong Balls</p>
+                                                    </div>
+                                                </li>
+                                                <li class="poster poster2" value="Bricks & Blocks" data-image-name="brick2">
+                                                    <div class="image-div">
+                                                        <img src="https://fergal-brophy-dev.herokuapp.com/assets/images/ReImagineApp/icons/brick2.png" class="img-responsive img-center rounded mx-auto d-block" />
+                                                        <p class="image-text1 m-0">Bricks & Blocks</p>
+                                                    </div>
+                                                </li>
+                                                <li class="poster poster3" value="Paperclips" data-image-name="paperclip">
+                                                    <div class="image-div">
+                                                        <img src="https://fergal-brophy-dev.herokuapp.com/assets/images/ReImagineApp/icons/paperclip.png" class="img-responsive img-center rounded mx-auto d-block" />
+                                                        <p class="image-text1 m-0">Paperclips</p>
+                                                    </div>
+                                                </li>
+                                                <li class="poster poster4" value="Jars & Bottles" data-image-name="jar">
+                                                    <div class="image-div ">
+                                                        <img src="https://fergal-brophy-dev.herokuapp.com/assets/images/ReImagineApp/icons/jar.png" class="img-responsive img-center rounded mx-auto d-block" />
+                                                        <p class="image-text1 m-0">Jars & Bottles</p>
+                                                    </div>
+                                                </li>
+                                                <li class="poster poster5" value="Planks & Boards" data-image-name="board">
+                                                    <div class="image-div">
+                                                        <img src="https://fergal-brophy-dev.herokuapp.com/assets/images/ReImagineApp/icons/board.png" class="img-responsive img-center rounded mx-auto d-block" />
+                                                        <p class="image-text1 m-0">Planks & Boards</p>
+                                                    </div>
+                                                </li>
 
-                                    <li class="col col-3 col-sm col-xs p-1" data-text="House" value="assets/images/crazyCombinationApp/icons/house-1.png">
-                                        <div class="image-div">
-                                            <img src="https://fergal-brophy-dev.herokuapp.com//assets/images/crazyCombinationApp/icons/house-1.png" style="max-width: 40px;">
-                                            <p class="image-text">House</p>
+                                                <li class="overlayOuter"></li>
+                                            </ul>
                                         </div>
-                                    </li>
-
-                                    <li class="col col-3 col-sm col-xs p-1" data-text="Love" value="assets/images/crazyCombinationApp/icons/heart1.png">
-                                        <div class="image-div">
-                                            <img src="https://fergal-brophy-dev.herokuapp.com//assets/images/crazyCombinationApp/icons/heart1.png" style="max-width: 40px;">
-                                            <p class="image-text">Love</p>
-                                        </div>
-                                    </li>
-
-                                    <li class="col col-3 col-sm col-xs p-1" data-text="Shopping" value="assets/images/crazyCombinationApp/icons/shopping-cart.png">
-                                        <div class="image-div">
-                                            <img src="https://fergal-brophy-dev.herokuapp.com//assets/images/crazyCombinationApp/icons/shopping-cart.png" style="max-width: 40px;">
-                                            <p class="image-text">Shopping</p>
-                                        </div>
-                                    </li>
-
-                                    <li class="col col-3 col-sm col-xs p-1" data-text="Animal" value="assets/images/crazyCombinationApp/icons/animal-1.png">
-                                        <div class="image-div">
-                                            <img src="https://fergal-brophy-dev.herokuapp.com//assets/images/crazyCombinationApp/icons/animal-1.png" style="max-width: 40px;">
-                                            <p class="image-text">Animal</p>
-                                        </div>
-                                    </li>
-
-                                    <li class="col col-3 col-sm col-xs p-1" data-text="Celebration" value="assets/images/crazyCombinationApp/icons/celebration.png">
-                                        <div class="image-div">
-                                            <img src="https://fergal-brophy-dev.herokuapp.com//assets/images/crazyCombinationApp/icons/celebration.png" style="max-width: 40px;">
-                                            <p class="image-text">Celebration</p>
-                                        </div>
-                                    </li>
-
-                                    <li class="col col-3 col-sm col-xs p-1" data-text="Medicine" value="assets/images/crazyCombinationApp/icons/medicine-2.png">
-                                        <div class="image-div">
-                                            <img src="https://fergal-brophy-dev.herokuapp.com//assets/images/crazyCombinationApp/icons/medicine-2.png" style="max-width: 40px;">
-                                            <p class="image-text">Medicine</p>
-                                        </div>
-                                    </li>
-
-                                    <li class="col col-3 col-sm col-xs p-1" data-text="Weather" value="assets/images/crazyCombinationApp/icons/cloudy-2.png">
-                                        <div class="image-div">
-                                            <img src="https://fergal-brophy-dev.herokuapp.com//assets/images/crazyCombinationApp/icons/cloudy-2.png" style="max-width: 40px;">
-                                            <p class="image-text">Weather</p>
-                                        </div>
-                                    </li>
-
-                                    <li class="col col-3 col-sm col-xs p-1" data-text="Food" value="assets/images/crazyCombinationApp/icons/food-1.png">
-                                        <div class="image-div">
-                                            <img src="https://fergal-brophy-dev.herokuapp.com//assets/images/crazyCombinationApp/icons/food-1.png" style="max-width: 40px;">
-                                            <p class="image-text">Food</p>
-                                        </div>
-                                    </li>
-
-                                    <li class="col col-3 col-sm col-xs p-1" data-text="Tree" value="assets/images/crazyCombinationApp/icons/tree.png">
-                                        <div class="image-div">
-                                            <img src="https://fergal-brophy-dev.herokuapp.com//assets/images/crazyCombinationApp/icons/tree.png" style="max-width: 40px;">
-                                            <p class="image-text">Tree</p>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col col-12 col-sm-12 col-md-12 col-lg col-xl">
-                            <div class="arrowDiv">
-                                <div class="firstArrow">&nbsp;</div>
-                                <p class="arrowText text-center text-white">Drag & Drop</p>
-                            </div>
-                        </div>
-                        <div class="col col-12 col-sm-12 col-md-12 col-lg col-xl">
-                            <div class="circleDiv">
-                                <div class="circle">
-                                    <ul id="group2" class="">
-                                        <li class="col col-3 col-sm col-xs p-1">
-                                            <div class="image-div" style="height: 57px;"></div>
-                                        </li>
-                                    </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 bg-img1 mb-3">
-                            <div class="formDiv">
-                                <div class="text-center formDivInner challenge-form">
-                                    <!-- <div class="form-group text-left">
-                                        <label for="userName" class="custom-label">Team/Individual Name:</label>
-                                        <input type="text" class="form-control" maxlength="30" id="userName" name="userName" placeholder="Enter your team/individual name" required>
-                                    </div> -->
+                        <button class="btn btn-primary col-md-8 col-sm-8 btnPlay" id="btnPlay">Spin to Reveal</button>
+                    </div>
 
-                                    <div class="form-group row text-left">
-                                        <label for="userName" class="col-sm-4 custom-label">Team Name</label>
-                                        <div class="col-sm-8">
-                                            <input type="text" class="form-control" maxlength="20" id="userName" name="userName" placeholder="Enter your team name" required>
+                    <div class="col-md-12 col-lg-3 col-xl-3 mt-3">
+                        <div class="row justify-content-center">
+                            <img src="https://fergal-brophy-dev.herokuapp.com/assets/images/ReImagineApp/character.png" class="center-image img-responsive img-center rounded mx-auto" />
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 col-lg-6 col-xl-6 mt-3">
+                        <div class="formDiv mb-3">
+                            <div class="formDivInner">
+                                <div class="row">
+                                    <input type="hidden" name="value1" value="" id="value1" />
+                                    <input type="hidden" name="image_name1" value="" id="image_name1" />
+
+                                    <div class="col-12 form-group text-left">
+                                        <div class="row">
+                                            <label for="userName" class="col-sm-4 custom-label">Team Name</label>
+                                            <div class="col-sm-8">
+                                                <input type="text" class="form-control" maxlength="20" id="userName" name="userName" placeholder="Enter your team name" required>
+                                            </div>
                                         </div>
                                     </div>
 
-                                    <div class="form-group row text-left">
-                                        <label for="playerName" class="col-sm-4 custom-label ">Player's Name </label>
-                                        <div class="col-sm-8">
-                                            <span class="text-white pull-right add-more" style="font-size: 1rem; cursor: pointer; position: absolute; right: 17px;" data-toggle="tooltip" data-placement="top" title="Add More Idea">
+                                    <div class="col-12 form-group text-left">
+                                        <div class="row">
+                                            <label for="playerName" class="col-sm-4 custom-label ">Player's Name </label>
+                                            <div class="col-sm-8">
+                                                <span class="text-white pull-right add-more1" style="font-size: 1rem; cursor: pointer; position: absolute; right: 17px;" data-toggle="tooltip" data-placement="top" title="Add More Idea">
                                                 <i class="fa fa-plus" aria-hidden="true"></i>
                                             </span>
-                                            <input type="text" class="form-control teamPlayerName" id="playerName" maxlength="100" placeholder="Click + to enter each player">
+                                                <input type="text" class="form-control" id="playerName" maxlength="100" placeholder="Click + to enter each player">
+                                            </div>
                                         </div>
                                     </div>
 
-                                    <div id="ideaDiv"></div>
+                                    <div class="col-12 p-0" id="ideaDiv1"></div>
 
-                                    <div class="form-group text-left">
-                                        <label for="ideaName" class="custom-label">Idea Name:</label>
-                                        <input type="text" class="form-control " maxlength="30" id="ideaName" name="ideaName" placeholder="Enter a clever idea name" required>
-                                    </div>
-
-                                    <div class="form-group text-left">
-                                        <label for="idea" class="custom-label">Idea Description:</label>
-                                        <textarea class="form-control" rows="3" name="idea" maxlength="150" id="idea" placeholder="Enter idea description" required></textarea>
-                                    </div>
-
-                                    <div class="row justify-content-center">
-                                        <input type="submit" class="btn btn-warning btn-block col-6 " id="submitBtn" value="Submit">
-                                    </div>
-
-                                    <div class="row text-center" id="successMessage" style="display: none;">
-                                        <div class="col-xs-12" style="margin: 0 auto;">
-                                            <p class="alert alert-success">
-                                                <strong>Congrats. Your idea has been successfully submitted</strong>
-                                            </p>
+                                    <div class="col-12 col-sm-6 ">
+                                        <div class="form-group">
+                                            <label for="" class="custom-label " style="width: 100%;">Repurpose Ideas:
+                                                <span class="d-sm-none d-xs-block text-white pull-right add-more" style="font-size: 1rem; cursor: pointer;" data-toggle="tooltip" data-placement="top" title="Add More Idea">
+                                                    <i class="fa fa-plus" aria-hidden="true"></i>
+                                                </span>
+                                            </label>
+                                            <input type="text" class="form-control" name="ideaName[]" id="ideaName1" maxlength="25" placeholder="Click + to enter each idea">
                                         </div>
                                     </div>
-
-                                    <div class="row text-center" id="failedMessage" style="display: none;">
-                                        <div class="col-xs-12" style="margin: 0 auto;">
-                                            <p class="alert alert-danger">
-                                                <strong>Error while submitting... try again later</strong>
-                                            </p>
+                                    <div class="col-12 col-sm-6 ">
+                                        <div class="form-group">
+                                            <label for="" class="custom-label " style="width: 100%;">Repurpose Ideas:
+                                                <span class="d-none d-sm-block text-white pull-right add-more" style="font-size: 1rem; cursor: pointer;" data-toggle="tooltip" data-placement="top" title="Add More Idea">
+                                                    <i class="fa fa-plus" aria-hidden="true"></i>
+                                                </span>
+                                            </label>
+                                            <input type="text" class="form-control" name="ideaName[]" id="ideaName1" maxlength="25" placeholder="Click + to enter each idea">
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="col col-12 col-sm-12 col-md-12 col-lg col-xl">
-                            <div class="circleDiv">
-                                <div class="circle">
-                                    <ul id="group3" class="">
-                                        <li class="col col-3 col-sm col-xs p-1">
-                                            <div class="image-div" style="height: 57px;"></div>
-                                        </li>
-                                    </ul>
+
+                                <!-- style="overflow-x: hidden; overflow-y: auto; max-height: 350px;" -->
+                                <div id="ideaDiv"></div>
+
+                                <div class="form-group">
+                                    <label for="userName" class="custom-label">Best Repurpose Idea:</label>
+                                    <input type="text" class="form-control" name="userName" id="userName" maxlength="30" placeholder="Enter your best Repurpose Idea">
                                 </div>
-                            </div>
-                        </div>
-                        <div class="col col-12 col-sm-12 col-md-12 col-lg col-xl">
-                            <div class="arrowDiv">
-                                <p class="arrowText arrowText1 text-center text-white ">Drag & Drop</p>
-                                <!-- d-lg-none d-xl-none -->
-                                <div class="secondArrow">&nbsp;</div>
-                                <p class="arrowText arrowText2 text-center text-white ">Drag & Drop</p>
-                                <!-- d-xs-none d-sm-none d-lg-block d-xl-block -->
-                            </div>
-                        </div>
-                        <div class="col col-12 col-sm-12 col-md-12 col-lg col-xl mb-3">
-                            <div class="list">
-                                <ul id="group4" class="row">
-                                    <li class="col col-3 col-sm col-xs p-1" data-text="Drones" value="assets/images/crazyCombinationApp/icons/drone.png">
-                                        <div class="image-div">
-                                            <img src="https://fergal-brophy-dev.herokuapp.com//assets/images/crazyCombinationApp/icons/drone.png" style="max-width: 40px;">
-                                            <p class="image-text">Drones</p>
-                                        </div>
-                                    </li>
+                                <!--
+                                <div class="form-group">
+                                    <label for="ideaName" class="custom-label">Invention Name:</label>
+                                    <input type="text" class="form-control " name="ideaName" id="ideaName" maxlength="30" placeholder="Enter Invention Name">
+                                </div>
+                                -->
 
-                                    <li class="col col-3 col-sm col-xs p-1" data-text="AI" value="assets/images/crazyCombinationApp/icons/artificial-intelligence.png">
-                                        <div class="image-div">
-                                            <img src="https://fergal-brophy-dev.herokuapp.com//assets/images/crazyCombinationApp/icons/artificial-intelligence.png" style="max-width: 40px;">
-                                            <!-- <p class="image-text" >Artificial <br> Intelligence</p> -->
-                                            <p class="image-text">AI</p>
-                                        </div>
-                                    </li>
+                                <div class="form-group">
+                                    <label for="idea" class="custom-label">Best Repurpose Idea Description:</label>
+                                    <textarea class="form-control" rows="3" name="idea" id="idea" maxlength="150" style="resize: none; border-radius: 0.25rem !important;" placeholder="Enter Best Repurpose Description"></textarea>
+                                </div>
 
-                                    <li class="col col-3 col-sm col-xs p-1" data-text="Biometrics" value="assets/images/crazyCombinationApp/icons/fingerprint-2.png">
-                                        <div class="image-div">
-                                            <img src="https://fergal-brophy-dev.herokuapp.com//assets/images/crazyCombinationApp/icons/fingerprint-2.png" style="max-width: 40px;">
-                                            <p class="image-text">Biometrics</p>
-                                        </div>
-                                    </li>
-
-                                    <li class="col col-3 col-sm col-xs p-1" data-text="IOT" value="assets/images/crazyCombinationApp/icons/iot-1.png">
-                                        <div class="image-div">
-                                            <img src="https://fergal-brophy-dev.herokuapp.com//assets/images/crazyCombinationApp/icons/iot-1.png" style="max-width: 40px;">
-                                            <!-- <p class="image-text" >Internet <br> of things</p> -->
-                                            <p class="image-text">IOT</p>
-                                        </div>
-                                    </li>
-
-                                    <li class="col col-3 col-sm col-xs p-1" data-text="Big Data" value="assets/images/crazyCombinationApp/icons/big-data.png">
-                                        <div class="image-div">
-                                            <img src="https://fergal-brophy-dev.herokuapp.com//assets/images/crazyCombinationApp/icons/big-data.png" style="max-width: 40px;">
-                                            <p class="image-text">Big Data</p>
-                                        </div>
-                                    </li>
-
-                                    <li class="col col-3 col-sm col-xs p-1" data-text="Blockchain" value="assets/images/crazyCombinationApp/icons/blockchain.png">
-                                        <div class="image-div">
-                                            <img src="https://fergal-brophy-dev.herokuapp.com//assets/images/crazyCombinationApp/icons/blockchain.png" style="max-width: 40px;">
-                                            <p class="image-text">Blockchain</p>
-                                        </div>
-                                    </li>
-
-                                    <li class="col col-3 col-sm col-xs p-1" data-text="Automation" value="assets/images/crazyCombinationApp/icons/automation-1.png">
-                                        <div class="image-div">
-                                            <img src="https://fergal-brophy-dev.herokuapp.com//assets/images/crazyCombinationApp/icons/automation-1.png" style="max-width: 40px;">
-                                            <p class="image-text">Automation</p>
-                                        </div>
-                                    </li>
-
-                                    <li class="col col-3 col-sm col-xs p-1" data-text="3D Printing" value="assets/images/crazyCombinationApp/icons/3d-printing-1.png">
-                                        <div class="image-div">
-                                            <img src="https://fergal-brophy-dev.herokuapp.com//assets/images/crazyCombinationApp/icons/3d-printing-1.png" style="max-width: 40px;">
-                                            <p class="image-text">3D Printing</p>
-                                        </div>
-                                    </li>
-
-                                    <li class="col col-3 col-sm col-xs p-1" data-text="VR" value="assets/images/crazyCombinationApp/icons/vr-3.png">
-                                        <div class="image-div">
-                                            <img src="https://fergal-brophy-dev.herokuapp.com//assets/images/crazyCombinationApp/icons/vr-3.png" style="max-width: 40px;">
-                                            <p class="image-text">VR
-                                                <!-- Virtual Reality -->
-                                            </p>
-                                        </div>
-                                    </li>
-
-                                    <li class="col col-3 col-sm col-xs p-1" data-text="Gene Editing" value="assets/images/crazyCombinationApp/icons/dna.png">
-                                        <div class="image-div">
-                                            <img src="https://fergal-brophy-dev.herokuapp.com//assets/images/crazyCombinationApp/icons/dna.png" style="max-width: 40px;">
-                                            <p class="image-text">Gene Editing</p>
-                                        </div>
-                                    </li>
-
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Modal -->
-                <div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered modal-lg">
-                        <div class="modal-content">
-                            <div class="modal-body">
                                 <div class="row justify-content-center">
-                                    <div class="col-md-12 col-xl-12 col-sm-12 text-center">
-                                        <img src="https://fergal-brophy-dev.herokuapp.com//assets/images/crazyCombinationApp/cc-example.jpg" class="img-responsive" width="100%" />
+                                    <input type="submit" class="btn btn-warning btn-block col-5 " id="submitBtn" value="Submit">
+                                </div>
+
+                                <div class="row text-center" id="successMessage" style="display: none;">
+                                    <div class="col-xs-12" style="margin: 0 auto;">
+                                        <p class="alert alert-success">
+                                            <strong>Congrats. Your idea has been successfully submitted</strong>
+                                        </p>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="modal-footer mx-auto p-1">
-                                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+
+                                <div class="row text-center" id="failedMessage" style="display: none;">
+                                    <div class="col-xs-12" style="margin: 0 auto;">
+                                        <p class="alert alert-danger">
+                                            <strong>Error while submitting... try again later</strong>
+                                        </p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
             </div>
 
-            <!-- SortableJS CDN -->
-            <script src="https://raw.githack.com/SortableJS/Sortable/master/Sortable.js"></script>
             <script>
-                new Sortable(group1, {
-                    group: 'shared', // both lists have same group name
-                    animation: 150,
-                    swap: true
-                });
-                new Sortable(group2, {
-                    group: 'shared',
-                    animation: 150,
-                    swap: true
-                });
-                new Sortable(group3, {
-                    group: 'shared1',
-                    animation: 150,
-                    swap: true
-                });
-                new Sortable(group4, {
-                    group: 'shared1',
-                    animation: 150,
-                    swap: true
-                });
-                $('#submitBtn').click(function(e) {
-                    e.preventDefault();
-                    var user = $("input.teamPlayerName").map(function() {
-                        return this.value;
-                    }).get().join(",");
-                    // var user = document.getElementById("userName").value;
-                    var ideaName = document.getElementById("ideaName").value;
-                    var idea = document.getElementById("idea").value;
-                    var group2 = $('#group2 li').attr('value');
-                    var group3 = $('#group3 li').attr('value');
-                    var group2Text = $('#group2 li').attr('data-text');
-                    var group3Text = $('#group3 li').attr('data-text');
-                    if (user && ideaName && idea && group2 && group3) {
-                        $.ajax({
-                            type: 'POST',
-                            url: 'https://fergal-brophy-dev.herokuapp.com/api/challenge/',
-                            data: {
-                                mix: group2,
-                                match: group3,
-                                idea: idea,
-                                penName: user,
-                                ideaName: ideaName,
-                                code: "1000",
-                            },
-                            success: function(data) {
-                                $('#successMessage').show();
-                                $('#submitBtn').prop("disabled", true);
-                            },
-                            error: function(data) {
-                                $('#failedMessage').show();
-                                console.log('An error occurred.');
-                                console.log(data);
-                            },
-                        });
-                        console.log(group2 + ' , ' + group3)
-                    } else {
-                        alert("Please fill all the values to submit");
-                    }
-                });
                 var count = 1;
+                var i = 3;
+                var j = 4;
                 $('.add-more').click(function() {
                     if (count >= 15) {
-                        // alert('Sorry you can add only 30 idea.');
-                        // return false;
+                        alert('Sorry you can add only 30 idea.');
+                        return false;
                     }
-                    var newRow = '<div class="form-group row text-left">' +
-                        '<label for="playerName" class="col-sm-4 custom-label">Player\'s Name</label>' +
-                        '<div class="col-sm-8">' +
-                        '<input type="text" class="form-control teamPlayerName" id="playerName" maxlength="100" placeholder="Enter names of all team players ">' +
+                    var newRow = '<div class="row">' +
+                        '<div class="col-12 col-sm-6 ">' +
+                        '<div class="form-group">' +
+                        '<label for="" class="custom-label " style="width: 100%;">Repurpose Ideas ' + '' + ':</label>' +
+                        '<input type="text" class="form-control" name="ideaName[]" id="ideaName1" maxlength="25" placeholder="Enter all your repurpose ideas">' +
+                        '</div>' +
+                        '</div>' +
+                        '<div class="col-12 col-sm-6 ">' +
+                        '<div class="form-group">' +
+                        '<label for="" class="custom-label " style="width: 100%;">Repurpose Ideas ' + '' + ':</label>' +
+                        '<input type="text" class="form-control" name="ideaName[]" id="ideaName1" maxlength="25" placeholder="Enter all your repurpose ideas">' +
+                        '</div>' +
                         '</div>' +
                         '</div>';
                     $('#ideaDiv').append(newRow);
+                    i = i + 2;
+                    j = j + 2;
                     count++;
                 });
+                jQuery(document).ready(function($) {
+                    var flag = 1;
+                    $('.btnPlay').click(function(e) {
+                        if (flag != 1) {
+                            return false;
+                        }
+                        setup_posters1('ring-11', 5, 270);
+                        $('#ring-11').attr('id', 'ring-1');
+                        var oneAttr = '';
+                        var twoAttr = '';
+                        var rndInt = 1;
+                        setTimeout(function() {
+                            rndInt = Math.floor(Math.random() * 5) + 1
+                                // console.log(rndInt);
+                            oneAttr = $('#ring-1 .poster1').attr('style');
+                            twoAttr = $('#ring-1 .poster' + rndInt).attr('style');
+                            $('#ring-1 .poster1').attr('style', twoAttr);
+                            $('#ring-1 .poster').removeAttr('style');
+                            $('#ring-1 .poster' + rndInt).attr('style', oneAttr);
+                            $('#value1').val($('#ring-1 .poster' + rndInt).attr('value'));
+                            $('#image_name1').val($('#ring-1 .poster' + rndInt).attr('data-image-name'));
+                            // console.log($('#ring-1 .poster' + rndInt).attr('value'));
+                            // console.log($('#ring-1 .poster' + rndInt).attr('data-image-name'));
+                            $('#ring-1').attr('id', 'ring-11');
+                        }, 3000);
+                    });
+                    var count = 1;
+                    $('.add-more1').click(function() {
+                        if (count >= 15) {
+                            // alert('Sorry you can add only 30 idea.');
+                            // return false;
+                        }
+                        var newRow =
+                            '<div class="col-12 form-group text-left">' +
+                            '<div class="row">' +
+                            '<label for="playerName" class="col-sm-4 custom-label">Player\'s Name</label>' +
+                            '<div class="col-sm-8">' +
+                            '<input type="text" class="form-control" id="playerName" maxlength="100" placeholder="Enter names of all team players ">' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>';
+                        $('#ideaDiv1').append(newRow);
+                        count++;
+                    });
+                });
+
+                function setup_posters1(id_name, total_list, ring_radius) {
+                    var posterAngle = 360 / total_list;
+                    for (var i = 0; i < total_list; i++) {
+                        var transform = '-webkit-transform: rotatex(' + (posterAngle * i) + 'deg) translateZ(' + ring_radius + 'px)';
+                        $('#' + id_name + " .poster" + (i + 1)).attr('style', transform);
+                    }
+                }
             </script>
 
             <!-- close default .container_wrap element -->
