@@ -584,8 +584,8 @@ body#top #wrap_all .footer_color .widgettitle {
 }
 
 #top .testimonial-block .quotes_content {
-    font-size: 32px;
-    line-height: 38px;
+    font-size: 26px;
+    line-height: 40px;
     text-align: left;
     font-weight: 700;
     margin-bottom: 160px;
@@ -621,6 +621,7 @@ body#top #wrap_all .footer_color .widgettitle {
 #top #lswss-logo-carousel-1 .lswss-slide img {
     max-height: 400px;
     cursor: pointer;
+    height:133px;
     /*background: #fffc63;*/
 }
 
@@ -1072,8 +1073,8 @@ body .pricing-section .av_one_fourth.avia-builder-el-last {
     background: #fff;
     max-width: 600px;
     margin: 60px auto;
-    border: 3px solid #000;
-    border-radius: 40px;
+    border: 2px solid #c9c9c9;
+    border-radius: 0;
     padding: 30px 30px 0 30px;
     margin-top: 60px;
 }
@@ -1081,7 +1082,10 @@ body .pricing-section .av_one_fourth.avia-builder-el-last {
 #top .custom-form br {
     display: none;
 }
-
+#top .custom-form h2{
+    margin-bottom: 15px;
+    font-size: 32px;
+}
 #top .custom-form label {
     font-size: 16px;
     font-weight: 700;
@@ -1091,13 +1095,13 @@ body .pricing-section .av_one_fourth.avia-builder-el-last {
 
 #top .custom-form .wpcf7-form-control-wrap {
     display: inline-block;
-    margin-left: 10px;
-    width: 84%;
+    margin-left: 0;
+    width: 100%;
 }
 
 #top .custom-form .inner-label {
-    display: inline-block;
-    border-bottom: 2px dashed #000;
+    display: block;
+    /*border-bottom: 2px dashed #000;*/
     padding-bottom: 0;
     height: 34px;
     font-size: 16px;
@@ -1107,19 +1111,16 @@ body .pricing-section .av_one_fourth.avia-builder-el-last {
 
 #top .custom-form .wpcf7-form-control,
 #top .custom-form .wpcf7-form-control:focus {
-    display: inline-block;
+    display: block;
     width: 100%;
-    border: none!important;
-    border-bottom: 1px solid #fff!important;
+    border: 2px solid #c9c9c9!important;
     background-color: #fff!important;
     color: #000!important;
     font-size: 16px;
     box-shadow: none;
+    padding:10px 12px;
 }
 
-#top .custom-form .wpcf7-form-control:focus {
-    border-bottom: 1px solid #eee!important;
-}
 
 #top .custom-form textarea {
     resize: none;
@@ -1130,22 +1131,24 @@ body .pricing-section .av_one_fourth.avia-builder-el-last {
 #top .custom-form .wpcf7-form-control.wpcf7-submit,
 #top .custom-form .wpcf7-form-control.wpcf7-submit:focus,
 #top .custom-form .wpcf7-form-control.wpcf7-submit:hover {
-    background: transparent;
-    font-size: 24px;
-    color: #008037!important;
-    text-transform: uppercase;
-    font-weight: 700;
+    background: #006782!important;
+    font-size: 20px;
+    color: #fff!important;
+    text-transform: capitalize;
+    font-weight: normal;
     margin: auto;
     display: block;
     letter-spacing: .7px;
     border: none!important;
-    width: 150px;
+    width: 135px;
     position: relative;
     padding: 0;
     left: 0;
-    text-align: left;
-    height: 52px;
-    line-height: 54px;
+    text-align: center;
+    height: 44px;
+    line-height: 44px;
+    z-index: 1;
+    border-radius: 6px;
 }
 
 #top .custom-form .submit-block {
@@ -1638,11 +1641,12 @@ Curiously creative</span> </h3> </span></strong></h1>
                                                 <input type="hidden" name="_wpcf7_posted_data_hash" value="" />
                                             </div>
                                             <div class="custom-form">
-                                                <label><span class="inner-label">Name:</span> <span class="wpcf7-form-control-wrap your-name"><input type="text" name="your-name" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" /></span> </label><br
+                                                <h2>Ask a Question</h2>
+                                                <label><span class="inner-label">Name</span> <span class="wpcf7-form-control-wrap your-name"><input type="text" name="your-name" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" /></span> </label><br
                                                 />
-                                                <label><span class="inner-label">Email:</span><span class="wpcf7-form-control-wrap your-email"><input type="email" name="your-email" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" aria-required="true" aria-invalid="false" /></span> </label><br
+                                                <label><span class="inner-label">Email</span><span class="wpcf7-form-control-wrap your-email"><input type="email" name="your-email" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" aria-required="true" aria-invalid="false" /></span> </label><br
                                                 />
-                                                <label><span class="inner-label"> Question:</span><span class="wpcf7-form-control-wrap your-message"><textarea name="your-message" cols="40" rows="10" class="wpcf7-form-control wpcf7-textarea" aria-invalid="false"></textarea></span> </label></p>
+                                                <label><span class="inner-label"> Question</span><span class="wpcf7-form-control-wrap your-message"><textarea name="your-message" cols="40" rows="10" class="wpcf7-form-control wpcf7-textarea" aria-invalid="false"></textarea></span> </label></p>
                                                 <div class="submit-block"><input type="submit" value="Submit" class="wpcf7-form-control has-spinner wpcf7-submit" /></div>
                                             </div>
                                             <div class="wpcf7-response-output" aria-hidden="true"></div>
@@ -1748,7 +1752,7 @@ Curiously creative</span> </h3> </span></strong></h1>
 <div id='av_section_3'  class='avia-section av-kve1zo6o-b90334fa9faa28d500d1954940ecc2b9 main_color avia-section-default avia-no-border-styling  avia-builder-el-17  el_after_av_section  el_before_av_section  avia-bg-style-scroll  container_wrap fullsize'  ><div class='container av-section-cont-open' ><div class='template-page content  av-content-full alpha units'><div class='post-entry post-entry-type-page post-entry-330'><div class='entry-content-wrapper clearfix'>
 <section class="av_textblock_section "  itemscope="itemscope" itemtype="https://schema.org/CreativeWork" ><div class='avia_textblock  av_inherit_color '  style='color:#000000; '  itemprop="text" ><h1 class="_04xlpA direction-ltr align-center para-style-body" style="text-align: center;"><span class="JsGRdQ">Played &#038; loved by</span></h1>
 <style>
-    #lswss-logo-carousel-1 .lswss-slide img{max-height:400px; }
+    #lswss-logo-carousel-1 .lswss-slide img{max-height:400px; height:133px;}
     #lswss-logo-grid-1 .lswss-grid img{max-height:400px; }
     
     @media only screen and (min-width:641px) and (max-width: 768px) {
@@ -2556,11 +2560,12 @@ Curiously creative</span> </h3> </span></strong></h1>
                                                 <input type="hidden" name="_wpcf7_posted_data_hash" value="" />
                                             </div>
                                             <div class="custom-form">
-                                                <label><span class="inner-label">Name:</span> <span class="wpcf7-form-control-wrap your-name"><input type="text" name="your-name" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" /></span> </label><br
+                                                <h2>Ask a Question</h2>
+                                                <label><span class="inner-label">Name</span> <span class="wpcf7-form-control-wrap your-name"><input type="text" name="your-name" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" /></span> </label><br
                                                 />
-                                                <label><span class="inner-label">Email:</span><span class="wpcf7-form-control-wrap your-email"><input type="email" name="your-email" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" aria-required="true" aria-invalid="false" /></span> </label><br
+                                                <label><span class="inner-label">Email</span><span class="wpcf7-form-control-wrap your-email"><input type="email" name="your-email" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" aria-required="true" aria-invalid="false" /></span> </label><br
                                                 />
-                                                <label><span class="inner-label"> Question:</span><span class="wpcf7-form-control-wrap your-message"><textarea name="your-message" cols="40" rows="10" class="wpcf7-form-control wpcf7-textarea" aria-invalid="false"></textarea></span> </label></p>
+                                                <label><span class="inner-label"> Question</span><span class="wpcf7-form-control-wrap your-message"><textarea name="your-message" cols="40" rows="10" class="wpcf7-form-control wpcf7-textarea" aria-invalid="false"></textarea></span> </label></p>
                                                 <div class="submit-block"><input type="submit" value="Submit" class="wpcf7-form-control has-spinner wpcf7-submit" /></div>
                                             </div>
                                             <div class="wpcf7-response-output" aria-hidden="true"></div>
