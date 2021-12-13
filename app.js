@@ -66,6 +66,10 @@ app.get('/lookSideways', (req, res) => {
     res.status(200).render('look-sideways');
 });
 
+app.get('/book-a-demo', (req, res) => {
+    res.status(200).render('book-a-demo');
+});
+
 // Handle 404 - Keep this as a last route
 app.use(function(req, res, next) {
     res.status(404).send('404: File Not Found');
