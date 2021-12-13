@@ -1505,6 +1505,15 @@ body .avia-font-medical,
 html body [data-av_iconfont='medical']:before {
 font-family: 'medical';
 }
+.pre-loader{
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: url('Fhttp://www.anytimecreativity.com/wp-content/uploads/2021/11/pre-loader.gif') 50% 50% no-repeat rgb(255,252,99);
+}
 </style>
 
 <!--
@@ -1525,7 +1534,7 @@ PLAu:9
 </head>
 
 <body id="top" class="page-template-default page page-id-1634 stretched no_sidebar_border rtl_columns av-curtain-numeric gt-eesti-display-custom gt-eesti-display gt-eesti-custom gt-eesti  avia-responsive-images-support" itemscope="itemscope" itemtype="https://schema.org/WebPage">
-
+<div class="pre-loader"></div>
 
 <div id='wrap_all'>
 
@@ -2144,6 +2153,11 @@ var words = {
 </script>
 <script type='text/javascript' src='http://www.anytimecreativity.com/wp-content/plugins/css3-rotating-words/js/script.js?ver=5.8.2' id='rw-script-js-js'></script>
 <script type='text/javascript' src='http://www.anytimecreativity.com/wp-content/uploads/dynamic_avia/avia-footer-scripts-dc2111677f56c0f7689d658ae5f663d2---61a5036290cd7.js' id='avia-footer-scripts-js'></script>
+<script>
+ $(window).load(function() {
+          $(".pre-loader").fadeOut("slow");
+    });
+</script>
 </body>
 
 </html>

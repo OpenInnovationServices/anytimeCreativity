@@ -1389,6 +1389,11 @@ Customise Reimagine &#038; Repurpose by replacing everyday objects with resource
 $('.learn-more').click(function(){
 var showDiv = $(this).closest('div').next();//console.log('test', $(this).next('div'));
 showDiv.slideToggle();
+var scrollToParentDiv = $(this).closest('div').prev();  
+console.log(scrollToParentDiv, "scrollToParentDiv");
+$('html, body').animate({
+    scrollTop: $(scrollToParentDiv).offset().top - 100
+}, 500);
 return false;
 })
 </script></div></section>

@@ -1506,6 +1506,15 @@ body .avia-font-medical,
 html body [data-av_iconfont='medical']:before {
     font-family: 'medical';
 }
+.pre-loader{
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: url('Fhttp://www.anytimecreativity.com/wp-content/uploads/2021/11/pre-loader.gif') 50% 50% no-repeat rgb(255,252,99);
+}
 </style>
 
 <!--
@@ -1523,11 +1532,12 @@ Compress: CSS:all theme files - JS:all theme files
 Updates: disabled
 PLAu:9
 -->
+
 </head>
 
 <body id="top" class="page-template-default page page-id-1634 stretched no_sidebar_border rtl_columns av-curtain-numeric gt-eesti-display-custom gt-eesti-display gt-eesti-custom gt-eesti  avia-responsive-images-support" itemscope="itemscope" itemtype="https://schema.org/WebPage">
 
-
+<div class="pre-loader"></div>
 <div id='wrap_all'>
 
 
@@ -1632,7 +1642,7 @@ PLAu:9
         </div>
 
         <div class="row justify-content-center mt-5 ">
-            <div class="col-md-12 col-lg-2">
+            <div class="col-md-12 col-lg-2 mt-3">
                 <div class="outerDiv mb-3">
                     <div class="headingDiv text-center">
                         <p class="title1">PROBLEMS </p>
@@ -1640,7 +1650,7 @@ PLAu:9
                     </div>
                     <div class="">
                         <!-- bg-circle1 -->
-                        <div class="circleOuterDiv">
+                        <div class="circleOuterDiv" style="padding-top:12px;">
                             <div class="circle2">
                                 <div class="innerDiv">
                                     <ul class="slot1 ring" id="ring-11">
@@ -1683,7 +1693,7 @@ PLAu:9
                 </div>
             </div>
 
-            <div class="col-md-12 col-lg-3">
+            <div class="col-md-12 col-lg-3 mt-3">
                 <div class="outerDiv mb-3">
                     <div class="headingDiv text-center">
                         <p class="title1">SOLUTIONS </p>
@@ -1692,10 +1702,10 @@ PLAu:9
 
                     <div class="">
                         <!-- bg-circle2 -->
-                        <div class="circleOuterDiv">
+                        <div class="circleOuterDiv" style="padding-top:12px;">
                             <div class="circle1">
                                 <div class="innerDiv">
-                                    <ul class="slot1 ring" id="ring-22">
+                                    <ul class="slot1 ring" id="ring-22" style="margin-left:0;">
                                         <li class="poster poster1">
                                             <div class="posterInnerDiv">
                                                 <!-- row image-div-->
@@ -1880,13 +1890,13 @@ PLAu:9
                 </div>
             </div>
 
-            <div class="col-md-12 col-lg-4">
+            <div class="col-md-12 col-lg-3 mt-3">
                 <div class="row justify-content-center ">
                     <img src="https://fergal-brophy-dev.herokuapp.com/assets/images/blueSkies/character.png" class="center-image img-responsive img-center rounded mx-auto" style="max-height:590px;">
                 </div>
             </div>
 
-            <div class="col-md-12 col-lg-3">
+            <div class="col-md-12 col-lg-4 mt-3">
                 <div class="formDiv mb-3">
                     <div class="formDivInner">
 
@@ -2160,6 +2170,11 @@ var words = {
 </script>
 <script type='text/javascript' src='http://www.anytimecreativity.com/wp-content/plugins/css3-rotating-words/js/script.js?ver=5.8.2' id='rw-script-js-js'></script>
 <script type='text/javascript' src='http://www.anytimecreativity.com/wp-content/uploads/dynamic_avia/avia-footer-scripts-dc2111677f56c0f7689d658ae5f663d2---61a5036290cd7.js' id='avia-footer-scripts-js'></script>
+<script>
+ $(window).load(function() {
+          $(".pre-loader").fadeOut("slow");
+    });
+</script>
 </body>
 
 </html>

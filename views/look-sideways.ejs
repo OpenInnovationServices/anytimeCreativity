@@ -1505,6 +1505,15 @@ body .avia-font-medical,
 html body [data-av_iconfont='medical']:before {
 font-family: 'medical';
 }
+.pre-loader{
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: url('Fhttp://www.anytimecreativity.com/wp-content/uploads/2021/11/pre-loader.gif') 50% 50% no-repeat rgb(255,252,99);
+}
 </style>
 
 <!--
@@ -1525,7 +1534,7 @@ PLAu:9
 </head>
 
 <body id="top" class="page-template-default page page-id-1634 stretched no_sidebar_border rtl_columns av-curtain-numeric gt-eesti-display-custom gt-eesti-display gt-eesti-custom gt-eesti  avia-responsive-images-support" itemscope="itemscope" itemtype="https://schema.org/WebPage">
-
+<div class="pre-loader"></div>
 
 <div id='wrap_all'>
 
@@ -1630,12 +1639,12 @@ Click for <br> example <i class="fa fa-thumbs-up"></i>
 </div>
 </div>
 
-<div class="row justify-content-center" style="min-height:630px;">
-<div class="col-md-5 col-sm-12 mt-3 mb-3 text-center">
+<div class="row justify-content-center mt-5" style="min-height:630px;">
+<div class="col-md-5 col-sm-12 mt-3 mb-3 text-center mt-3">
 <img src="https://fergal-brophy-dev.herokuapp.com/assets/images/lookSideways/eyes.png" class="img-responsive img-center rounded mx-auto" style="width:100%;max-height:537px;" />
 </div>
 
-<div class="col-md-5 col-sm-12 mt-3 mb-3">
+<div class="col-md-5 col-sm-12 mt-3 mb-3 mt-3">
 <!-- form-col -->
 <div class="formDiv mb-3">
 <div class="formDivInner">
@@ -1646,14 +1655,14 @@ Click for <br> example <i class="fa fa-thumbs-up"></i>
 </div> -->
 
 <div class="form-group row text-left">
-<label for="userName" class="col-sm-4 custom-label">Team Name</label>
+<label for="userName" class="col-sm-4 custom-label" style="padding-top:7px;">Team Name</label>
 <div class="col-sm-8">
 <input type="text" class="form-control" maxlength="20" id="userName" name="userName" placeholder="Enter your team name" required>
 </div>
 </div>
 
 <div class="form-group row text-left">
-<label for="playerName" class="col-sm-4 custom-label ">Player's Name </label>
+<label for="playerName" class="col-sm-4 custom-label " style="padding-top:7px;">Player's Name </label>
 <div class="col-sm-8">
 <span class="text-white pull-right add-more" style="font-size: 1rem; cursor: pointer; position: absolute; right: 17px;" data-toggle="tooltip" data-placement="top" title="Add More Idea">
 <i class="fa fa-plus" aria-hidden="true"></i>
@@ -1907,6 +1916,11 @@ var words = {
 </script>
 <script type='text/javascript' src='http://www.anytimecreativity.com/wp-content/plugins/css3-rotating-words/js/script.js?ver=5.8.2' id='rw-script-js-js'></script>
 <script type='text/javascript' src='http://www.anytimecreativity.com/wp-content/uploads/dynamic_avia/avia-footer-scripts-dc2111677f56c0f7689d658ae5f663d2---61a5036290cd7.js' id='avia-footer-scripts-js'></script>
+<script>
+ $(window).load(function() {
+          $(".pre-loader").fadeOut("slow");
+    });
+</script>
 </body>
 
 </html>
