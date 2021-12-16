@@ -167,7 +167,7 @@ img.emoji {
 <link rel='stylesheet' id='avia-single-post-1919-css' href='http://www.anytimecreativity.com/wp-content/uploads/avia_posts_css/post-1919.css?ver=ver-1638205487' type='text/css' media='all' />
 <link rel='stylesheet' id='font-awesome-official-v4shim-css' href='https://use.fontawesome.com/releases/v5.15.4/css/v4-shims.css' type='text/css' media='all' integrity="sha384-Vq76wejb3QJM4nDatBa5rUOve+9gkegsjCebvV/9fvXlGWo4HCMR4cJZjjcF6Viv" crossorigin="anonymous"
 />
-<link rel='stylesheet' href="fonts/customFont.css" />
+<link rel='stylesheet' href="../public/fonts/customFont.css" />
 <style id='font-awesome-official-v4shim-inline-css' type='text/css'>
 @font-face {
     font-family: "FontAwesome";
@@ -337,7 +337,12 @@ html body .social_bookmarks [data-av_iconfont="entypo-fontello"]:before {
     color: #000;
     font-size: 24px;
 }
-
+html body .social_bookmarks .social_bookmarks_youtube [data-av_iconfont="entypo-fontello"]:before {
+    font-size: 28px;
+}
+html body .social_bookmarks .social_bookmarks_youtube a{
+    padding-top: 1px;
+}
 #top .social_bookmarks li {
     margin-left: 8px;
 }
@@ -868,13 +873,17 @@ body .pricing-section .av_one_fourth.first {
 
 body .two-colCardlayout.flex_column,
 body .pricing-section .flex_column {
-    background: #c4c30d;
+    /*background: #c4c30d;
     border: 3px solid #8b8a00;
-    border-radius: 30px;
+    border-radius: 30px;*/
     padding: 20px 40px;
     text-align: center;
     position: relative;
     z-index: 2;
+    border: 1px solid #0a0b1e;
+    border-radius: 40px;
+    background: #fff;
+    box-shadow: 5px 5px 0 0 rgb(0 0 0 / 20%);
 }
 
 body .two-colCardlayout.flex_column:after,
@@ -893,6 +902,7 @@ body .pricing-section .flex_column:after {
     border: 3px solid #8b8a00;
     border-bottom: 3px solid #8b8a00;
     border-radius: 30px;
+    display:none;
 }
 
 body .twoCol-row .entry-content-wrapper {
@@ -1001,7 +1011,7 @@ body .twoCol-row .image-block {
 body .pricing-section .flex_column.av_one_half {
     margin-left: 40px;
     width: calc(38% - 40px);
-    padding: 20px 20px 20px 0;
+    padding: 20px 20px 20px 20px;
     margin-top: 0;
 }
 
@@ -1022,7 +1032,7 @@ body .pricing-section .flex_column.av_one_fourth h2 {
 body .pricing-section .av_one_fourth {
     margin-left: 40px;
     width: calc(32% - 40px);
-    padding: 20px 20px 20px 0;
+    padding: 20px 20px 20px 20px;
 }
 
 body .pricing-section .av_one_fourth.avia-builder-el-last {
@@ -1477,7 +1487,7 @@ display:none;
     font-weight: normal;
     font-style: normal;
     font-display: auto;
-    src: url('fonts/entypo-fontello.woff2') format('woff2'), url('fonts/entypo-fontello.woff') format('woff'), url('fonts/entypo-fontello.ttf') format('truetype'), url('fonts/entypo-fontello.svg#entypo-fontello') format('svg'), url('fonts/entypo-fontello.eot'), url('fonts/entypo-fontello.eot?#iefix') format('embedded-opentype');
+    src: url('../public/fonts/entypo-fontello.woff2') format('woff2'), url('../public/fonts/entypo-fontello.woff') format('woff'), url('../public/fonts/entypo-fontello.ttf') format('truetype'), url('../public/fonts/entypo-fontello.svg#entypo-fontello') format('svg'), url('../public/fonts/entypo-fontello.eot'), url('../public/fonts/entypo-fontello.eot?#iefix') format('embedded-opentype');
 }
 
 #top .avia-font-entypo-fontello,
@@ -1737,6 +1747,11 @@ PLAu:9
                                     $('.ask-btn').click(function() {
                                         var showDiv = $(this).closest('div').next(); //console.log('test', $(this).next('div'));
                                         showDiv.slideToggle();
+                                        var scrollToAskDiv = $(this).closest('div');  
+//console.log('scrollToAskDiv',scrollToAskDiv);
+$('html, body').animate({
+    scrollTop: $(scrollToAskDiv).offset().top - 80
+}, 500);
                                         return false;
                                     })
                                 </script>
