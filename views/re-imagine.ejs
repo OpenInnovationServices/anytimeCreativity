@@ -1534,7 +1534,7 @@ padding-bottom:70px;
             width: 100%;
             height: 100%;
             z-index: 9999;
-            background: url('Fhttp://www.anytimecreativity.com/wp-content/uploads/2021/11/pre-loader.gif') 50% 50% no-repeat rgb(255, 252, 99);
+            background: url('http://www.anytimecreativity.com/wp-content/uploads/2021/11/pre-loader.gif') 50% 50% no-repeat rgb(255, 252, 99);
         }
     </style>
 
@@ -2018,9 +2018,7 @@ padding-bottom:70px;
     <script type='text/javascript' src='http://www.anytimecreativity.com/wp-content/plugins/css3-rotating-words/js/script.js?ver=5.8.2' id='rw-script-js-js'></script>
     <script type='text/javascript' src='http://www.anytimecreativity.com/wp-content/uploads/dynamic_avia/avia-footer-scripts-dc2111677f56c0f7689d658ae5f663d2---61a5036290cd7.js' id='avia-footer-scripts-js'></script>
     <script>
-        $(window).load(function() {
-          $(".pre-loader").fadeOut("slow");
-    });
+     $(window).on('load', function(){ $(".pre-loader").fadeOut("slow");});
     </script>
 </body>
 
