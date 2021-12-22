@@ -718,7 +718,6 @@
         }
         
         #top .card-layout .content h2 {
-			font-family: 'gt-eesti-display',Helvetica,Arial,sans-serif!important;
             max-width: 930px;
             margin: auto;
             line-height: 40px;
@@ -1497,6 +1496,18 @@ padding-bottom:70px;
                 width: 100%;
             }
         }
+          @media only screen and (min-width:1025px) and (max-width:1366px) and (orientation:landscape){
+            body .headerModalDiv .inst-para{
+                font-size: 14px;
+                line-height: 18px;
+            }
+        }
+         @media only screen and (min-width:1024px) and (max-width:1366px) and (orientation:portrait){
+          
+            body .custom-height{
+                min-height:794px!important;
+            }
+        }
     </style>
     <style type='text/css'>
         @font-face {
@@ -1664,7 +1675,7 @@ padding-bottom:70px;
                     </div>
                 </div>
 
-                <div class="row justify-content-center mt-5">
+                <div class="row justify-content-center mt-5 custom-height">
                     <div class="col-md-12 col-lg-3 col-xl-3 mt-3 text-center ">
                         <div class='row justify-content-center'>
                             <div class="col-sm-12 col-md-10 col-lg-10 col-xl-10 mb-3 ">

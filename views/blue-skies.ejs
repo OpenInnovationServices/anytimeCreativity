@@ -1497,6 +1497,26 @@ padding-bottom:70px;
                 width: 100%;
             }
         }
+        @media only screen and (min-width:1025px) and (max-width:1366px) and (orientation:landscape){
+            body .headerModalDiv .inst-para{
+                font-size: 14px;
+                line-height: 18px;
+            }
+            body .character-img{
+                height:670px;
+                max-height:100%!important;
+            }
+            
+        }
+        @media only screen and (min-width:1024px) and (max-width:1366px) and (orientation:portrait){
+            body .character-img{
+                height:500px;
+                max-height:100%!important;
+            }
+            body .custom-height{
+                min-height:794px!important;
+            }
+        }
     </style>
     <style type='text/css'>
         @font-face {
@@ -1648,7 +1668,7 @@ padding-bottom:70px;
                     </div>
                 </div>
 
-                <div class="row justify-content-center mt-5 ">
+                <div class="custom-height row justify-content-center mt-5 ">
                     <div class="col-md-12 col-lg-2 mt-3">
                         <div class="outerDiv mb-3">
                             <div class="headingDiv text-center">
@@ -1899,7 +1919,7 @@ padding-bottom:70px;
 
                     <div class="col-md-12 col-lg-3 mt-3">
                         <div class="row justify-content-center ">
-                            <img src="https://fergal-brophy-dev.herokuapp.com/assets/images/blueSkies/character.png" class="center-image img-responsive img-center rounded mx-auto" style="max-height:590px;">
+                            <img class="character-img" src="https://fergal-brophy-dev.herokuapp.com/assets/images/blueSkies/character.png" class="center-image img-responsive img-center rounded mx-auto" style="max-height:590px;">
                         </div>
                     </div>
 
