@@ -70,6 +70,11 @@ app.get('/book-a-demo', (req, res) => {
     res.status(200).render('book-a-demo');
 });
 
+app.get('/privacy-policy', (req, res) => {
+    res.status(200).render('privacy-policy');
+});
+
+
 // Handle 404 - Keep this as a last route
 app.use(function(req, res, next) {
     res.status(404).send('404: File Not Found');
