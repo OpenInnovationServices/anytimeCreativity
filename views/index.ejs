@@ -1651,7 +1651,7 @@ Curiously creative</span> </h3> </span></strong></h1>
                             <div class="btn-group">
                                 <ul>
                                     <li><a class="filled-btn" href="http://www.anytimecreativity.com/how-it-works/">How it Works</a></li>
-                                    <li><a class="ask-btn" href="#">Ask a Question</a></li>
+                                    <li><a class="ask-btn" href="javascript:void(0);">Ask a Question</a></li>
                                     <li><a class="filled-btn" href="/book-a-demo">Book a Demo</a></li>
                                 </ul>
                             </div>
@@ -2713,6 +2713,20 @@ Curiously creative</span> </h3> </span></strong></h1>
 
 <div id="fb-root"></div>
 
+<script>
+
+$('.ask-btn').click(function(){
+var showDiv = $(this).closest('div').next();//console.log('test', $(this).next('div'));
+showDiv.slideToggle();
+var scrollToAskDiv = $(this).closest('div');  
+//console.log('scrollToAskDiv',scrollToAskDiv);
+$('html, body').animate({
+    scrollTop: $(scrollToAskDiv).offset().top - 80
+}, 500);
+return false;
+})
+
+</script>
 
 <script type='text/javascript'>
 /* <![CDATA[ */
