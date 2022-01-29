@@ -296,11 +296,15 @@ font-weight: 400;
 margin-left: 4px;
 border-radius: 12px;
 color: #000;
+display:inline-block;
 }
-
+#top #header .av-main-nav > li:hover > a{
+  background-color: transparent;  
+}
 #top #header .av-main-nav>li>a:hover,#top #header .av-main-nav>li>a:focus,#top #header .av-main-nav>li.current-menu-item>a:hover,#top #header .av-main-nav>li.current-menu-item>a:focus,
 #top #header .av-main-nav>li.current-menu-item>a  {
 background-color: rgba(9, 9, 9, 0.1);
+display:inline-block;
 }
 
 #header {
@@ -309,6 +313,7 @@ position: relative;
 
 .logo {
 padding-top: 7px;
+z-index: 9!important;
 }
 
 .html_header_top.html_header_sticky #top #wrap_all #main {
@@ -1653,7 +1658,7 @@ Curiously creative</span> </h3> </span></strong></h1>
                             <div class="btn-group">
                                 <ul>
                                     <li><a class="filled-btn" href="http://www.anytimecreativity.com/how-it-works/">How it Works</a></li>
-                                    <li><a class="ask-btn" href="javascript:void(0);">Ask a Question</a></li>
+                                    <li><a id="ask-btnblock"class="ask-btn" href="javascript:void(0);">Ask a Question</a></li>
                                     <li><a class="filled-btn" href="/book-a-demo">Book a Demo</a></li>
                                 </ul>
                             </div>
@@ -2671,7 +2676,7 @@ Curiously creative</span> </h3> </span></strong></h1>
 				<h3 class="widgettitle">Support</h3>
 				<div class="textwidget">
 					<ul>
-						<li class="_04xlpA direction-ltr align-start para-style-body"><span class="JsGRdQ"><a href="http://www.anytimecreativity.com#ask-btn">Ask a Question</a></span></li>
+						<li class="_04xlpA direction-ltr align-start para-style-body"><span class="JsGRdQ"><a class="footerask-btn" href="javascript:void(0)">Ask a Question</a></span></li>
 						<li class="_04xlpA direction-ltr align-start para-style-body"><span class="JsGRdQ"><a href="http://www.anytimecreativity.com#av_section_10">Faqs</a></span></li>
 						<li class="_04xlpA direction-ltr align-start para-style-body"><span class="JsGRdQ"><a href="/book-a-demo">Book a Demo</a></span></li>
 						<li class="_04xlpA direction-ltr align-start para-style-body"><span class="JsGRdQ"><a href="http://www.anytimecreativity.com/#toggle-id-16">About Us</a></span></li>
@@ -2724,6 +2729,27 @@ $('html, body').animate({
 }, 500);
 return false;
 })
+/**footer askbtn js**/
+if ( window.location.pathname == '/' ){
+     $(".footerask-btn").click(function() { 
+var scrollToParentDiv = $('#ask-btnblock');  var showAskblock = $('#ask-btnblock').closest('div').next();
+$('html, body').animate({
+    scrollTop: $(scrollToParentDiv).offset().top
+}, 2000);showAskblock.slideToggle();return false;
+});
+
+} else {
+    // Other page
+    $(".footerask-btn").click(function() { 
+        window.location.href = "/";
+var scrollToParentDiv = $('#ask-btnblock');  
+var showAskblock = $('#ask-btnblock').closest('div').next();
+$('html, body').animate({
+    scrollTop: $(scrollToParentDiv).offset().top
+}, 2000);showAskblock.slideToggle();
+return false;
+});
+}
 
 </script>
 

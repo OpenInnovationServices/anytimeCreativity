@@ -326,6 +326,10 @@
             margin-left: 4px;
             border-radius: 12px;
             color: #000;
+            display:inline-block;
+        }
+        #top #header .av-main-nav > li:hover > a{
+          background-color: transparent;  
         }
         
         #top #header .av-main-nav>li>a:hover,
@@ -334,6 +338,7 @@
         #top #header .av-main-nav>li.current-menu-item>a:focus,
         #top #header .av-main-nav>li.current-menu-item>a {
             background-color: rgba(9, 9, 9, 0.1);
+            display:inline-block;
         }
         
         #header {
@@ -342,6 +347,7 @@
         
         .logo {
             padding-top: 7px;
+            z-index: 9!important;
         }
         
         .html_header_top.html_header_sticky #top #wrap_all #main {
@@ -2073,6 +2079,7 @@ padding-bottom:70px;
                             <h3 class="widgettitle">Support</h3>
                             <div class="textwidget">
                                 <ul>
+                                     <li class="_04xlpA direction-ltr align-start para-style-body"><span class="JsGRdQ"><a class="footerask-btn" href="javascript:void(0)">Ask a Question</a></span></li>
                                     <li class="_04xlpA direction-ltr align-start para-style-body"><span class="JsGRdQ"><a href="http://www.anytimecreativity.com#av_section_10">Faqs</a></span></li>
                                     <li class="_04xlpA direction-ltr align-start para-style-body"><span class="JsGRdQ"><a href="/book-a-demo">Book a Demo</a></span></li>
                                     <li class="_04xlpA direction-ltr align-start para-style-body"><span class="JsGRdQ"><a href="http://www.anytimecreativity.com/#toggle-id-16">About Us</a></span></li>
@@ -2113,7 +2120,29 @@ padding-bottom:70px;
 
     <div id="fb-root"></div>
 
+    <script>
+    /**footer askbtn js**/
+    if ( window.location.pathname == '/' ){
+         $(".footerask-btn").click(function() { 
+    var scrollToParentDiv = $('#ask-btnblock');  var showAskblock = $('#ask-btnblock').closest('div').next();
+    $('html, body').animate({
+        scrollTop: $(scrollToParentDiv).offset().top
+    }, 2000);showAskblock.slideToggle();return false;
+    });
 
+    } else {
+        // Other page
+        $(".footerask-btn").click(function() { 
+            window.location.href = "/";
+    var scrollToParentDiv = $('#ask-btnblock');  
+    var showAskblock = $('#ask-btnblock').closest('div').next();
+    $('html, body').animate({
+        scrollTop: $(scrollToParentDiv).offset().top
+    }, 2000);showAskblock.slideToggle();
+    return false;
+    });
+    }
+    </script>
     <script type='text/javascript'>
         /* <![CDATA[ */
         var avia_framework_globals = avia_framework_globals || {};
