@@ -61,7 +61,10 @@ app.get('/book-a-demo', (req, res) => {
     res.status(200).render('book-a-demo');
 });
 
-/*
+app.get('/privacy-policy', (req, res) => {
+    res.status(200).render('privacy-policy');
+});
+
 app.get('/crazyCombinations', (req, res) => {
     res.status(200).render('crazy-combinations');
 });
@@ -85,13 +88,6 @@ app.get('/blueSkies', (req, res) => {
 app.get('/lookSideways', (req, res) => {
     res.status(200).render('look-sideways');
 });
-
-*/
-
-app.get('/privacy-policy', (req, res) => {
-    res.status(200).render('privacy-policy');
-});
-
 
 // Handle 404 - Keep this as a last route
 app.use(function(req, res, next) {
