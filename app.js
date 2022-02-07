@@ -4,6 +4,14 @@ const app = express();
 var path = require('path');
 const bodyParser = require('body-parser');
 
+//Routes
+const crazyCombinationRoutes = require('./routes/crazy-combination');
+const connectTheDotsRoutes = require('./routes/connect-the-dots');
+const madAndNuttyRoutes = require('./routes/mad-and-nutty');
+const blueSkiesRoutes = require('./routes/blue-skies');
+const lookSidewaysRoutes = require('./routes/look-sideways');
+const reimagineRoutes = require('./routes/reimagine');
+
 //Setting Port
 var port = process.env.PORT || 3000;
 
@@ -26,6 +34,13 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // parse requests of content-type - application/json
 app.use(bodyParser.json());
 
+app.use('/crazy-combination', crazyCombinationRoutes);
+app.use('/connect-the-dots', connectTheDotsRoutes);
+app.use('/mad-and-nutty', madAndNuttyRoutes);
+app.use('/blue-skies', blueSkiesRoutes);
+app.use('/look-sideways', lookSidewaysRoutes);
+app.use('/reimagine', reimagineRoutes);
+
 app.get('/', (req, res) => {
     res.status(200).render('index');
 });
@@ -42,6 +57,11 @@ app.get('/pricing', (req, res) => {
     res.status(200).render('pricing');
 });
 
+app.get('/book-a-demo', (req, res) => {
+    res.status(200).render('book-a-demo');
+});
+
+/*
 app.get('/crazyCombinations', (req, res) => {
     res.status(200).render('crazy-combinations');
 });
@@ -66,9 +86,7 @@ app.get('/lookSideways', (req, res) => {
     res.status(200).render('look-sideways');
 });
 
-app.get('/book-a-demo', (req, res) => {
-    res.status(200).render('book-a-demo');
-});
+*/
 
 app.get('/privacy-policy', (req, res) => {
     res.status(200).render('privacy-policy');
