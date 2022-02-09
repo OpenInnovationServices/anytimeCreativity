@@ -1,0 +1,172 @@
+#introSprintSection{
+	background-image: url("../images/sprints-page/intro-sprint.png");
+    
+}
+
+#introeHostingSection{
+	background-image: url("../images/eSprints-page/eHosting-intro-new.png");   
+}
+
+#introeSprintSection{
+    background-image: url("../images/eSprints-page/new-eSprints-intro.jpg"); 
+}
+
+#introTalksSection{
+    background-image: url("../images/talks-page/talks-introSection.png");
+}
+
+#introAdvisorySection{
+	background-image: url("../images/advisory-page/advisory-intro.jpg");
+}
+
+#introCreativitySection{
+    background-image: url("../images/creativity-page/creativty-intro.png");
+}
+
+#introiWorkshopsSection{
+    background-image: url("../images/eSprints-page/problemSolving-intro.jpeg");
+}
+
+#introMentoringSection{
+    background-image: url("../images/eSprints-page/eSprints-intro.jpg");
+}
+
+#introNetworkSection{
+    background-image: url("../images/networks-page/network-bg.jpg");
+}
+
+#introeChallengesSection{
+    background-image: url("../images/challenge/sub-Banner.png");
+}
+
+#section2-sprint{
+    font-size: 1.5rem;
+    line-height: 2rem;
+    padding:0rem 10rem 0rem 10rem;
+}
+
+.sprint-testimonial{
+    color: #009ADA!important;
+}
+
+.mentor-title{
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 400;
+}
+
+.unleash-sprint{
+    font-family: 'Oswald', sans-serif;
+    font-size: 2.8rem;
+    font-weight: 600;
+    color: white;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+#intro-sprint-header{
+    border: 10px solid #65BBE9;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-size: 2.8rem;
+    font-weight: 600;
+    color: white;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+#testimonial-giver{
+    font-size: 1.1rem;
+}
+
+.testimonial-pic{
+    height: 4.4rem;
+}
+
+
+#talk-img-header{
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+
+#on-demand-text{
+    color: #87ceeb;
+    font-size: 5rem;
+    border-bottom: 0.6rem solid #F9D500;
+    line-height: 6rem;
+    display: inline-block;
+}
+
+#challenge-sub-text{
+    font-family: oswald;
+    font-weight: 100;
+}
+
+#intro-challenge-header{
+    border: 10px solid #72ced8;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-size: 2.8rem;
+    font-weight: 600;
+    color: #72ced8;
+}
+
+.video-spacing{
+    text-align: center;
+    margin: 1.2rem 0;
+}
+
+@media (min-width: 768px) {
+
+    #section2-sprint {
+        padding: 0rem 3rem;
+    }
+ }
+
+@media (max-width: 576px) { 
+    #section2-sprint {
+        font-size: 1.3rem;
+        line-height: 1.6rem;
+        padding: 0rem 0.5rem;
+    }
+
+    .testimonial-pic {
+        height: 3rem;
+    }
+
+    #on-demand-text {
+        font-size: 2.5rem;
+        border-bottom: 0.6rem solid #F9D500;
+        line-height: 3rem;
+        display: inline-block;
+    }
+
+    #intro-challenge-header{
+        padding-left: 0rem;
+    padding-right: 0rem;
+    }
+
+    #intro-sprint-header {
+        border: 5px solid #65BBE9;
+        padding-left: .5rem;
+        padding-right: .5rem;
+        font-size: 1.1rem;
+        font-weight: 500;
+        color: white;
+        text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    }
+
+    .unleash-sprint {
+        font-size: 1.3rem;
+    }
+
+    .sprint-testimonial {
+        text-align: center!important;
+        margin-top: 0!important;
+    }
+
+    .sprint-opti{
+        margin-top: -2rem!important;
+        margin-bottom: 0rem;
+    }
+}

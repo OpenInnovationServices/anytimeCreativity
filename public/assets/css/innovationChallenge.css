@@ -1,0 +1,103 @@
+
+
+.info-text{
+  text-align: justify;
+  font-size: 14px;
+}
+
+/* body{
+  background-color:#efe5f9;
+} */
+
+.mainForm{
+  padding-bottom: 20px;
+  padding-top: 2rem;
+}
+
+.tech-img{
+  max-height: 4rem;
+  margin: 0.6rem;
+}
+
+.tech-img1{
+  max-height: 2rem;
+  margin: 0.6rem;
+}
+
+.middle {
+  margin: auto;
+}
+
+div.item {
+  vertical-align: top;
+  display: inline-block;
+  text-align: center;
+  font-size:10px;
+  margin: 0 10px;
+}
+
+
+
+option{
+  line-height: 20px;
+}
+
+.caption {
+  display: block;
+}
+
+.spacing{
+  padding-top: 15px;
+}
+
+.subtitle{
+  /* color: #6601c6; */
+  font-size:1rem;
+  font-weight: 500;
+}
+
+.subheading{
+  font-size: 1.5rem;
+}
+
+
+.btn-color{
+  /* background-color: #6601c6; */
+  color: #efe5f9;
+}
+
+/* .formCtn, .ipborder{
+  -moz-box-shadow: 1px 1px 3px 2px #6601c6;
+-webkit-box-shadow: 1px 1px 3px 2px #6601c6;
+box-shadow:         1px 1px 3px 2px #6601c6;
+} */
+
+.logo-img{
+  max-height: 80px;
+  margin-top:1rem;
+}
+
+
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (max-width: 920px) {
+    .logo-img{
+        max-height: 70px;
+        margin-bottom: 25px;
+        margin-top: 2rem;
+      }
+} 
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .logo-img{
+  max-height: 50px;
+  margin-bottom: 25px;
+  margin-top: 2rem;
+}
+
+div.item{
+  margin:0 5px;
+}
+
+} 

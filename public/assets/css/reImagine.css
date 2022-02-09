@@ -1,0 +1,644 @@
+@font-face {
+    font-family: 'chunkfive';
+    src: url('/assets/fonts/chunkfive.regular.ttf');
+}
+
+body {
+    font: 'chunkfive';
+    background: #5DC640;
+}
+
+#objImgCustom {
+    height: 27rem;
+    padding-left: 1rem;
+}
+
+.myinputs {
+    line-height: 5px;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 0 !important;
+    background-color: transparent;
+    border-color: white;
+    color: black;
+    border-bottom: 2px solid black;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-radius: 0px;
+}
+
+.inst-para-outer {
+    /* display: table; */
+    margin: auto;
+}
+
+.inst-para {
+    font-size: 2vh;
+    font-family: 'Open Sans', sans-serif;
+    /* display: table-cell; */
+    /* vertical-align: middle; */
+    /* margin: 0 !important; */
+    margin: auto;
+}
+
+.nav-row {
+    /* background-color: #429629; */
+    background: rgba(0, 0, 0, 0.4);
+    color: white;
+    margin-bottom: 1rem;
+    padding: 0 2rem;
+}
+
+.mn-logo {
+    height: 90px;
+}
+
+.babyOnBed-img {
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    width: 25rem;
+}
+
+.obj-img-style {
+    padding: 5px 100px;
+}
+
+.obj-img-name {
+    margin: 0px;
+    color: #fff;
+    font-weight: 700;
+    padding-left: 90px;
+    font-size: 17px;
+}
+
+.input-spacing-left {
+    padding: 111px 75px 60px 58px;
+}
+
+.input-spacing-right {
+    padding: 112px 149px 0px 0px;
+}
+
+.whiteboard-style {
+    background-image: url(/assets/images/ReImagineApp/Whiteboard.png);
+    background-repeat: no-repeat;
+    height: 448px;
+    background-position: center;
+    background-size: 650px;
+    width: 652px;
+}
+
+.time1 {
+    background-image: url(/assets/images/ReImagineApp/Stopwatch.png);
+    background-repeat: no-repeat;
+    height: 219px;
+    background-position: center;
+    padding-top: 82px;
+    color: black;
+    background-size: 175px;
+    padding-left: 4.3rem;
+    width: 220px;
+}
+
+.timer-style-custom1 {
+    width: 142px;
+    font-weight: 100;
+    padding-top: 2rem;
+    color: white;
+    font-size: 2.1rem !important;
+    position: absolute;
+    top: 200px;
+    left: 38rem;
+}
+
+#confirmationModalBody {
+    background-color: #5cb85c;
+}
+
+#failedModalBody {
+    background-color: #dc3545 !important;
+    color: #fff;
+}
+
+#timer-confirm {
+    font-size: 1.5rem;
+    padding-left: 2rem;
+}
+
+#btn-timer-panel {
+    display: inline-flex;
+}
+
+.confirm-box-style {
+    height: 40px;
+}
+
+@media (max-width: 1448px) {
+    .timer-style-custom1 {
+        left: 35rem;
+    }
+    /* .inst-para {
+        font-size: 0.9rem;
+    } */
+    /* .nav-img {
+        height: 70px;
+    } */
+}
+
+@media (max-width: 768px) {
+    /* .logo-div {
+        text-align: center !important;
+    }
+    .nav-img {
+        width: 180px;
+        height: auto !important;
+    } */
+}
+
+@media only screen and (max-width: 600px) {
+    .timer-style-custom1 {
+        width: 300px;
+        padding-bottom: 2rem;
+        padding-top: 2rem;
+        margin: 10px auto;
+        font-size: 2.3rem !important;
+    }
+    .babyOnBed-img {
+        position: absolute;
+        right: 16px;
+        top: 280px;
+        width: 300px;
+    }
+    .inst-para {
+        padding: 0;
+        /* font-size: 0.9rem; */
+        /* font-weight: 700; */
+    }
+    .nav-row {
+        padding: 0 .5rem;
+    }
+    #objImgCustom {
+        height: 270px;
+        left: 10px;
+        top: 30px;
+    }
+    footer {
+        position: absolute;
+    }
+}
+
+
+/*## NEW CSS */
+
+.custom-label {
+    color: #f4f4f4;
+    font-weight: 600;
+    /* font-size: 2vh; */
+}
+
+.form-control {
+    background-color: transparent;
+    border: transparent;
+    outline: 0;
+    border-color: transparent;
+    border-bottom: 3px solid #f4f4f4;
+    border-width: 0 0 2px;
+    color: #fff;
+    /* font-size: 2vh; */
+}
+
+.form-control:focus {
+    color: #FFF;
+    background-color: transparent;
+    border: transparent;
+    outline: 0;
+    border-color: transparent;
+    border-bottom: 3px solid #cacaca;
+    border-width: 0 0 2px;
+    box-shadow: none;
+    caret-color: #fff;
+}
+
+.form-control::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    /* color: rgba( 0.9); */
+    color: #b4b4b4;
+    opacity: 1;
+    /* font-size: 2vh; */
+    /* Firefox */
+}
+
+.form-control:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: #a5a5a5;
+    /* font-size: 2vh; */
+}
+
+.form-control::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: #a5a5a5;
+    /* font-size: 2vh; */
+}
+
+.formDiv {
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.formDivInner {
+    margin: 5px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 7px;
+}
+
+.nav-img {
+    height: 80px;
+}
+
+textarea {
+    resize: none;
+}
+
+.headerModalDiv {
+    /* background: #1D976C; */
+    background: #5DC640;
+    /* background: #343a40; */
+    color: white;
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+    display: table;
+    position: relative;
+}
+
+.headerModalDiv .inst-para {
+    /* padding-left: 0rem; */
+    /* vertical-align: middle;
+    margin: 0 auto;
+    display: table-cell; */
+    padding: 5px;
+    font-size: 1.8vh;
+    width: 100%;
+    margin: 0;
+    top: 50%;
+    position: absolute;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.bg-img {
+    background-image: url('/assets/images/ReImagineApp/character.png');
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: auto;
+    background-position: center;
+}
+
+.bg-phone {
+    background-image: url(/assets/images/ReImagineApp/phone_frame.png);
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: contain;
+    /* background-size: 100%; */
+    background-position: center;
+    height: 100%;
+    padding-bottom: 50%;
+}
+
+.bg-frame {
+    background-image: url(/assets/images/ReImagineApp/frame.png);
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: contain;
+    /* background-size: 100%; */
+    background-position: center;
+    height: 100%;
+    padding-bottom: 50%;
+}
+
+.center-image {
+    max-width: 100%;
+}
+
+@media (max-width: 767px) {
+    .headerModalDiv {
+        display: flex;
+    }
+    .headerModalDiv .inst-para {
+        padding: 5px !important;
+        width: 100%;
+        margin: 0;
+        top: 0;
+        position: relative;
+        -ms-transform: none;
+        transform: none;
+    }
+    .center-image {
+        max-width: 50%;
+    }
+    .logo-div {
+        text-align: center !important;
+    }
+    .nav-img {
+        width: 180px !important;
+        height: auto !important;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+    .inst-para {
+        font-size: 1.3vh !important;
+    }
+    .headerModalDiv .inst-para {
+        font-size: 1.2vh !important;
+    }
+    .nav-img {
+        width: 200px;
+        height: auto;
+    }
+    .image-text {
+        font-size: 1.5vh !important;
+    }
+    .image-text1 {
+        font-size: 2vh !important;
+    }
+    .center-image {
+        max-width: 50%;
+    }
+}
+
+@media only screen and (min-width: 1024px) and (orientation: portrait) {
+    .inst-para {
+        font-size: 1.2vh !important;
+    }
+    .headerModalDiv .inst-para {
+        font-size: .77vh !important;
+    }
+    .nav-img {
+        width: 120px;
+        height: auto;
+    }
+    .image-text {
+        font-size: 1vh !important;
+    }
+    .image-text1 {
+        font-size: 1.5vh !important;
+    }
+    .center-image {
+        max-width: 110%;
+    }
+}
+
+@media (max-width: 992px) {
+    .formDiv {
+        top: 2px;
+    }
+    .logo-div {
+        text-align: center !important;
+    }
+    .headerModalDiv {
+        display: flex;
+    }
+    .headerModalDiv .inst-para {
+        padding: 5px !important;
+        width: 100%;
+        margin: 0;
+        top: 0;
+        position: relative;
+        -ms-transform: none;
+        transform: none;
+    }
+    .nav-img {
+        width: 200px;
+        height: auto;
+    }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1000px) {
+    .headerModalDiv .inst-para {
+        font-size: 1.4vh;
+    }
+}
+
+@media screen and (min-width: 1000px) and (max-width: 1099px) {
+    .headerModalDiv .inst-para {
+        font-size: 1.4vh;
+    }
+    .nav-img {
+        width: 155px;
+        height: auto !important;
+    }
+}
+
+@media screen and (min-width: 1100px) and (max-width: 1199px) {
+    .nav-img {
+        width: 155px;
+        height: auto !important;
+    }
+    .nav-img {
+        width: 170px;
+        height: auto !important;
+    }
+}
+
+@media (max-width: 1448px) {
+    .inst-para {
+        font-size: 0.9rem;
+    }
+    .nav-img {
+        height: 60px;
+    }
+}
+
+@media (min-width: 1100px) {
+    .formDiv {
+        width: 80%;
+    }
+    .image-text {
+        margin-top: 1vh;
+        font-size: 2vh !important;
+    }
+}
+
+@media screen and (min-width: 200px) and (max-width: 768px) {
+    .logo-div {
+        text-align: center !important;
+    }
+}
+
+
+/* ################# 
+### Slot Machine ### 
+################# */
+
+.overlayOuter {
+    background: #FFF !important;
+    position: relative;
+}
+
+.circleOuterDiv {
+    padding-top: 15%;
+    padding-bottom: 14.5%;
+    position: relative;
+    margin: 0 auto;
+    left: 0.3%;
+}
+
+.circleInnerDiv {
+    /* display: table-cell; */
+    /* vertical-align: middle; */
+}
+
+.circle1 {
+    position: relative;
+    width: 75%;
+    height: 130%;
+    padding-bottom: 72%;
+    border-radius: 25px;
+    margin: 0 auto;
+    top: 18%;
+    left: .5%;
+}
+
+.circle1 .innerDiv {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    margin: 0;
+    border-radius: 25px;
+    transform: translate(-50%, -50%);
+}
+
+.slot1,
+.slot2,
+.slot3,
+.slot4 {
+    list-style-type: none;
+    text-align: center;
+    padding: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+.slot1 li,
+.slot2 li,
+.slot3 li,
+.slot4 li {
+    width: 100%;
+    height: 100%;
+    display: table;
+}
+
+.image-div {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    background: #FFF;
+    width: 100%;
+    top: 50%;
+    position: absolute;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.image-div img {
+    max-width: 60%;
+    margin: 0 auto;
+}
+
+.image-text {
+    color: #3c3c3c;
+    font-weight: 600;
+    line-height: 1.4;
+    margin-top: 1vh;
+    font-size: 1.8vh;
+}
+
+.image-text1 {
+    color: #656565;
+    font-weight: 600;
+    line-height: 1.4;
+    font-size: 2.4vh;
+}
+
+.ring {
+    -webkit-transform-style: preserve-3d;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+}
+
+.ring> :nth-child(odd) {
+    background-color: #FFF;
+}
+
+.ring> :nth-child(even) {
+    background-color: #FFF;
+}
+
+.poster {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+
+.poster>p {
+    font-family: 'Georgia', serif;
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 28px;
+}
+
+#ring-1 {
+    -webkit-animation-name: x-spin;
+    -webkit-animation-duration: .5s;
+}
+
+
+/* @-webkit-keyframes x-spin {
+    0%    { -webkit-transform: rotateX(0deg); }
+    50%   { -webkit-transform: rotateX(180deg); }
+    100%  { -webkit-transform: rotateX(360deg); }
+  } */
+
+@-webkit-keyframes x-spin {
+    0% {
+        -webkit-transform: rotateX(360deg);
+    }
+    50% {
+        -webkit-transform: rotateX(180deg);
+    }
+    100% {
+        -webkit-transform: rotateX(00deg);
+    }
+}
+
+@-webkit-keyframes y-spin {
+    0% {
+        -webkit-transform: rotateY(0deg);
+    }
+    50% {
+        -webkit-transform: rotateY(180deg);
+    }
+    100% {
+        -webkit-transform: rotateY(360deg);
+    }
+}
+
+@-webkit-keyframes back-y-spin {
+    0% {
+        -webkit-transform: rotateY(360deg);
+    }
+    50% {
+        -webkit-transform: rotateY(180deg);
+    }
+    100% {
+        -webkit-transform: rotateY(0deg);
+    }
+}

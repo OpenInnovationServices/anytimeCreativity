@@ -1,0 +1,455 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+.inst-para-outer {
+    /* display: table; */
+    margin: auto;
+}
+
+.inst-para {
+    font-size: 2vh;
+    font-family: 'Open Sans', sans-serif;
+    /* display: table-cell; */
+    /* vertical-align: middle; */
+    /* margin: 0 !important; */
+    margin: auto;
+}
+
+.upload-sketch-text {
+    font-size: 1.15rem;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 800;
+    color: #fff;
+}
+
+.nav-row {
+    /* background-color: #000; */
+    background-color: rgba(0, 0, 0, 0.3);
+    color: #fff;
+    margin-bottom: 1rem;
+    padding: 0 2rem;
+}
+
+.input-group-text {
+    background-color: white;
+    border-right: none;
+    font-weight: bolder;
+    color: black;
+    border-radius: 0px;
+}
+
+.input-style {
+    border-left: none;
+    border-radius: 0px;
+}
+
+.input-group {
+    box-shadow: -4px 5px #a7b1b9;
+}
+
+.description-label-style {
+    text-align: left;
+    background-color: white;
+    padding: 5px 0 0 10px;
+    margin-bottom: 0px;
+    font-weight: bolder;
+    color: black;
+    opacity: 0.9;
+    border-bottom: none;
+}
+
+textarea {
+    border-radius: 0px !important;
+    border: none !;
+    opacity: 0.9;
+    border-top: none !important;
+}
+
+.form-group {
+    opacity: 0.9;
+}
+
+input[type="file"] {
+    /* display: none; */
+    padding-bottom: 40px;
+}
+
+.eye-style {
+    height: 27rem;
+}
+
+.poster-style {
+    width: 100%;
+}
+
+.uploadIcon-style {
+    width: 75%;
+}
+
+.spacing-style {
+    padding: 10px;
+}
+
+.description-spacing {
+    padding-left: 25px;
+    padding-right: 0px;
+}
+
+.upload-box-spacing {
+    padding-right: 25px;
+    padding-left: 0px;
+}
+
+.mn-logo {
+    height: 90px;
+    /* padding-left: 40px; */
+}
+
+.logo-div {
+    text-align: left !important;
+}
+
+textarea {
+    resize: none;
+}
+
+
+/* .eye-style-nav {
+            display: none;
+        }
+
+        .poster-style-nav {
+            display: none;
+        } */
+
+.card-top-text {
+    margin-bottom: -10px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: white;
+}
+
+@media (max-width: 1370px) {
+    .form-container {
+        height: 660px;
+        padding-top: 4rem;
+    }
+    .eye-style {
+        height: 550px;
+    }
+    .form-col {
+        padding-top: 5rem;
+    }
+    .uploadIcon-style {
+        padding-top: 4rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .eye-style {
+        padding-top: 15%;
+        height: 550px;
+    }
+    .poster-style {
+        /* padding-top: 22%; */
+        /* height: 450px; */
+    }
+    .eye-style-nav {
+        height: 17rem;
+    }
+    /* .poster-style-nav {
+                display: none;
+            } */
+    .logo-div {
+        text-align: center !important;
+    }
+    /* .nav-img {
+        width: 180px;
+        height: auto !important;
+    } */
+}
+
+@media (max-width: 576px) {
+    .mn-logo {
+        height: 50px;
+        padding-left: 0px;
+    }
+    .eye-style-nav {
+        display: inline-flex;
+        height: 90px;
+    }
+    .poster-style-nav {
+        display: inline-flex;
+        height: 70px;
+    }
+    .eye-style {
+        height: 17rem;
+        padding-bottom: 2rem;
+    }
+    .poster-style {
+        /* width: 80%; */
+    }
+    .uploadIcon-style {
+        width: 55%;
+    }
+    .upload-sketch-text {
+        font-size: 1.5rem;
+    }
+    .logo-div {
+        text-align: center !important;
+    }
+    .inst-para {
+        /* padding-left: 0px; */
+        /* font-weight: 100; */
+        padding: 0px;
+    }
+    .flower-style {
+        position: absolute;
+        height: 355px;
+        left: -80px;
+        top: 50%;
+    }
+    .scene {
+        width: 164px;
+        height: 148px;
+        margin: 10px auto;
+        perspective: 400px;
+        padding: 4px;
+    }
+    .spacing-style {
+        padding: 0px;
+    }
+    .description-spacing {
+        padding: 0 15px;
+        margin-bottom: 1rem;
+    }
+    .or-tag {
+        left: 1rem;
+    }
+    .upload-box-spacing {
+        margin-left: 9rem;
+    }
+}
+
+
+/*## NEW CSS */
+
+body {
+    background: #545454;
+}
+
+.custom-label {
+    color: #f4f4f4;
+    font-weight: 600;
+    /* font-size: 2vh; */
+}
+
+.form-control {
+    background-color: transparent;
+    border: transparent;
+    outline: 0;
+    border-color: transparent;
+    border-bottom: 3px solid #f4f4f4;
+    border-width: 0 0 2px;
+    color: #fff;
+}
+
+.form-control:focus {
+    color: #FFF;
+    background-color: transparent;
+    border: transparent;
+    outline: 0;
+    border-color: transparent;
+    border-bottom: 3px solid #cacaca;
+    border-width: 0 0 2px;
+    box-shadow: none;
+    caret-color: #fff;
+}
+
+.form-control::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    /* color: rgba( 0.9); */
+    color: #a5a5a5;
+    opacity: 1;
+    /* font-size: 2vh; */
+    /* Firefox */
+}
+
+.form-control:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: #a5a5a5;
+    /* font-size: 2vh; */
+}
+
+.form-control::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: #a5a5a5;
+    /* font-size: 2vh; */
+}
+
+.formDiv {
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.formDivInner {
+    margin: 5px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 7px;
+    padding: 10px;
+}
+
+.headerModalDiv {
+    background: #545454;
+    color: white;
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+    display: table;
+    position: relative;
+}
+
+.headerModalDiv .inst-para {
+    /* padding-left: 0rem; */
+    /* vertical-align: middle;
+    margin: 0 auto;
+    display: table-cell; */
+    padding: 5px;
+    font-size: 1.8vh;
+    width: 100%;
+    margin: 0;
+    top: 50%;
+    position: absolute;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.nav-img {
+    height: 80px;
+}
+
+@media (max-width: 767px) {
+    .headerModalDiv {
+        display: flex;
+    }
+    .headerModalDiv .inst-para {
+        padding: 5px !important;
+        width: 100%;
+        margin: 0;
+        top: 0;
+        position: relative;
+        -ms-transform: none;
+        transform: none;
+    }
+    .logo-div {
+        text-align: center !important;
+    }
+    .nav-img {
+        width: 180px !important;
+        height: auto !important;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+    .inst-para {
+        font-size: 1.3vh !important;
+    }
+    .headerModalDiv .inst-para {
+        font-size: 1.2vh !important;
+    }
+    .nav-img {
+        width: 200px;
+        height: auto;
+    }
+    .mn-logo {
+        height: 50px;
+    }
+}
+
+@media only screen and (min-width: 1024px) and (orientation: portrait) {
+    .inst-para {
+        font-size: 1.2vh !important;
+    }
+    .headerModalDiv .inst-para {
+        font-size: .77vh !important;
+    }
+    .nav-img {
+        width: 120px;
+        height: auto;
+    }
+    .mn-logo {
+        height: 70px;
+    }
+}
+
+@media (max-width: 992px) {
+    .logo-div {
+        text-align: center !important;
+    }
+    .headerModalDiv {
+        display: flex;
+    }
+    .headerModalDiv .inst-para {
+        padding: 5px !important;
+        width: 100%;
+        margin: 0;
+        top: 0;
+        position: relative;
+        -ms-transform: none;
+        transform: none;
+    }
+    .nav-img {
+        width: 200px;
+        height: auto;
+    }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1000px) {
+    .headerModalDiv .inst-para {
+        font-size: 1.4vh;
+    }
+}
+
+@media screen and (min-width: 1000px) and (max-width: 1099px) {
+    .headerModalDiv .inst-para {
+        font-size: 1.4vh;
+    }
+    .nav-img {
+        width: 155px;
+        height: auto !important;
+    }
+}
+
+@media screen and (min-width: 1100px) and (max-width: 1199px) {
+    .nav-img {
+        width: 155px;
+        height: auto !important;
+    }
+    .nav-img {
+        width: 170px;
+        height: auto !important;
+    }
+}
+
+@media (max-width: 1448px) {
+    .inst-para {
+        font-size: 0.9rem;
+    }
+    .nav-img {
+        height: 60px;
+    }
+}
+
+@media (min-width: 1100px) {
+    .formDiv {
+        width: 80%;
+    }
+    .mn-logo {
+        height: 88px;
+    }
+}
+
+@media screen and (min-width: 200px) and (max-width: 768px) {
+    /* .logo-div {
+        text-align: center !important;
+    } */
+}

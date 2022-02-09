@@ -1,0 +1,823 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald&display=swap');
+html,body{
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden; 
+    scroll-behavior: smooth;
+    overflow: auto;
+}
+.tableFixHead          { overflow: auto; height: 100px; }
+.tableFixHead thead th { position: sticky; top: 0; z-index: 1; }
+
+/* Just common table stuff. Really. */
+table  { border-collapse: collapse; width: 100%; }
+th, td { padding: 8px 16px; }
+th     { background:#eee; }
+
+#navBrand{
+    height: 4rem;
+    width: auto;
+}
+
+.navbar{
+    padding: 0 2rem !important;
+    background-color:#005496;
+    color: cornsilk;
+}
+
+.nav-item{
+    margin: auto .4rem;
+}
+
+.nav-link{
+    font-weight: bold;
+    color: white !important;
+}
+
+.introSection{
+    min-height: 650px;
+    background-repeat: no-repeat;
+    background-position:top;
+    background-size: cover;
+    margin-top: -1.5rem;
+}
+
+.introSection-index{
+    min-height: 650px;
+    background-repeat: no-repeat;
+    background-position:center;
+    background-size: cover;
+    margin-top: -1.5rem;
+}
+
+#intro-home-img{
+    background-image: url("../images/index-page/introBg.png");
+}
+
+#intro-talks-img{
+    background-image: url("../images/talks-page/talks-introSection.png");
+}
+
+#introText{
+    color: #005496;
+    font-size: 3.5rem;
+    padding-left: 3.5rem;
+    padding-right: 1rem;
+    margin-top: 5rem;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    line-height: 5rem;
+}
+
+
+
+#social-icons-intro{
+    height: 2rem;
+    width: auto;
+    margin-top: .8rem;
+    padding-right: .5rem;
+    padding-left: .4rem;
+    border-right: 3px solid #005496;
+}
+
+#sec2{
+    font-weight: 500;
+    color: #231F20;
+}
+
+.para-space{
+    width: 60%
+}
+
+#unleash-header{
+    color: #f7941D;
+    font-size: 3.5rem;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    line-height: 3rem;
+    padding-bottom: 1rem;
+}
+
+#fergalBio{
+    background-image: url("../images/index-page/fergalBio.png");
+    max-height: auto;
+    background-repeat: no-repeat;
+    background-position:top;
+    background-size: cover;
+}
+
+section{
+	padding: 1rem 0;
+}
+
+#section2{
+    font-size: 1.3rem;
+    padding:0rem 14rem 0rem 14rem
+}
+
+#pwrSection{
+    height: 120px;
+    border: 2px solid white;
+    background-size: cover;
+}
+
+.pwr-text{
+    padding-top: 2.6rem;
+    font-size: 1.8rem;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+}
+
+.pwr-1{
+   background-image: url("../images/index-page/yellow.png");
+}
+.pwr-2{
+    background-image:url("../images/index-page/orange.png");
+}
+.pwr-3{
+    background-image: url("../images/index-page/green.png"); 
+}
+
+#unleashMain{
+position: relative;
+}
+.unleash-section{
+    text-align: center;
+    height: 400px;
+    width: 565px;
+    border: 3px solid white;
+    display: table;
+    overflow: hidden;
+    background-size: cover;
+}
+
+.unleash-text{
+    font-family: 'Oswald', sans-serif;
+    font-size: 3.2rem;
+    font-weight: 600;
+    color: white;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    display: table-cell; vertical-align: middle;
+}
+
+.navbar-dark .navbar-nav .active>.nav-link{
+    color: #72ced8!important;
+}
+
+#img-1{
+    background-image: url("../images/index-page/ms-1.png");
+    max-width: 100%;
+}
+
+#img-2{
+    background-image: url("../images/index-page/ms-2.png");
+    max-width: 100%;
+}
+
+#img-3{
+    background-image: url("../images/index-page/ms-3.png");
+    max-width: 100%;
+}
+
+#img-4{
+    background-image: url("../images/index-page/ms-4.png");
+    max-width: 100%;
+}
+
+#tlk-1{
+    background-image: url("../images/talks-page/tlk-1.png");
+}
+
+#tlk-2{
+    background-image: url("../images/talks-page/tlk-2.png");
+}
+
+#tlk-3{
+    background-image: url("../images/talks-page/tlk-3.png");
+}
+
+#tlk-4{
+    background-image: url("../images/talks-page/tlk-4.png");
+}
+
+.testimonial-img{
+    height: 40px;
+}
+
+
+.fb-logosec{
+    position: absolute;
+    top: 310px;
+}
+
+.fb-logosec-2{
+    position: absolute;
+    top: 210px;
+}
+
+#fergal-bio-text{
+    padding: 1.3rem;
+    color: #fff;
+    font-size: 1.3rem;
+    font-weight: bold;
+    line-height: 2rem;
+}
+
+#bio-textStart{
+    margin-bottom: .8rem;
+}
+
+.bioBtn{
+    background-color: transparent;
+    border: 1.5px solid #87ceeb;
+    padding: 1rem;
+}
+
+.bioBtn:hover{
+    background-color: #87ceeb;
+    color: #000;
+    border: 1.5px solid #87ceeb;;
+}
+
+#testimonial{
+    background-color: #74B7D6;
+}
+
+
+#testimonial-header{
+    font-size: 1.5rem;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 1000;
+}
+
+.carousel{
+    margin-top: 5px;
+  }
+  .carousel-inner{
+    height: 260px;
+  }
+  .carousel-caption{
+    color: #fff;
+    top: 2%;
+    font-size: 1rem;
+ }
+
+  .carousel-indicators li {
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    border: 2px solid white;
+    border-spacing: 5px;
+}
+
+.carousel-indicators .active {
+    background-color: #F9D500;
+    height: 22px;
+    width: 22px;
+}
+
+.carousel-indicators{
+    margin-top: -20px;
+}
+
+.test-space{
+    margin-top: 3rem;
+}
+
+#icon-indicator{
+    font-size: 3rem;
+}
+
+#testimonial-text{
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+
+footer{
+    background-color: #005496;
+    padding: 1.8rem 0;
+    color: #fff;
+    font-size: 1.5rem;
+}
+
+#testimonial-by{
+    font-weight: 1000;
+    font-size: 1.4rem;
+}
+
+#footer-left-text{
+    padding-top: .8rem;
+    border-right: 2px solid white;
+}
+
+.footer-img{
+    height: 2rem;
+    width: auto;
+}
+
+.footer-icon{
+    height: 26px;
+}
+
+.footer-icon-phone{
+    height: 40px;
+}
+
+.advi-img{
+    min-width: 100%;
+    padding: 0 -10px;
+}
+
+.adv-cont{
+    padding: 0 7px;
+}
+
+.call-to-action{
+    border: 1px solid #e5e5e5;
+    background-color: #000;
+    opacity: 0.7;
+    position: absolute;
+    bottom: 5rem;
+    right: 5rem;
+    color: #fff;
+    font-family: oswald;
+    font-size: 1.5rem;
+}
+
+.suspend-btn{
+    position: absolute;
+    transform:rotateZ(-30deg);  
+    top: 0;
+    max-width: 70%;
+    left: 10rem;
+}
+
+.suspend-btn1{
+    position: absolute;
+    transform:rotateZ(-30deg);  
+    top: 2rem;
+    max-width: 80%;
+    left: 5rem;
+}
+
+.call-to-action-relative{
+    border: 1px solid #e5e5e5;
+    background-color: #000;
+    opacity: 0.7;
+    color: #fff;
+    font-family: oswald;
+    font-size: 1.5rem;
+}
+
+.dropdown-menu{
+    position: absolute !important;     
+    left: -5rem;
+    top: 3rem;
+    background-color: #74B7D6;
+}
+
+.dropdown-menu::before{
+    position: absolute;
+    display: block;
+    content: '';
+    bottom: 100%;
+    right: 25px;
+    width: 9px;
+    height: 9px;
+    margin-bottom: -4px;
+    border-top: 1px solid #74B7D6;
+    border-left: 1px solid #74B7D6;
+    background: #74B7D6;
+    transform: rotate(45deg);
+    transition: all .4s ease-in-out;
+}
+
+.dropdown-item{
+    color: #fff;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 900;
+}
+
+#fb-logo-img{
+    max-height: 200px;
+    max-width: 200px;
+}
+
+#header-introText{
+    margin: 2rem;
+}
+
+
+.tlk-cus{
+    max-width: 75%; margin: .2rem 0;
+}
+
+#con-tlk{
+    text-align: right;
+}
+
+.con-talk-all{
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+.con-talk-all{
+    margin: 0;
+}
+
+.sprint-banner-sty{
+    padding: 0;
+}
+
+#lisa-img{
+    max-width: 8rem;
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+}
+
+.img-holder{
+    position: relative;
+  text-align: center;
+  padding: 3px;
+}
+
+.index-4imgs{
+    max-width: 100%;
+    max-height: 400px;
+}
+
+.text-custom-center{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.mobile-footer{
+    display: none;
+}
+
+.sus-text{
+    color:red;transform:rotateZ(-30deg);left:6rem;top:6rem;
+}
+
+.c-img, .b-img{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.border-style{
+    border-right: 1.5px solid #009ADA;
+}
+
+.index-ban-border{
+    border-right: 1.5px solid white;
+    padding: 1rem;
+}
+
+.border-spacing{
+    margin: 2rem auto;
+}
+
+.cont-spacing{
+    margin: -2rem auto;
+}
+
+.banner-text{
+    font-size: medium; 
+    color: #000; 
+    margin-bottom: 0;
+}
+
+.index-banner-img{
+    max-width: 100%;
+    max-height: 100%;
+    padding-top: 1rem;
+}
+
+.frame {
+    height: 100px; /*can be anything*/
+    width: 100px; /*can be anything*/
+    display: inline-block;
+    position: relative;
+  }
+
+.mckeon-testimonial-pic{
+    height: 3rem;
+}
+
+@media (max-width: 992px) {
+.unleash-section{
+    height: 300px;
+    width: 475px;
+}
+
+.sus-text{
+    color:red;transform:rotateZ(-30deg);left:3rem;top:4rem;
+}
+
+}
+@media (max-width: 768px) {
+
+    #bio-textStart {
+        font-size: 1.1rem;
+    }
+
+    .advi-img{
+        max-width: 100%;
+        min-width: none;
+        padding: 0.8px 0!important;
+    }
+    
+    .adv-cont{
+        padding: 0 7px;
+    }
+
+    #section2 {
+        font-size: 1.3rem;
+        padding: 0rem 7rem;
+    }
+
+    .fb-logosec-2 {
+        position: absolute;
+        top: 145px;
+    }
+
+    .con-talk-all {
+        margin: 0;
+    }
+
+    #fb-logo-img {
+        max-height: 100px;
+        max-width: 100px;
+    }
+
+    .sprint-banner-sty{
+        padding: 5px 12px;
+    }
+
+    .index-4imgs{
+       border: 3px solid white;
+    }
+
+    .mobile-footer{
+        display: none;
+    }
+
+    .sus-text{
+        color:red;transform:rotateZ(-30deg);left:3rem;top:4rem;
+    }
+ }
+
+
+@media (max-width: 576px) { 
+
+    #social-icons-intro {
+        height: 1.3rem;
+        width: auto;
+        margin-top: .8rem;
+        padding-right: .5rem;
+        padding-left: .4rem;
+        border-right: 3px solid #005496;
+    }
+
+    .con-talk-all-cr{
+        margin: .5rem 0;
+    }
+
+    #navBrand {
+        height: 2.5rem;
+    }
+
+    .navbar{
+        padding: 0 1.2rem !important;
+    }
+
+    .nav-item{
+        text-align: end;
+    }
+
+    .dropdown-menu{
+        right: 0;
+        left: 8rem;
+    }
+
+    #header-introText{
+        margin: 0.5rem 0;
+        margin-top: -0.2rem;
+    }
+
+    #introText{
+        font-size: 1.1rem;
+        text-align: right;
+        padding-left: 10rem;
+        margin-top: 0.7rem;
+        line-height: 1.5rem;
+        padding-right: 1rem;
+    }
+
+    .introSection, .introSection-index{
+        max-height: 200px;
+        min-height: 235px;
+        background-size: cover;
+    }
+
+    #section2 {
+        font-size: 1.4rem;
+        padding: 0rem 1rem;
+    }
+
+
+    #unleash-header {
+        line-height: 2.5rem;
+        font-size: 2rem;
+        margin-top: 1rem;
+    }
+
+    .unleash-section {
+        text-align: center;
+        max-width: 100%;
+    }
+
+    .unleash-text{
+        font-size: 3rem;
+    }
+
+    .fb-logosec {
+        position: absolute;
+        top: 730px;
+    }
+
+    .fb-logosec-2{
+        position: absolute;
+        top: 450px;
+    }
+
+    #fb-logo-img{
+        display: none
+        /* max-height: 150px;
+        max-width: 150px; */
+    }
+
+    #fergalBio{
+        background-image: linear-gradient(rgba(0,0,0, .5), rgba(0,0,0,.5)),url("../images/index-page/fergalBio-mobile.png");
+        max-width: 800px;
+        background-color: #74B7D6;
+        opacity: 0.9;
+    }
+    #fergal-bio-text {
+        padding: 1rem;
+        color: #fff;
+        font-size: 1.2rem;
+        font-weight: 300;
+        line-height: 1.5rem;
+        margin: 1rem auto;
+        margin-bottom: 0;
+    }
+
+    .pwr-text {
+        font-size: 2rem;
+        font-family: 'Oswald', sans-serif;
+        font-weight: 400;
+    }
+
+    #pwrSection{
+        margin: 0.5rem;
+    }
+
+    .carousel-inner {
+        height: 600px;
+    }
+
+    #testimonial-text {
+        font-size: 1.2rem;
+        font-weight: 300;
+    }
+
+    #footer-left-text{
+        text-align: center !important;
+        border-right: none;
+    }
+
+    #footer-right-text{
+        text-align: center !important;
+    }
+
+    #sprint-cycle-img{
+        max-width: 100%;
+    }
+
+    .call-to-action{
+            bottom: -0rem;
+            right: 0rem;
+            left: 0rem;
+            font-size: 0.9rem;
+    }
+
+    .c2a-btn{
+        max-width: 1.2rem;
+    }
+
+    .tlk-cus{
+        max-width: 100%; margin: .3rem 0;
+        border: 3px solid white;
+    }
+
+    .fb-logosec-2{
+        position: absolute;
+        top: 448px;
+    }
+
+    .unleash-section{
+        width: 368px;
+    }
+
+    #sec2{
+        text-align: left;
+        margin-top: 2rem;
+        color: #121212;
+        font-size: 1.2rem;
+        line-height: 1.7rem;
+    }
+
+    #lisa-img{
+        position: relative;
+        bottom: 0;
+        right: 0;
+    }
+
+    .footer-text{
+        display: none;
+    }
+
+    .desktop-footer{
+        display: none;
+    }
+
+    .mobile-footer{
+        display: block;
+    }
+
+    #footer-left-text {
+        margin-top: -1.3rem!important;
+    }
+
+    section{
+        padding: .5rem 0;
+    }
+
+    .sus-text{
+        color:red;transform:rotateZ(-30deg);left:3rem;top:4rem;
+    }
+
+    .introSection, .introSection-index {
+        margin-top: -0.8rem;
+    }
+
+    
+
+    .suspend-btn{
+        top: 2rem;
+        left: 4rem;
+    }
+       
+    .suspend-btn1{
+        top: 2rem;
+        left: 4rem;
+    }
+
+    .b-img{
+        height: 15rem;
+    }
+
+    .border-style{
+        /* border-bottom: 1.5px solid #009ADA; */
+        border-right: none;
+        padding: 10px;
+    }
+
+    .index-ban-border{
+        border-bottom: 1.5px solid white;
+        border-right: none;
+        padding-bottom: 15px;
+    }
+
+    .border-spacing{
+        margin: 0 auto;
+    }
+
+    .c-img{
+        height: 8rem;
+        margin: 0.5rem auto;
+    }
+    
+    .banner-text{
+        font-size: 1.2rem;
+    }
+
+    .para-space{
+        width: 100%
+    }
+    
+ }

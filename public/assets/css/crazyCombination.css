@@ -1,0 +1,93 @@
+
+.info-text{
+  text-align: justify;
+  font-size: 14px;
+}
+
+.mainForm{
+  padding-bottom: 20px;
+  padding-top: 15px;
+}
+
+.form-label-style{
+  color: #fff;
+}
+
+.tech-img{
+  max-height: 2.5rem;
+  margin: 0.6rem;
+}
+
+.middle {
+  margin: auto;
+}
+
+div.item {
+  vertical-align: top;
+  display: inline-block;
+  text-align: center;
+  font-size:10px;
+  margin: 0 10px;
+}
+
+option{
+  line-height: 20px;
+}
+
+.caption {
+  display: block;
+  font-size: 1rem;
+}
+
+.spacing{
+  padding-top: 15px;
+}
+
+.subtitle{
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #fff;
+}
+
+.subheading{
+  font-size: 1.5rem;
+}
+
+
+.btn-color{
+  /* background-color: #6601c6; */
+  color: #efe5f9;
+}
+
+/* .formCtn, .ipborder{
+  -moz-box-shadow: 1px 1px 3px 2px #6601c6;
+-webkit-box-shadow: 1px 1px 3px 2px #6601c6;
+box-shadow:         1px 1px 3px 2px #6601c6;
+} */
+
+ 
+.logo-img{
+  max-height: 150px;
+  margin: 1.5rem auto;
+}
+
+.tech-img1{
+  max-height: 2rem;
+  margin: 1.8rem;
+}
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .logo-img{
+    max-height: 100px;
+  margin-bottom: 25px;
+  margin-top: 2rem;
+}
+
+
+div.item{
+  margin:0 5px;
+}
+
+} 
