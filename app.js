@@ -11,6 +11,7 @@ const madAndNuttyRoutes = require('./routes/mad-and-nutty');
 const blueSkiesRoutes = require('./routes/blue-skies');
 const lookSidewaysRoutes = require('./routes/look-sideways');
 const reimagineRoutes = require('./routes/reimagine');
+const submitChallengeDataApiRoutes = require('./routes/challenges-data-api');
 
 //Setting Port
 var port = process.env.PORT || 3000;
@@ -40,6 +41,7 @@ app.use('/mad-and-nutty', madAndNuttyRoutes);
 app.use('/blue-skies', blueSkiesRoutes);
 app.use('/look-sideways', lookSidewaysRoutes);
 app.use('/reimagine', reimagineRoutes);
+app.use('/api/challenge', submitChallengeDataApiRoutes);
 
 app.get('/', (req, res) => {
     res.status(200).render('index');
