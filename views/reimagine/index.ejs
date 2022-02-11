@@ -1735,9 +1735,9 @@ PLAu:9
 
                                     <div class="col-12 form-group text-left">
                                         <div class="row">
-                                            <label for="userName" class="col-sm-4 custom-label">Team Name</label>
+                                            <label for="teamName" class="col-sm-4 custom-label">Team Name</label>
                                             <div class="col-sm-8">
-                                                <input type="text" class="form-control" maxlength="20" id="userName" name="userName" placeholder="Enter your team name" required>
+                                                <input type="text" class="form-control" maxlength="20" id="teamName" name="teamName" placeholder="Enter your team name" required>
                                             </div>
                                         </div>
                                     </div>
@@ -1747,9 +1747,9 @@ PLAu:9
                                             <label for="playerName" class="col-sm-4 custom-label ">Player's Name </label>
                                             <div class="col-sm-8">
                                                 <span class="text-white pull-right add-more1" style="font-size: 1rem; cursor: pointer; position: absolute; right: 17px;" data-toggle="tooltip" data-placement="top" title="Add More Idea">
-                                        <i class="fa fa-plus" aria-hidden="true"></i>
-                                    </span>
-                                                <input type="text" class="form-control" id="playerName" maxlength="100" placeholder="Click + to enter each player">
+                                                <i class="fa fa-plus" aria-hidden="true"></i>
+                                            </span>
+                                                <input type="text" class="form-control teamPlayerName" id="playerName" maxlength="100" placeholder="Click + to enter each player">
                                             </div>
                                         </div>
                                     </div>
@@ -1757,23 +1757,23 @@ PLAu:9
                                     <div class="col-12 p-0" id="ideaDiv1"></div>
 
                                     <div class="col-12 col-sm-6 ">
-                                        <div class="form-group inputblock-icon">
+                                        <div class="form-group">
                                             <label for="" class="custom-label " style="width: 100%;">Repurpose Ideas:
-                                        <span class="d-sm-none d-xs-block text-white pull-right add-more" style="font-size: 1rem; cursor: pointer;" data-toggle="tooltip" data-placement="top" title="Add More Idea">
-                                            <i class="fa fa-plus" aria-hidden="true"></i>
-                                        </span>
-                                    </label>
-                                            <input type="text" class="form-control" name="ideaName[]" id="ideaName1" maxlength="25" placeholder="Click + to enter each idea">
+                                                <span class="d-sm-none d-xs-block text-white pull-right add-more" style="font-size: 1rem; cursor: pointer;" data-toggle="tooltip" data-placement="top" title="Add More Idea">
+                                                    <i class="fa fa-plus" aria-hidden="true"></i>
+                                                </span>
+                                            </label>
+                                            <input type="text" class="form-control imagination" name="ideaName[]" id="ideaName1" maxlength="25" placeholder="Click + to enter each idea">
                                         </div>
                                     </div>
                                     <div class="col-12 col-sm-6 ">
                                         <div class="form-group">
                                             <label for="" class="custom-label " style="width: 100%;">Repurpose Ideas:
-                                        <span class="d-none d-sm-block text-white pull-right add-more" style="font-size: 1rem; cursor: pointer;" data-toggle="tooltip" data-placement="top" title="Add More Idea">
-                                            <i class="fa fa-plus" aria-hidden="true"></i>
-                                        </span>
-                                    </label>
-                                            <input type="text" class="form-control" name="ideaName[]" id="ideaName1" maxlength="25" placeholder="Click + to enter each idea">
+                                                <span class="d-none d-sm-block text-white pull-right add-more" style="font-size: 1rem; cursor: pointer;" data-toggle="tooltip" data-placement="top" title="Add More Idea">
+                                                    <i class="fa fa-plus" aria-hidden="true"></i>
+                                                </span>
+                                            </label>
+                                            <input type="text" class="form-control imagination" name="ideaName[]" id="ideaName1" maxlength="25" placeholder="Click + to enter each idea">
                                         </div>
                                     </div>
                                 </div>
@@ -1783,21 +1783,22 @@ PLAu:9
 
                                 <div class="form-group">
                                     <label for="userName" class="custom-label">Best Repurpose Idea:</label>
-                                    <input type="text" class="form-control" name="userName" id="userName" maxlength="30" placeholder="Enter your best Repurpose Idea">
+                                    <input type="text" class="form-control" name="ideaName" id="ideaName" maxlength="30" placeholder="Enter your best Repurpose Idea">
                                 </div>
                                 <!--
-                        <div class="form-group">
-                            <label for="ideaName" class="custom-label">Invention Name:</label>
-                            <input type="text" class="form-control " name="ideaName" id="ideaName" maxlength="30" placeholder="Enter Invention Name">
-                        </div>
-                        -->
+                                <div class="form-group">
+                                    <label for="ideaName" class="custom-label">Invention Name:</label>
+                                    <input type="text" class="form-control " name="ideaName" id="ideaName" maxlength="30" placeholder="Enter Invention Name">
+                                </div>
+                                -->
 
                                 <div class="form-group">
                                     <label for="idea" class="custom-label">Best Repurpose Idea Description:</label>
-                                    <textarea class="form-control" rows="3" name="idea" id="idea" maxlength="150" style="resize: none; border-radius: 0.25rem !important;" placeholder="Enter Best Repurpose Description"></textarea>
+                                    <textarea class="form-control" rows="3" name="ideaDescription" id="ideaDescription" maxlength="150" style="resize: none; border-radius: 0.25rem !important;" placeholder="Enter Best Repurpose Description"></textarea>
                                 </div>
 
                                 <div class="row justify-content-center">
+                                    <input type="hidden" id="object" name="object" />
                                     <input type="submit" class="btn btn-warning btn-block col-5 " id="submitBtn" value="Submit">
                                 </div>
 
@@ -1840,10 +1841,52 @@ PLAu:9
                     </div>
                 </div>
                 <!-- Modal -->
-
             </div>
 
             <script>
+                $('#submitBtn').click(function(e) {
+                    e.preventDefault();
+                    console.log("In submit");
+                    var object = document.getElementById("object").value;
+                    var playerNames = $("input.teamPlayerName").map(function() {
+                        return this.value;
+                    }).get().join(", <br> ");
+                    var teamName = document.getElementById("teamName").value;
+                    var imaginations = $("input.imagination").map(function() {
+                        return this.value;
+                    }).get().join(", <br> ");
+                    var ideaCount = $("input.imagination").length;
+                    var ideaName = document.getElementById("ideaName").value;
+                    var ideaDescription = document.getElementById("ideaDescription").value;
+                    if (object && playerNames && teamName && ideaName && ideaDescription) {
+                        $.ajax({
+                            type: 'POST',
+                            url: '/reImagine/',
+                            data: {
+                                object: object,
+                                team: teamName,
+                                playerNames: playerNames,
+                                imaginations: imaginations,
+                                ideaCount: ideaCount,
+                                ideaName: ideaName,
+                                ideaDescription: ideaDescription
+                            },
+                            success: function(data) {
+                                $('#successMessage').show();
+                                $('#submitBtn').prop("disabled", true);
+                            },
+                            error: function(data) {
+                                $('#failedMessage').show();
+                                console.log('An error occurred.');
+                                console.log(data);
+                            },
+                        });
+                    } else {
+                        alert("Please fill all the values to submit");
+                    }
+
+                });
+
                 var count = 1;
                 var i = 3;
                 var j = 4;
@@ -1856,62 +1899,77 @@ PLAu:9
                         '<div class="col-12 col-sm-6 ">' +
                         '<div class="form-group">' +
                         '<label for="" class="custom-label " style="width: 100%;">Repurpose Ideas ' + '' + ':</label>' +
-                        '<input type="text" class="form-control" name="ideaName[]" id="ideaName1" maxlength="25" placeholder="Enter all your repurpose ideas">' +
+                        '<input type="text" class="form-control imagination" name="ideaName[]" id="ideaName1" maxlength="25" placeholder="Enter all your repurpose ideas">' +
                         '</div>' +
                         '</div>' +
                         '<div class="col-12 col-sm-6 ">' +
                         '<div class="form-group">' +
                         '<label for="" class="custom-label " style="width: 100%;">Repurpose Ideas ' + '' + ':</label>' +
-                        '<input type="text" class="form-control" name="ideaName[]" id="ideaName1" maxlength="25" placeholder="Enter all your repurpose ideas">' +
+                        '<input type="text" class="form-control imagination" name="ideaName[]" id="ideaName1" maxlength="25" placeholder="Enter all your repurpose ideas">' +
                         '</div>' +
                         '</div>' +
                         '</div>';
+
                     $('#ideaDiv').append(newRow);
                     i = i + 2;
                     j = j + 2;
                     count++;
                 });
+
                 jQuery(document).ready(function($) {
                     var flag = 1;
+
                     $('.btnPlay').click(function(e) {
                         if (flag != 1) {
                             return false;
                         }
+
                         setup_posters1('ring-11', 5, 270);
                         $('#ring-11').attr('id', 'ring-1');
+
                         var oneAttr = '';
                         var twoAttr = '';
                         var rndInt = 1;
+
                         setTimeout(function() {
                             rndInt = Math.floor(Math.random() * 5) + 1
                                 // console.log(rndInt);
+
                             oneAttr = $('#ring-1 .poster1').attr('style');
                             twoAttr = $('#ring-1 .poster' + rndInt).attr('style');
+
                             $('#ring-1 .poster1').attr('style', twoAttr);
                             $('#ring-1 .poster').removeAttr('style');
                             $('#ring-1 .poster' + rndInt).attr('style', oneAttr);
+
                             $('#value1').val($('#ring-1 .poster' + rndInt).attr('value'));
                             $('#image_name1').val($('#ring-1 .poster' + rndInt).attr('data-image-name'));
-                            // console.log($('#ring-1 .poster' + rndInt).attr('value'));
-                            // console.log($('#ring-1 .poster' + rndInt).attr('data-image-name'));
+
+                            $('#object').val($('#ring-1 .poster' + rndInt).attr('value'));
+                            console.log($('#ring-1 .poster' + rndInt).attr('data-image-name'));
+
                             $('#ring-1').attr('id', 'ring-11');
+
                         }, 3000);
                     });
+
                     var count = 1;
                     $('.add-more1').click(function() {
-                        if (count >= 15) {
-                            // alert('Sorry you can add only 30 idea.');
-                            // return false;
+                        if (count >= 6) {
+                            alert('Sorry you can add only 30 idea.');
+                            return false;
                         }
+
                         var newRow =
                             '<div class="col-12 form-group text-left">' +
                             '<div class="row">' +
                             '<label for="playerName" class="col-sm-4 custom-label">Player\'s Name</label>' +
                             '<div class="col-sm-8">' +
-                            '<input type="text" class="form-control" id="playerName" maxlength="100" placeholder="Click + to enter each player">' +
+                            '<input type="text" class="form-control teamPlayerName" id="playerName" maxlength="100" placeholder="Enter names of all team players ">' +
                             '</div>' +
                             '</div>' +
                             '</div>';
+
                         $('#ideaDiv1').append(newRow);
                         count++;
                     });
@@ -1919,6 +1977,7 @@ PLAu:9
 
                 function setup_posters1(id_name, total_list, ring_radius) {
                     var posterAngle = 360 / total_list;
+
                     for (var i = 0; i < total_list; i++) {
                         var transform = '-webkit-transform: rotatex(' + (posterAngle * i) + 'deg) translateZ(' + ring_radius + 'px)';
                         $('#' + id_name + " .poster" + (i + 1)).attr('style', transform);
@@ -1926,11 +1985,7 @@ PLAu:9
                 }
             </script>
 
-
-
             <!-- close default .container_wrap element -->
-
-
             <div class='container_wrap footer_color' id='footer'>
                 <div class='container'>
                     <div class='flex_column av_one_fourth  first el_before_av_one_fourth'>

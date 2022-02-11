@@ -1665,24 +1665,24 @@ PLAu:9
                             <div class="formDivInner">
                                 <form id="lookSidewayForm">
                                     <!-- <div class="form-group text-left">
-<label for="userName" class="custom-label">Team Name:</label>
-<input type="text" class="form-control" maxlength="30" id="userName" name="userName" placeholder="Enter Team Name" required>
-</div> -->
+                                        <label for="userName" class="custom-label">Team Name:</label>
+                                        <input type="text" class="form-control" maxlength="30" id="userName" name="userName" placeholder="Enter Team Name" required>
+                                    </div> -->
 
                                     <div class="form-group row text-left">
-                                        <label for="userName" class="col-sm-4 custom-label" style="padding-top:7px;">Team Name</label>
+                                        <label for="userName" class="col-sm-4 custom-label">Team Name</label>
                                         <div class="col-sm-8">
                                             <input type="text" class="form-control" maxlength="20" id="userName" name="userName" placeholder="Enter your team name" required>
                                         </div>
                                     </div>
 
                                     <div class="form-group row text-left">
-                                        <label for="playerName" class="col-sm-4 custom-label " style="padding-top:7px;">Player's Name </label>
+                                        <label for="playerName" class="col-sm-4 custom-label ">Player's Name </label>
                                         <div class="col-sm-8">
                                             <span class="text-white pull-right add-more" style="font-size: 1rem; cursor: pointer; position: absolute; right: 17px;" data-toggle="tooltip" data-placement="top" title="Add More Idea">
-<i class="fa fa-plus" aria-hidden="true"></i>
-</span>
-                                            <input type="text" class="form-control" id="playerName" maxlength="100" placeholder="Click + to enter each player">
+                                                <i class="fa fa-plus" aria-hidden="true"></i>
+                                            </span>
+                                            <input type="text" class="form-control teamPlayerName" id="playerName" maxlength="100" placeholder="Click + to enter each player">
                                         </div>
                                     </div>
 
@@ -1698,15 +1698,15 @@ PLAu:9
                                         <textarea class="form-control" rows="3" name="idea" maxlength="150" id="idea" placeholder="Enter Idea Description" required></textarea>
                                     </div>
                                     <!--
-<div class="form-group">
-<label for="idea" class="custom-label ">Upload Sketch:
-<span class="text-white " style="font-size: 25px;" data-toggle="tooltip" data-placement="top" title="Help  icon">
-<i class="fa fa-question-circle-o" aria-hidden="true"></i>
-</span>
-</label>
-<input type="file" class="form-control " name="file" id="file" />
-</div>
--->
+                                    <div class="form-group">
+                                        <label for="idea" class="custom-label ">Upload Sketch:
+                                            <span class="text-white " style="font-size: 25px;" data-toggle="tooltip" data-placement="top" title="Help  icon">
+                                                <i class="fa fa-question-circle-o" aria-hidden="true"></i>
+                                            </span>
+                                        </label>
+                                        <input type="file" class="form-control " name="file" id="file" />
+                                    </div>
+                                    -->
 
                                     <div class="row justify-content-center">
                                         <input type="submit" class="btn btn-warning btn-block col-6 " id="submitBtn" value="Submit">
@@ -1759,6 +1759,7 @@ PLAu:9
             <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.form/3.51/jquery.form.min.js"></script>
             <!-- <script src="/assets/js/timerClock.js"></script> -->
 
+
             <script>
                 jQuery(document).ready(function($) {
                     var count = 1;
@@ -1767,51 +1768,55 @@ PLAu:9
                             // alert('Sorry you can add only 30 idea.');
                             // return false;
                         }
+
                         var newRow = '<div class="form-group row text-left">' +
                             '<label for="playerName" class="col-sm-4 custom-label">Player\'s Name</label>' +
                             '<div class="col-sm-8">' +
-                            '<input type="text" class="form-control" id="playerName" maxlength="100" placeholder="Click + to enter each player">' +
+                            '<input type="text" class="form-control teamPlayerName" id="playerName" maxlength="100" placeholder="Enter names of all team players ">' +
                             '</div>' +
                             '</div>';
+
                         $('#ideaDiv').append(newRow);
                         count++;
                     });
                 });
-                // $('#submitBtn').click(function(e) {
-                //     e.preventDefault();
-                //     var user = document.getElementById("userName").value;
-                //     var ideaName = document.getElementById("ideaName").value;
-                //     var idea = document.getElementById("idea").value;
-                //     if (user && ideaName && idea) {
-                //         $.ajax({
-                //             type: 'POST',
-                //             url: '/lookSideways/',
-                //             data: {
-                //                 idea: document.getElementById("idea").value,
-                //                 userName: document.getElementById("userName").value,
-                //                 ideaName: document.getElementById("ideaName").value
-                //             },
-                //             success: function(data) {
-                //                 $('#successMessage').show();
-                //                 $('#submitBtn').prop("disabled", true);
-                //             },
-                //             error: function(data) {
-                //                 $('#failedMessage').show();
-                //                 console.log('An error occurred.');
-                //                 console.log(data);
-                //             },
-                //         });
-                //     } else {
-                //         alert("Please fill all the values to submit");
-                //     }
-                // });
+
+                $('#submitBtn').click(function(e) {
+                    e.preventDefault();
+                    console.log("In submit");
+                    var playerNames = $("input.teamPlayerName").map(function() {
+                        return this.value;
+                    }).get().join(", <br> ");
+                    var team = document.getElementById("userName").value;
+                    var ideaName = document.getElementById("ideaName").value;
+                    var idea = document.getElementById("idea").value;
+                    if (playerNames && team && ideaName && idea) {
+                        $.ajax({
+                            type: 'POST',
+                            url: '/lookSideways/',
+                            data: {
+                                team: team,
+                                playerNames: playerNames,
+                                idea: idea,
+                                ideaName: ideaName
+                            },
+                            success: function(data) {
+                                $('#successMessage').show();
+                                $('#submitBtn').prop("disabled", true);
+                            },
+                            error: function(data) {
+                                $('#failedMessage').show();
+                                console.log('An error occurred.');
+                                console.log(data);
+                            },
+                        });
+                    } else {
+                        alert("Please fill all the values to submit");
+                    }
+
+                });
             </script>
-
-
-
-
             <!-- close default .container_wrap element -->
-
 
             <div class='container_wrap footer_color' id='footer'>
                 <div class='container'>

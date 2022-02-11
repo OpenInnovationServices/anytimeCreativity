@@ -1854,14 +1854,14 @@ PLAu:9
                                     <input type="hidden" name="image_name4" value="" id="image_name4" />
 
                                     <!-- <div class="form-group text-left">
-                <label for="userName" class="custom-label">Team Name:</label>
-                <input type="text" class="form-control" maxlength="30" id="userName" name="userName" placeholder="Enter Team Name" required>
-            </div> -->
+                                        <label for="userName" class="custom-label">Team Name:</label>
+                                        <input type="text" class="form-control" maxlength="30" id="userName" name="userName" placeholder="Enter Team Name" required>
+                                    </div> -->
 
                                     <div class="form-group row text-left">
                                         <label for="userName" class="col-sm-4 custom-label">Team Name</label>
                                         <div class="col-sm-8">
-                                            <input type="text" class="form-control" maxlength="20" id="userName" name="userName" placeholder="Enter your team name" required>
+                                            <input type="text" class="form-control" maxlength="20" id="teamName" name="teamName" placeholder="Enter your team name" required>
                                         </div>
                                     </div>
 
@@ -1869,9 +1869,9 @@ PLAu:9
                                         <label for="playerName" class="col-sm-4 custom-label ">Player's Name </label>
                                         <div class="col-sm-8">
                                             <span class="text-white pull-right add-more" style="font-size: 1rem; cursor: pointer; position: absolute; right: 17px;" data-toggle="tooltip" data-placement="top" title="Add More Idea">
-                        <i class="fa fa-plus" aria-hidden="true"></i>
-                    </span>
-                                            <input type="text" class="form-control playerNameList" id="playerName" maxlength="100" placeholder="Click + to enter each player">
+                                                <i class="fa fa-plus" aria-hidden="true"></i>
+                                            </span>
+                                            <input type="text" class="form-control teamPlayerName" id="playerName" maxlength="100" placeholder="Click + to enter each player">
                                         </div>
                                     </div>
 
@@ -1884,21 +1884,27 @@ PLAu:9
 
                                     <div class="form-group text-left">
                                         <label for="idea" class="custom-label">Invention Description:</label>
-                                        <textarea class="form-control" rows="3" name="idea" maxlength="150" id="idea" placeholder="Enter Invention Description" required></textarea>
+                                        <textarea class="form-control" rows="3" name="idea" maxlength="150" id="ideaDescription" placeholder="Enter Invention Description" required></textarea>
                                     </div>
 
                                     <div class="form-group">
                                         <label for="idea" class="custom-label ">Upload Sketch:
-                        <span class="text-white " style="font-size: 25px;" data-toggle="tooltip" data-placement="top" title="Help  icon">
-                            <i class="fa fa-question-circle-o" aria-hidden="true"></i>
-                        </span>
-                    </label>
+                                                <span class="text-white " style="font-size: 25px;" data-toggle="tooltip" data-placement="top" title="Help  icon">
+                                                    <i class="fa fa-question-circle-o" aria-hidden="true"></i>
+                                                </span>
+                                            </label>
                                         <input type="file" class="form-control " name="file" id="file" />
                                     </div>
 
                                     <div class="row justify-content-center">
                                         <input type="submit" class="btn btn-warning btn-block col-6 " id="submitBtn" value="Submit">
                                     </div>
+
+                                    <!--
+                                        <div class="form-group">
+                                            <input type="image" src="/assets/images/lookSideways/SubmitButton.png" id="submitBtn" height="90px" style="margin-top: 2rem;">
+                                        </div>
+                                        -->
 
                                     <div class="row text-center" id="successMessage" style="display: none;">
                                         <div class="col-xs-12" style="margin: 0 auto;">
@@ -1928,70 +1934,97 @@ PLAu:9
             <script>
                 jQuery(document).ready(function($) {
                     var flag = 1;
+
                     $('.btnPlay').click(function(e) {
                         if (flag != 1) {
                             return false;
                         }
+
                         setup_posters1('ring-11', 5, 100);
                         setup_posters1('ring-22', 5, 100);
                         setup_posters1('ring-33', 4, 100);
                         setup_posters1('ring-44', 4, 100);
+
                         $('#ring-11').attr('id', 'ring-1');
                         $('#ring-22').attr('id', 'ring-2');
                         $('#ring-33').attr('id', 'ring-3');
                         $('#ring-44').attr('id', 'ring-4');
+
                         $('.overlayOuter').addClass('overlayOuter1');
                         $('.overlayOuter1').removeClass('overlayOuter');
+
                         setTimeout(function() {
                             const rndInt = Math.floor(Math.random() * 5) + 1
                                 // console.log(rndInt);
+
                             var oneAttr = $('#ring-1 .poster1').attr('style');
                             var twoAttr = $('#ring-1 .poster' + rndInt).attr('style');
+
                             $('#ring-1 .poster1').attr('style', twoAttr);
                             $('#ring-1 .poster').removeAttr('style');
                             $('#ring-1 .poster' + rndInt).attr('style', oneAttr);
+
                             $('#value1').val($('#ring-1 .poster' + rndInt).attr('value'));
                             $('#image_name1').val($('#ring-1 .poster' + rndInt).attr('data-image-name'));
+
                             // console.log($('#ring-1 .poster' + rndInt).attr('value'));
                             // console.log($('#ring-1 .poster' + rndInt).attr('data-image-name'));
+
                             $('#ring-1').attr('id', 'ring-11');
+
                         }, 3000);
+
                         setTimeout(function() {
                             const rndInt = Math.floor(Math.random() * 5) + 1
                                 // console.log(rndInt);
+
                             var oneAttr = $('#ring-2 .poster1').attr('style');
                             var twoAttr = $('#ring-2 .poster' + rndInt).attr('style');
+
                             $('#ring-2 .poster1').attr('style', twoAttr);
                             $('#ring-2 .poster').removeAttr('style');
                             $('#ring-2 .poster' + rndInt).attr('style', oneAttr);
+
                             $('#value2').val($('#ring-2 .poster' + rndInt).attr('value'));
                             $('#image_name2').val($('#ring-2 .poster' + rndInt).attr('data-image-name'));
+
                             $('#ring-2').attr('id', 'ring-22');
                         }, 3500);
+
                         setTimeout(function() {
                             const rndInt = Math.floor(Math.random() * 4) + 1
                                 // console.log(rndInt);
+
                             var oneAttr = $('#ring-3 .poster1').attr('style');
                             var twoAttr = $('#ring-3 .poster' + rndInt).attr('style');
+
                             $('#ring-3 .poster1').attr('style', twoAttr);
                             $('#ring-3 .poster').removeAttr('style');
                             $('#ring-3 .poster' + rndInt).attr('style', oneAttr);
+
                             $('#value3').val($('#ring-3 .poster' + rndInt).attr('value'));
                             $('#image_name3').val($('#ring-3 .poster' + rndInt).attr('data-image-name'));
+
                             $('#ring-3').attr('id', 'ring-33');
                         }, 4000);
+
                         setTimeout(function() {
                             const rndInt = Math.floor(Math.random() * 4) + 1
                                 // console.log(rndInt);
+
                             var oneAttr = $('#ring-4 .poster1').attr('style');
                             var twoAttr = $('#ring-4 .poster' + rndInt).attr('style');
+
                             $('#ring-4 .poster1').attr('style', twoAttr);
                             $('#ring-4 .poster').removeAttr('style');
                             $('#ring-4 .poster' + rndInt).attr('style', oneAttr);
+
                             $('#value4').val($('#ring-4 .poster' + rndInt).attr('value'));
                             $('#image_name4').val($('#ring-4 .poster' + rndInt).attr('data-image-name'));
+
                             $('#ring-4').attr('id', 'ring-44');
                         }, 4500);
+
                         flag++;
                     });
 
@@ -2001,44 +2034,64 @@ PLAu:9
                             alert('Sorry you can add only 6 players.');
                             return false;
                         }
+
                         var newRow = '<div class="form-group row text-left">' +
                             '<label for="playerName" class="col-sm-4 custom-label">Player\'s Name</label>' +
                             '<div class="col-sm-8">' +
-                            '<input type="text" class="form-control playerNameList" id="playerName" maxlength="100" placeholder="Click + to enter each player">' +
+                            '<input type="text" class="form-control teamPlayerName" id="playerName" maxlength="100" placeholder="Enter names of all team players ">' +
                             '</div>' +
                             '</div>';
+
                         $('#ideaDiv').append(newRow);
                         count++;
                     });
+
                 });
 
                 $('#submitBtn').click(function(e) {
                     e.preventDefault();
-                    var inputs = $(".playerNameList");
-                    var nameList = '';
-                    for (var i = 0; i < inputs.length; i++) {
-                        if (i == 0) {
-                            nameList = $(inputs[i]).val();
-                        } else {
-                            nameList = nameList + ' , ' + $(inputs[i]).val();
+                    var appliance = document.getElementById("image_name1").value;
+                    var garden = document.getElementById("image_name2").value;
+                    var diy = document.getElementById("image_name3").value;
+                    var hometech = document.getElementById("image_name4").value;
+                    var playerNames = $("input.teamPlayerName").map(function() {
+                        return this.value;
+                    }).get().join(", <br> ");
+                    var teamName = document.getElementById("teamName").value;
+                    var ideaName = document.getElementById("ideaName").value;
+                    var ideaDescription = document.getElementById("ideaDescription").value;
+
+                    $.ajax({
+
+                        type: 'POST',
+                        url: '/madAndNutty/',
+                        data: JSON.stringify({
+                            object1: appliance,
+                            object2: garden,
+                            object3: diy,
+                            object4: hometech,
+                            teamName: teamName,
+                            playerNames: playerNames,
+                            ideaName: ideaName,
+                            ideaDescription: ideaDescription
+                        }),
+                        contentType: 'application/json',
+                        success: function(data) {
+                            $('#successMessage').show();
+                            $('#submitBtn').prop("disabled", true);
+                        },
+                        error: function(data) {
+                            $('#failedMessage').show();
+                            console.log('An error occurred.');
+                            console.log(data);
                         }
-                    }
-                    var frmObj = JSON.stringify({
-                        // obj1: document.getElementById("obj1").value,
-                        // obj2: document.getElementById("obj2").value,
-                        // obj3: document.getElementById("obj3").value,
-                        // obj4: document.getElementById("obj4").value,
-                        nameList: nameList,
-                        ideaName: document.getElementById("ideaName").value,
-                        idea: document.getElementById("idea").value,
-                        userName: document.getElementById("userName").value
-                    })
-                    console.log(frmObj);
+                    });
                     return false;
                 });
 
                 function setup_posters1(id_name, total_list, ring_radius) {
                     var posterAngle = 360 / total_list;
+
                     for (var i = 0; i < total_list; i++) {
                         var transform = '-webkit-transform: rotatex(' + (posterAngle * i) + 'deg) translateZ(' + ring_radius + 'px)';
                         $('#' + id_name + " .poster" + (i + 1)).attr('style', transform);
@@ -2047,8 +2100,6 @@ PLAu:9
             </script>
 
             <!-- close default .container_wrap element -->
-
-
             <div class='container_wrap footer_color' id='footer'>
                 <div class='container'>
                     <div class='flex_column av_one_fourth  first el_before_av_one_fourth'>
@@ -2169,5 +2220,3 @@ PLAu:9
         // $(window).load(function() {});
     </script>
 </body>
-
-</html>
