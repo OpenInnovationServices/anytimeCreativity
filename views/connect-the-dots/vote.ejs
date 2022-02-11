@@ -24,6 +24,7 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:label1" content="Est. reading time" />
     <meta name="twitter:data1" content="10 minutes" />
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script type="application/ld+json" class="yoast-schema-graph">
         {
             "@context": "https://schema.org",
@@ -1286,7 +1287,7 @@ padding-bottom:70px;
             body .pricing-section .flex_column {
                 margin-top: 40px!important;
             }
-            body .twoCol-row .flex_column_table.av-equal-height-column-flextable:not(:first-child),
+            body .twoCol-row .flex_column_table.av-equal-height-column-flextable:not(:first-child)
             {
                 margin-top: 0!important;
             }
@@ -1620,7 +1621,8 @@ PLAu:9
                 body,
                 #wrap_all,
                 #main {
-                    background: #fffc63 !important;
+                    background: #fff !important;
+                    /* fffc63 */
                 }
                 
                 .form-control {
@@ -1808,6 +1810,9 @@ PLAu:9
                     top: 10px;
                     right: 15px;
                 }
+                .image-text{
+                    margin-bottom: .2rem;
+                }
             </style>
 
             <div class="container-fluid">
@@ -1864,8 +1869,18 @@ PLAu:9
                                                             </div>
                                                         </div>
                                                     </td>
-                                                    <td><img src="/<%= data[i].mix %>" style="max-width: 50px;" /></td>
-                                                    <td><img src="/<%= data[i].match %>" style="max-width: 50px;" /></td>
+                                                    <td>
+                                                        <div class="image-div">
+                                                            <img src="<%= data[i].mix %>" style="max-width: 40px;">
+                                                            <p class="image-text"><%= data[i].mix_text %></p>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="image-div">
+                                                            <img src="<%= data[i].match %>" style="max-width: 40px;">
+                                                            <p class="image-text"><%= data[i].match_text %></p>
+                                                        </div>
+                                                    </td>
                                                     <td>
                                                         <%= data[i].ideaName %>
                                                     </td>
@@ -1902,8 +1917,7 @@ PLAu:9
                     </div>
                 </form>
             </div>
-
-
+            
             <script>
                 var frm = $('#ctdVoting');
 

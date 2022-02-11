@@ -1286,7 +1286,7 @@ padding-bottom:70px;
             body .pricing-section .flex_column {
                 margin-top: 40px!important;
             }
-            body .twoCol-row .flex_column_table.av-equal-height-column-flextable:not(:first-child),
+            body .twoCol-row .flex_column_table.av-equal-height-column-flextable:not(:first-child)
             {
                 margin-top: 0!important;
             }
@@ -1958,15 +1958,21 @@ PLAu:9
                     // var user = document.getElementById("userName").value;
                     var ideaName = document.getElementById("ideaName").value;
                     var idea = document.getElementById("idea").value;
-                    var group3 = $('#group3 li').attr('value');
-                    var group2 = $('#group2 li').attr('value');
+                    var group3 = document.querySelector("#group3 > li > div > img").src;
+                    var group2 = document.querySelector("#group2 > li > div > img").src;
+                    var group2_text = document.querySelector("#group2 > li > div > p").innerText;
+                    var group3_text = document.querySelector("#group3 > li > div > p").innerText;
+                    console.log(group2);
+                    console.log(group2_text);
                     if (user && ideaName && idea && group2 && group3) {
                         $.ajax({
                             type: 'POST',
-                            url: 'https://www.anytimecreativity.com/api/challenge/',
+                            url: '/api/challenge/',
                             data: {
-                                mix: $('#group2 li').attr('value'),
-                                match: $('#group3 li').attr('value'),
+                                mix: group2,
+                                match: group3,
+                                mix_text: group2_text,
+                                match_text: group3_text,
                                 idea: document.getElementById("idea").value,
                                 penName: user,
                                 ideaName: document.getElementById("ideaName").value,
@@ -2005,42 +2011,6 @@ PLAu:9
 
 
             <script>
-                $('#submitBtn').click(function(e) {
-                    e.preventDefault();
-                    var user = $("input.teamPlayerName").map(function() {
-                        return this.value;
-                    }).get().join(",");
-                    // var user = document.getElementById("userName").value;
-                    var ideaName = document.getElementById("ideaName").value;
-                    var idea = document.getElementById("idea").value;
-                    var group3 = $('#group3 li').attr('value');
-                    var group2 = $('#group2 li').attr('value');
-                    if (user && ideaName && idea && group2 && group3) {
-                        $.ajax({
-                            type: 'POST',
-                            url: 'https://www.anytimecreativity.com/api/challenge/',
-                            data: {
-                                mix: $('#group2 li').attr('value'),
-                                match: $('#group3 li').attr('value'),
-                                idea: document.getElementById("idea").value,
-                                penName: user,
-                                ideaName: document.getElementById("ideaName").value,
-                                code: "1001",
-                            },
-                            success: function(data) {
-                                $('#successMessage').show();
-                                $('#submitBtn').prop("disabled", true);
-                            },
-                            error: function(data) {
-                                $('#failedMessage').show();
-                                console.log('An error occurred.');
-                                console.log(data);
-                            },
-                        });
-                    } else {
-                        alert("Please fill all the values to submit");
-                    }
-                });
                 var count = 1;
                 $('.add-more').click(function() {
                     if (count >= 15) {
