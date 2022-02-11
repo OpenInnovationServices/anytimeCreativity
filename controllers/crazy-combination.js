@@ -10,10 +10,6 @@ exports.index = (req, res, next) => {
 };
 
 exports.dashboard = (req, res, next) => {
-    // res.render('crazy-combinations/dashboard', {
-    //     pageTitle: 'Crazy Combination Dashboard',
-    //     data: [],
-    // });
     MongoClient.connect(keys.mongodb.dbURI, { useUnifiedTopology: true, useNewUrlParser: true }, function(err, db) {
         if (err) throw err;
         var dbo = db.db(keys.mongodb.dbName);
@@ -26,10 +22,6 @@ exports.dashboard = (req, res, next) => {
 };
 
 exports.vote = (req, res, next) => {
-    // res.render('crazy-combinations/vote', {
-    //     pageTitle: 'Crazy Combination Vote',
-    //     data: [],
-    // });
     MongoClient.connect(keys.mongodb.dbURI, { useUnifiedTopology: true, useNewUrlParser: true }, function(err, db) {
         if (err) throw err;
         var dbo = db.db(keys.mongodb.dbName);
@@ -42,10 +34,7 @@ exports.vote = (req, res, next) => {
 };
 
 exports.voteDashboard = (req, res, next) => {
-    // res.render('crazy-combinations/voting-dashboard', {
-    //     pageTitle: 'Crazy Combination Voting Dashboard',
-    //     data: [],
-    // });
+    // 'crazy-combinations/voting-dashboard'
     MongoClient.connect(keys.mongodb.dbURI, { useUnifiedTopology: true, useNewUrlParser: true }, function(err, db) {
         if (err) throw err;
         var dbo = db.db(keys.mongodb.dbName);
