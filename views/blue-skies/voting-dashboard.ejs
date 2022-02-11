@@ -1613,7 +1613,208 @@ PLAu:9
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-            <link rel="stylesheet" type="text/css" href="https://www.anytimecreativity.com/assets/css/blue-skies.css">
+            <!-- <link rel="stylesheet" type="text/css" href="https://www.anytimecreativity.com/assets/css/blue-skies.css"> -->
+
+            <style>
+                html,
+                body,
+                #wrap_all,
+                #main {
+                    background: #fffc63 !important;
+                }
+                
+                .form-control {
+                    background-color: transparent !important;
+                    border: transparent !important;
+                    outline: 0 !important;
+                    border-color: transparent !important;
+                    border-bottom: 3px solid #f4f4f4 !important;
+                    border-width: 0 0 2px !important;
+                    color: #fff !important;
+                    border-radius: 0.25rem !important;
+                }
+                
+                .row {
+                    margin-bottom: 0px;
+                }
+                
+                .nav-row {
+                    margin-bottom: 1rem !important;
+                }
+                
+                .inst-para-outer {
+                    margin: auto;
+                }
+                
+                .inst-para {
+                    font-size: 2vh;
+                    font-family: 'Open Sans', sans-serif;
+                    margin: auto;
+                }
+                
+                .nav-row {
+                    background-color: #004AAD;
+                    color: white;
+                    margin-bottom: 1rem;
+                    padding: 0 2rem;
+                }
+                
+                body {
+                    background: transparent;
+                }
+                
+                .table-responsive {
+                    box-shadow: 0 0 10px #d7d7d7;
+                }
+                
+                .table {
+                    box-shadow: 0 0 10px #cecece;
+                    border: 1.2px solid #4389e6;
+                }
+                
+                thead th {
+                    /* font-size: 1.8vh; */
+                    padding: 1rem !important;
+                }
+                
+                th {
+                    background: #b8d6fd;
+                }
+                
+                .bg-blue {
+                    background-color: #4389e6;
+                    box-shadow: 0 0 5px #cecece;
+                }
+                
+                input[type=checkbox] {
+                    -ms-transform: scale(2);
+                    -moz-transform: scale(2);
+                    -webkit-transform: scale(2);
+                    -o-transform: scale(2);
+                    transform: scale(2);
+                    padding: 10px;
+                }
+                
+                .inst-para-outer h1 {
+                    color: #fff;
+                    /* font-size: 3rem; */
+                    font-weight: 900;
+                    margin: auto;
+                }
+                
+                h1 {
+                    color: #fff;
+                    /* font-size: 3rem; */
+                    font-weight: 900;
+                }
+                
+                .nav-img {
+                    height: 80px;
+                }
+                
+                .card-body {
+                    /* width: 200px; */
+                    border: none;
+                    padding: 0.1rem;
+                    background: #cccccc;
+                }
+                
+                .h6 {
+                    font-weight: 450;
+                }
+                
+                @media (max-width: 1448px) {
+                    .inst-para {
+                        font-size: 0.9rem;
+                    }
+                    .nav-img {
+                        height: 70px;
+                    }
+                }
+                
+                @media (max-width: 768px) {
+                    .logo-div {
+                        text-align: center !important;
+                    }
+                    .nav-img {
+                        width: 180px;
+                        height: auto !important;
+                    }
+                }
+                /*## Checkbox */
+                
+                #ck-button {
+                    margin: auto;
+                    overflow: auto;
+                    float: left;
+                }
+                
+                #ck-button:hover {
+                    cursor: pointer;
+                    margin: auto;
+                    background-color: #EFEFEF;
+                    border-radius: 4px;
+                    overflow: auto;
+                    float: left;
+                }
+                
+                #ck-button #label {
+                    float: left;
+                    margin-bottom: 0rem;
+                }
+                
+                #ck-button #label span {
+                    text-align: center;
+                    display: block;
+                    font-size: 3vh;
+                }
+                
+                #ck-button #label input {
+                    position: absolute;
+                    visibility: hidden;
+                }
+                
+                #ck-button #label input:disabled+span {
+                    color: #bdbdbd;
+                }
+                
+                #ck-button input:checked+span {
+                    color: #F7C327;
+                }
+                /*## Collapse */
+                
+                .panel-title {
+                    position: relative;
+                    cursor: pointer;
+                }
+                
+                .panel-title::after {
+                    content: "\f107";
+                    color: #333;
+                    /* top: -2px; */
+                    top: 0px;
+                    right: 0px;
+                    position: absolute;
+                    font-family: "FontAwesome"
+                }
+                
+                .panel-title[aria-expanded="true"]::after {
+                    content: "\f106";
+                }
+                
+                .panel-heading-full.panel-heading {
+                    padding: 0;
+                }
+                
+                .panel-heading-full .panel-title {
+                    padding: 10px 15px;
+                }
+                
+                .panel-heading-full .panel-title::after {
+                    top: 10px;
+                    right: 15px;
+                }
+            </style>
 
             <div class="container-fluid">
                 <div class="row nav-row">
