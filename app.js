@@ -35,12 +35,12 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // parse requests of content-type - application/json
 app.use(bodyParser.json());
 
-app.use('/crazy-combination', crazyCombinationRoutes);
-app.use('/connect-the-dots', connectTheDotsRoutes);
-app.use('/mad-and-nutty', madAndNuttyRoutes);
-app.use('/blue-skies', blueSkiesRoutes);
-app.use('/look-sideways', lookSidewaysRoutes);
-app.use('/reimagine', reimagineRoutes);
+app.use('/crazyCombinations', crazyCombinationRoutes);
+app.use('/connectTheDots', connectTheDotsRoutes);
+app.use('/madAndNutty', madAndNuttyRoutes);
+app.use('/blueSkies', blueSkiesRoutes);
+app.use('/lookSideways', lookSidewaysRoutes);
+app.use('/reImagine', reimagineRoutes);
 app.use('/api/challenge', submitChallengeDataApiRoutes);
 
 app.get('/', (req, res) => {
@@ -66,7 +66,7 @@ app.get('/book-a-demo', (req, res) => {
 app.get('/privacy-policy', (req, res) => {
     res.status(200).render('privacy-policy');
 });
-
+/*
 app.get('/crazyCombinations', (req, res) => {
     res.status(200).render('crazy-combinations');
 });
@@ -90,7 +90,7 @@ app.get('/blueSkies', (req, res) => {
 app.get('/lookSideways', (req, res) => {
     res.status(200).render('look-sideways');
 });
-
+*/
 // Handle 404 - Keep this as a last route
 app.use(function(req, res, next) {
     res.status(404).send('404: File Not Found');
