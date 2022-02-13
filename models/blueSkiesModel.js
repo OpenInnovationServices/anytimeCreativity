@@ -3,6 +3,7 @@ const Schema = mongoose.Schema;
 
 const blueSkiesSchema = new Schema({
     problem: String,
+    problemText: String,
     solutions:String,
     teamName: String,
     playerNames: String,

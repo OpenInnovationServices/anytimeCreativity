@@ -2007,6 +2007,8 @@ PLAu:9
                 $('#submitBtn').click(function(e) {
                     e.preventDefault();
                     var problem = document.getElementById("image_name1").value;
+                    var problemText = document.getElementById("value1").value;
+                    console.log(problemText);
                     var solutions = document.getElementById("value2").value;
                     var teamName = document.getElementById("teamName").value;
                     var playerNames = $("input.teamPlayerName").map(function() {
@@ -2020,6 +2022,7 @@ PLAu:9
                             url: '/blueSkies/',
                             data: {
                                 problem: problem,
+                                problemText: problemText,
                                 solutions: solutions,
                                 teamName: teamName,
                                 playerNames: playerNames,

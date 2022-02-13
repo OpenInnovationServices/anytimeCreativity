@@ -59,6 +59,7 @@ exports.voteDashboard = (req, res, next) => {
 exports.post = (req, res, next) => {
     const blueSkiesObj = new model({
         problem: req.body.problem,
+        problemText: req.body.problemText,
         solutions: req.body.solutions,
         teamName: req.body.teamName,
         playerNames: req.body.playerNames,
