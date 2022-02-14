@@ -1286,8 +1286,7 @@ padding-bottom:70px;
             body .pricing-section .flex_column {
                 margin-top: 40px!important;
             }
-            body .twoCol-row .flex_column_table.av-equal-height-column-flextable:not(:first-child)
-            {
+            body .twoCol-row .flex_column_table.av-equal-height-column-flextable:not(:first-child) {
                 margin-top: 0!important;
             }
             #top #av-burger-menu-ul {
@@ -1968,7 +1967,8 @@ PLAu:9
                     e.preventDefault();
                     var user = $("input.teamPlayerName").map(function() {
                         return this.value;
-                    }).get().join(",");
+                    }).get().join(", <br>");
+
                     var ideaName = document.getElementById("ideaName").value;
                     var idea = document.getElementById("idea").value;
                     var group3 = document.querySelector("#group3 > li > div > img").src;

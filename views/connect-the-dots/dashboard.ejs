@@ -1809,7 +1809,8 @@ PLAu:9
                     top: 10px;
                     right: 15px;
                 }
-                .image-text{
+                
+                .image-text {
                     margin-bottom: .2rem;
                 }
             </style>
@@ -1866,13 +1867,17 @@ PLAu:9
                                                 <td>
                                                     <div class="image-div">
                                                         <img src="<%= data[i].mix %>" style="max-width: 40px;">
-                                                        <p class="image-text"><%= data[i].mix_text %></p>
+                                                        <p class="image-text">
+                                                            <%= data[i].mix_text %>
+                                                        </p>
                                                     </div>
                                                 </td>
                                                 <td>
                                                     <div class="image-div">
                                                         <img src="<%= data[i].match %>" style="max-width: 40px;">
-                                                        <p class="image-text"><%= data[i].match_text %></p>
+                                                        <p class="image-text">
+                                                            <%= data[i].match_text %>
+                                                        </p>
                                                     </div>
                                                 </td>
                                                 <td>
