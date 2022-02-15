@@ -44,7 +44,7 @@ exports.voteDashboard = (req, res, next) => {
         dbo.collection("challengeDataCollection").find({ "code": "1001" }).toArray(function (err, result) {
             if (err) res.status(400).json("Error Connecting DB");
             res.render('connect-the-dots/voting-dashboard', {
-                pageTitle: 'Connect The Dots Voting Dashboard',
+                pageTitle: 'Connect The Dots Results',
                 data: result
             });
             db.close();

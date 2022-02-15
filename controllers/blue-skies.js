@@ -48,7 +48,7 @@ exports.voteDashboard = (req, res, next) => {
         dbo.collection("blueSkiesSolutions").find({}).toArray(function(err, result) {
             if (err) res.status(400).json("Error Connecting DB");
             res.render('blue-skies/voting-dashboard', {
-                pageTitle: 'Blue Skies Voting Dashboard',
+                pageTitle: 'Blue Skies Results',
                 data: result
             });
             db.close();

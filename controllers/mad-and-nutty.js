@@ -48,7 +48,7 @@ exports.voteDashboard = (req, res, next) => {
         dbo.collection("madAndNuttySolution").find({}).toArray(function(err, result) {
             if (err) res.status(400).json("Error Connecting DB");
             res.render('mad-and-nutty/voting-dashboard', {
-                pageTitle: 'Mad And Nutty Voting Dashboard',
+                pageTitle: 'Mad And Nutty Results',
                 data: result
             });
             db.close();
