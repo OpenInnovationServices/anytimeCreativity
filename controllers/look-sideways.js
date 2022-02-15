@@ -48,7 +48,7 @@ exports.voteDashboard = (req, res, next) => {
         dbo.collection("lookSidewaysSolution").find({}).toArray(function(err, result) {
             if (err) res.status(400).json("Error Connecting DB");
             res.render('look-sideways/voting-dashboard', {
-                pageTitle: 'Look Sideways Voting Dashboard',
+                pageTitle: 'Look Sideways Results',
                 data: result
             });
             db.close();
