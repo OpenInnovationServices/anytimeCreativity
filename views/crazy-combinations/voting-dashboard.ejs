@@ -317,7 +317,9 @@
             margin: auto;
             padding-left: 40px;
         }
-
+        #top #header .av-main-nav>li:hover>a {
+        background-color: transparent;
+    }
         .html_header_top #top .av_header_stretch .container {
             max-width: 1400px;
             padding: 0 40px;
@@ -336,6 +338,7 @@
             margin-left: 4px;
             border-radius: 12px;
             color: #000;
+            display: inline-block;
         }
 
         #top #header .av-main-nav>li>a:hover,
@@ -344,6 +347,7 @@
         #top #header .av-main-nav>li.current-menu-item>a:focus,
         #top #header .av-main-nav>li.current-menu-item>a {
             background-color: rgba(9, 9, 9, 0.1);
+            display: inline-block;
         }
 
         #header {
@@ -352,6 +356,7 @@
 
         .logo {
             padding-top: 7px;
+            z-index: 9!important;
         }
 
         .html_header_top.html_header_sticky #top #wrap_all #main {
@@ -1116,9 +1121,11 @@ padding-bottom:70px;
         #top .right-menu:hover,
         #top .right-menu:focus {
             position: fixed !important;
-            right: 250px;
+            /*right: 250px;*/
             top: 15px;
             font-size: 19px;
+            width: 50%;
+            right:0;
         }
 
         #top .right-menu,
