@@ -2006,11 +2006,12 @@ PLAu:9
                     var group2_text = $('#group2 li').attr('data-image-name');
                     var group3_text = $('#group3 li').attr('data-image-name');
 
-                    if (user && ideaName && idea && group2 && group3) {
+                    if (user1 && user && ideaName && idea && group2 && group3) {
                         $.ajax({
                             type: 'POST',
                             url: '/api/challenge/',
                             data: {
+                                user: user1,
                                 mix: group2,
                                 match: group3,
                                 mix_text: group2_text,

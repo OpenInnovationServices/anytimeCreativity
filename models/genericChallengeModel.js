@@ -2,11 +2,12 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const challengeSchema = new Schema({
+    user: String,
     mix: String,
     match: String,
     mix_text: String,
     match_text: String,
-    teamName:String,
+    teamName: String,
     penName: String,
     ideaName: String,
     idea: String,

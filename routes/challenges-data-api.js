@@ -36,8 +36,9 @@ router.get('/', (req, res) => {
 // });
 
 router.post('/', (req, res) => {
-    console.log(req.body);
+    // console.log(req.body);
     const idea = new challengeModel({
+        user: req.body.user,
         mix: req.body.mix,
         match: req.body.match,
         mix_text: req.body.mix_text,
@@ -49,7 +50,7 @@ router.post('/', (req, res) => {
         code: req.body.code,
         count: 0
     });
-    console.log(idea);
+    // console.log(idea);
     // console.log('-------------------------');
     // return false;
 

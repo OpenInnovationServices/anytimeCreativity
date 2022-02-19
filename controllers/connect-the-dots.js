@@ -9,24 +9,25 @@ exports.index = (req, res, next) => {
 };
 
 exports.dashboard = (req, res, next) => {
-    MongoClient.connect(keys.mongodb.dbURI, { useUnifiedTopology: true, useNewUrlParser: true }, function (err, db) {
+    MongoClient.connect(keys.mongodb.dbURI, { useUnifiedTopology: true, useNewUrlParser: true }, function(err, db) {
         if (err) throw err;
         var dbo = db.db(keys.mongodb.dbName);
-        dbo.collection("challengeDataCollection").find({ "code": "1001" }).toArray(function (err, result) {
+        dbo.collection("challengeDataCollection").find({ "code": "1001" }).toArray(function(err, result) {
             if (err) res.status(400).json("Error Connecting DB");
             res.status(200).render('connect-the-dots/dashboard', {
                 pageTitle: 'Connect The Dots Dashboard',
-                data: result});
+                data: result
+            });
             db.close();
         });
     });
 };
 
 exports.vote = (req, res, next) => {
-    MongoClient.connect(keys.mongodb.dbURI, { useUnifiedTopology: true, useNewUrlParser: true }, function (err, db) {
+    MongoClient.connect(keys.mongodb.dbURI, { useUnifiedTopology: true, useNewUrlParser: true }, function(err, db) {
         if (err) throw err;
         var dbo = db.db(keys.mongodb.dbName);
-        dbo.collection("challengeDataCollection").find({ "code": "1001" }).toArray(function (err, result) {
+        dbo.collection("challengeDataCollection").find({ "code": "1001" }).toArray(function(err, result) {
             if (err) res.status(400).json("Error Connecting DB");
             res.render('connect-the-dots/vote', {
                 pageTitle: 'Connect The Dots Vote',
@@ -38,10 +39,10 @@ exports.vote = (req, res, next) => {
 };
 
 exports.voteDashboard = (req, res, next) => {
-    MongoClient.connect(keys.mongodb.dbURI, { useUnifiedTopology: true, useNewUrlParser: true }, function (err, db) {
+    MongoClient.connect(keys.mongodb.dbURI, { useUnifiedTopology: true, useNewUrlParser: true }, function(err, db) {
         if (err) throw err;
         var dbo = db.db(keys.mongodb.dbName);
-        dbo.collection("challengeDataCollection").find({ "code": "1001" }).toArray(function (err, result) {
+        dbo.collection("challengeDataCollection").find({ "code": "1001" }).toArray(function(err, result) {
             if (err) res.status(400).json("Error Connecting DB");
             res.render('connect-the-dots/voting-dashboard', {
                 pageTitle: 'Connect The Dots Results',
