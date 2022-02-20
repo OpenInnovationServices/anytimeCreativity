@@ -1842,8 +1842,8 @@ PLAu:9
                                     <table class="table table-bordered table-hover text-center mb-0">
                                         <thead>
                                             <th>Index</th>
-                                            <th>Resource</th>
                                             <th>Team</th>
+                                            <th>Resource</th>
                                             <th>Repurpose Ideas</th>
                                             <th>Best Idea</th>
                                             <th>Idea Description</th>
@@ -1854,9 +1854,6 @@ PLAu:9
                                             <tr>
                                                 <td>
                                                     <%= i+1 %>
-                                                </td>
-                                                <td>
-                                                    <%= data[i].object %>
                                                 </td>
                                                 <td>
                                                     <b><%= data[i].teamName %></b>
@@ -1871,6 +1868,9 @@ PLAu:9
                                                             </div>
                                                         </div>
                                                     </div>
+                                                </td>
+                                                <td>
+                                                    <%= data[i].object %>
                                                 </td>
                                                 <td>
 
