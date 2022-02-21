@@ -302,9 +302,11 @@
             margin: auto;
             padding-left: 40px;
         }
+        
         #top #header .av-main-nav>li:hover>a {
-        background-color: transparent;
-    }
+            background-color: transparent;
+        }
+        
         .html_header_top #top .av_header_stretch .container {
             max-width: 1400px;
             padding: 0 40px;
@@ -1109,7 +1111,7 @@ padding-bottom:70px;
             top: 15px;
             font-size: 19px;
             width: 50%;
-            right:0;
+            right: 0;
         }
         
         #top .right-menu,
@@ -2006,19 +2008,19 @@ PLAu:9
                     // var group2_text = document.querySelector("#group2 > li > div > p").innerText;
                     // var group3_text = document.querySelector("#group3 > li > div > p").innerText;
 
-                    var user1 = document.getElementById("userName").value;
+                    var teamName = document.getElementById("userName").value;
                     var group2 = $('#group2 li').attr('value');
                     var group3 = $('#group3 li').attr('value');
 
                     var group2_text = $('#group2 li').attr('data-image-name');
                     var group3_text = $('#group3 li').attr('data-image-name');
 
-                    if (user1 && user && ideaName && idea && group2 && group3) {
+                    if (teamName && user && ideaName && idea && group2 && group3) {
                         $.ajax({
                             type: 'POST',
                             url: '/api/challenge/',
                             data: {
-                                user: user1,
+                                teamName: teamName,
                                 mix: group2,
                                 match: group3,
                                 mix_text: group2_text,
