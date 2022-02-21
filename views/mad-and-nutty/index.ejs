@@ -302,9 +302,11 @@
             margin: auto;
             padding-left: 40px;
         }
+        
         #top #header .av-main-nav>li:hover>a {
-        background-color: transparent;
-    }
+            background-color: transparent;
+        }
+        
         .html_header_top #top .av_header_stretch .container {
             max-width: 1400px;
             padding: 0 40px;
@@ -1109,7 +1111,7 @@ padding-bottom:70px;
             top: 15px;
             font-size: 19px;
             width: 50%;
-            right:0;
+            right: 0;
         }
         
         #top .right-menu,
@@ -2077,31 +2079,36 @@ PLAu:9
                     var ideaName = document.getElementById("ideaName").value;
                     var ideaDescription = document.getElementById("ideaDescription").value;
 
-                    $.ajax({
+                    if (appliance && garden && diy && hometech && teamName && playerNames && ideaName && ideaDescription) {
 
-                        type: 'POST',
-                        url: '/madAndNutty/',
-                        data: JSON.stringify({
-                            object1: appliance,
-                            object2: garden,
-                            object3: diy,
-                            object4: hometech,
-                            teamName: teamName,
-                            playerNames: playerNames,
-                            ideaName: ideaName,
-                            ideaDescription: ideaDescription
-                        }),
-                        contentType: 'application/json',
-                        success: function(data) {
-                            $('#successMessage').show();
-                            $('#submitBtn').prop("disabled", true);
-                        },
-                        error: function(data) {
-                            $('#failedMessage').show();
-                            console.log('An error occurred.');
-                            console.log(data);
-                        }
-                    });
+                        $.ajax({
+                            type: 'POST',
+                            url: '/madAndNutty/',
+                            data: JSON.stringify({
+                                object1: appliance,
+                                object2: garden,
+                                object3: diy,
+                                object4: hometech,
+                                teamName: teamName,
+                                playerNames: playerNames,
+                                ideaName: ideaName,
+                                ideaDescription: ideaDescription
+                            }),
+                            contentType: 'application/json',
+                            success: function(data) {
+                                $('#successMessage').show();
+                                $('#submitBtn').prop("disabled", true);
+                            },
+                            error: function(data) {
+                                $('#failedMessage').show();
+                                console.log('An error occurred.');
+                                console.log(data);
+                            }
+                        });
+                    } else {
+                        alert("Please fill all the values to submit");
+                    }
+
                     return false;
                 });
 
