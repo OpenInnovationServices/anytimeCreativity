@@ -2025,7 +2025,7 @@ PLAu:9
                     }).get().join(", <br> ");
                     var ideaName = document.getElementById("ideaName").value;
                     var ideaDescription = document.getElementById("idea").value;
-                    if (teamName && ideaName && ideaDescription && playerNames) {
+                    if (problem && solutions && teamName && ideaName && ideaDescription && playerNames) {
                         $.ajax({
                             type: 'POST',
                             url: '/blueSkies/',
