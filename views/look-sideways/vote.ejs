@@ -302,9 +302,11 @@
             margin: auto;
             padding-left: 40px;
         }
+        
         #top #header .av-main-nav>li:hover>a {
-        background-color: transparent;
-    }
+            background-color: transparent;
+        }
+        
         .html_header_top #top .av_header_stretch .container {
             max-width: 1400px;
             padding: 0 40px;
@@ -1109,7 +1111,7 @@ padding-bottom:70px;
             top: 15px;
             font-size: 19px;
             width: 50%;
-            right:0;
+            right: 0;
         }
         
         #top .right-menu,
@@ -1875,6 +1877,7 @@ PLAu:9
                                                         <%= i+1 %>
                                                     </td>
                                                     <td>
+                                                        <b> <%= data[i].team %></b>
                                                         <div class="panel panel-default">
                                                             <div class="panel-heading">
                                                                 <p class="panel-title h6" data-toggle="collapse" data-target="#collapse<%= i+1 %>">Player's Names</p>
