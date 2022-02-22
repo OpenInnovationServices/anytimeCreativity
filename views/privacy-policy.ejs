@@ -1102,15 +1102,7 @@ body .pricing-section .av_one_fourth.avia-builder-el-last {
 #top #wrap_all .btn-group li:focus a {
     background: #fff!important;
 }
-#top .right-menu, #top .right-menu:hover,
-#top .right-menu:focus{
-position: fixed!important;
-/*right: 250px;*/
-top: 15px;
-font-size: 19px;
-width: 50%;
-right:0;
-}
+
 #top .right-menu, #top .right-menu:hover,
 #top .right-menu:focus{
 background-color: transparent;
@@ -1496,6 +1488,19 @@ display:none;
         width: 100%;
     }
 }
+
+        @media only screen and (min-width:768px){
+            #top .right-menu,
+        #top .right-menu:hover,
+        #top .right-menu:focus {
+            position: fixed!important;
+            /*right: 250px;*/
+            top: 15px;
+            font-size: 19px;
+            width: 50%;
+            right: 0;
+            }
+        }
 </style>
 <style type='text/css'>
 @font-face {
