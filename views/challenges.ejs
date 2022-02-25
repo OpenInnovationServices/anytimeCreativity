@@ -1602,6 +1602,30 @@ padding-bottom:70px;
             margin-top: 18px;
             text-decoration: none;
         }
+        
+        .videoWrapperOuter {
+            max-width: 640px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .videoWrapperInner {
+            float: none;
+            clear: both;
+            width: 100%;
+            position: relative;
+            padding-bottom: 50%;
+            padding-top: 25px;
+            height: 0;
+        }
+        
+        .videoWrapperInner iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
         /****MEDIA QUERIES****/
         
         @media screen and (min-width: 600px) {
@@ -1631,6 +1655,24 @@ padding-bottom:70px;
                 float: right;
                 margin-right: 10px;
                 margin-top: 10px;
+            }
+        }
+        
+        @media screen and (max-width: 599px) {
+            .modal1 {
+                width: 80%;
+                height: 300px;
+                /* margin-left: calc(50vw - 250px); */
+                margin-top: calc(50vh - 150px);
+            }
+        }
+        
+        @media screen and (max-width: 350px) {
+            .modal1 {
+                width: 80%;
+                height: 250px;
+                /* margin-left: calc(50vw - 250px); */
+                margin-top: calc(50vh - 150px);
             }
         }
         /*LARGE SCREEN*/
@@ -2147,10 +2189,7 @@ padding-bottom:70px;
             <!-- close default .container_wrap element -->
 
             <style>
-                #vid {
-                    max-width: 100%;
-                    height: auto;
-                }
+
             </style>
             <div class="container1" id="a">
             </div>
@@ -2160,7 +2199,17 @@ padding-bottom:70px;
                     <a href="#" class="cancel1">X</a>
                 </div>
                 <div class="content1">
-                    <center><iframe id="vid" src="https://www.youtube.com/embed/ZVerihR4Ee4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <center>
+                        <div class="videoWrapperOuter">
+                            <div class="videoWrapperInner">
+                                <!-- <iframe src="//www.youtube.com/embed/C6-TWRn0k4I" frameborder="0" allowfullscreen></iframe> -->
+                                <iframe id="vid1" src="https://www.youtube.com/embed/ZVerihR4Ee4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                        </div>
+
+                        <div class="embed-responsive embed-responsive-16by9" style="height: 100%; width: 100%; ">
+                            <!-- <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/LbLB0K-mXMU?start=1841" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0"></iframe> -->
+                        </div>
                     </center>
                 </div>
             </div>
