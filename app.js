@@ -12,6 +12,8 @@ const blueSkiesRoutes = require('./routes/blue-skies');
 const lookSidewaysRoutes = require('./routes/look-sideways');
 const reimagineRoutes = require('./routes/reimagine');
 const submitChallengeDataApiRoutes = require('./routes/challenges-data-api');
+const dynamicChallengeApiRoutes = require('./routes/dynamic-challenges')
+const dynamicChallengeData = require('./routes/dynamic-challenge-data');
 
 //Setting Port
 var port = process.env.PORT || 3000;
@@ -42,6 +44,9 @@ app.use('/blueSkies', blueSkiesRoutes);
 app.use('/lookSideways', lookSidewaysRoutes);
 app.use('/reImagine', reimagineRoutes);
 app.use('/api/challenge', submitChallengeDataApiRoutes);
+app.use('/dynamic', dynamicChallengeApiRoutes);
+app.use('/api/dynamicChallenge', dynamicChallengeData);
+
 
 app.get('/', (req, res) => {
     res.status(200).render('index');
