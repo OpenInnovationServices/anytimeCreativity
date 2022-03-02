@@ -1506,6 +1506,30 @@ padding-bottom:70px;
                 right: 0;
             }
         }
+        
+        .videoWrapperOuter {
+            max-width: 640px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .videoWrapperInner {
+            float: none;
+            clear: both;
+            width: 100%;
+            position: relative;
+            padding-bottom: 50%;
+            padding-top: 25px;
+            height: 0;
+        }
+        
+        .videoWrapperInner iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
     </style>
     <style type='text/css'>
         @font-face {
@@ -1535,183 +1559,7 @@ padding-bottom:70px;
         html body [data-av_iconfont='medical']:before {
             font-family: 'medical';
         }
-        
-        .container1 {
-            display: none;
-            width: 100%;
-            height: 100vh;
-            position: fixed;
-            opacity: 0.9;
-            background: #222;
-            z-index: 40000;
-            top: 0;
-            left: 0;
-            overflow: hidden;
-            animation-name: fadeIn_Container;
-            animation-duration: 1s;
-        }
-        
-        .modal1 {
-            display: none;
-            top: 0;
-            min-width: 250px;
-            width: 80%;
-            height: 400px;
-            margin: 0 auto;
-            position: fixed;
-            z-index: 40001;
-            background: #fff;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px #000;
-            margin-top: 30px;
-            margin-left: 10%;
-            animation-name: fadeIn_Modal;
-            animation-duration: 0.8s;
-        }
-        
-        .modal1 .header1 {
-            width: 100%;
-            height: 70px;
-            border-radius: 10px 10px 0px 0px;
-            /* border-bottom: 2px solid #ccc; */
-        }
-        
-        .modal1 .header1 a {
-            text-decoration: none;
-            float: right;
-            line-height: 70px;
-            margin-right: 20px;
-            color: #aaa;
-        }
-        
-        .modal1 .content1 {
-            width: 100%;
-            height: 250px;
-        }
-        
-        .modal1 .footer1 {
-            width: 100%;
-            height: 80px;
-            border-radius: 0px 0px 10px 10px;
-            border-top: 2px solid #ccc;
-        }
-        
-        .modal1 .fotter1 button {
-            float: right;
-            margin-right: 10px;
-            margin-top: 18px;
-            text-decoration: none;
-        }
-        
-        .videoWrapperOuter {
-            max-width: 640px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .videoWrapperInner {
-            float: none;
-            clear: both;
-            width: 100%;
-            position: relative;
-            padding-bottom: 50%;
-            padding-top: 25px;
-            height: 0;
-        }
-        
-        .videoWrapperInner iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-        /****MEDIA QUERIES****/
-        
-        @media screen and (min-width: 600px) {
-            .modal1 {
-                width: 500px;
-                height: 300px;
-                margin-left: calc(50vw - 250px);
-                margin-top: calc(50vh - 150px);
-            }
-            .modal1 .header1 {
-                width: 100%;
-                height: 40px;
-            }
-            .modal1 .header1 a {
-                line-height: 40px;
-                margin-right: 10px;
-            }
-            .modal1 .content1 {
-                width: 100%;
-                height: 190px;
-            }
-            .modal1 .footer1 {
-                width: 100%;
-                height: 70px;
-            }
-            .modal1 .footer1 button {
-                float: right;
-                margin-right: 10px;
-                margin-top: 10px;
-            }
-        }
-        
-        @media screen and (max-width: 599px) {
-            .modal1 {
-                width: 80%;
-                height: 300px;
-                /* margin-left: calc(50vw - 250px); */
-                margin-top: calc(50vh - 150px);
-            }
-        }
-        
-        @media screen and (max-width: 350px) {
-            .modal1 {
-                width: 80%;
-                height: 250px;
-                /* margin-left: calc(50vw - 250px); */
-                margin-top: calc(50vh - 150px);
-            }
-        }
-        /*LARGE SCREEN*/
-        
-        @media screen and (min-width: 1300px) {
-            .modal1 {
-                width: 700px;
-                height: 400px;
-                /* margin-left: calc(50vw - 250px); */
-                margin-left: calc(50vw - 360px);
-                margin-top: calc(50vh - 150px);
-            }
-            .modal1 .content1 {
-                width: 100%;
-                height: 100%;
-            }
-        }
-        /****ANIMATIONS****/
-        
-        @keyframes fadeIn_Modal {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-        
-        @keyframes fadeIn_Container {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 0.9;
-            }
-        }
     </style>
-
-
 </head>
 
 <body id="top" class="page-template-default page page-id-1634 stretched no_sidebar_border rtl_columns av-curtain-numeric gt-eesti-display-custom gt-eesti-display gt-eesti-custom gt-eesti  avia-responsive-images-support" itemscope="itemscope" itemtype="https://schema.org/WebPage">
@@ -1840,7 +1688,7 @@ padding-bottom:70px;
                                         <h2>Collaboratively think about your big organisational problems. Then combine your key resources or activities with tech to create new innovative products, services, ways of working<span class="JsGRdQ"> &#038;</span>                                            business models.</h2>
                                         <div class="btn-group">
                                             <ul>
-                                                <li><a href="#" id="open1">Watch <i class="far fa-play-circle"></i><br /></a></li>
+                                                <li><a href="#" type="button" data-toggle="modal" data-target="#exampleModal1">Watch <i class="far fa-play-circle"></i><br /></a></li>
                                                 <li><a class="learn-more" href="#"> Learning Outcomes</a></li>
                                                 <li><a href="/connectTheDots">Play <i class="far fa-arrow-alt-circle-right"></i><br /></a></li>
                                             </ul>
@@ -1940,7 +1788,7 @@ padding-bottom:70px;
                                         </h2>
                                         <div class="btn-group">
                                             <ul>
-                                                <li><a href="#">Watch <i class="far fa-play-circle"></i><br /></a></li>
+                                                <li><a href="#" type="button" data-toggle="modal" data-target="#exampleModal4">Watch <i class="far fa-play-circle"></i><br /></a></li>
                                                 <li><a class="learn-more" href="#"> Learning Outcomes</a></li>
                                                 <li><a href="/crazyCombinations">Play <i class="far fa-arrow-alt-circle-right"></i><br /></a></li>
                                             </ul>
@@ -1972,7 +1820,7 @@ padding-bottom:70px;
                                         <h2 style="text-align: center;"><span class="JsGRdQ">Ignite your imagination. Collaboratively c</span><span class="JsGRdQ">reate incredible, fantastical, moonshot solutions to some of the world’s biggest</span><span class="JsGRdQ"> social &#038; community problems. </span></h2>
                                         <div class="btn-group">
                                             <ul>
-                                                <li><a href="#">Watch <i class="far fa-play-circle"></i><br /></a></li>
+                                                <li><a href="#" type="button" data-toggle="modal" data-target="#exampleModal5">Watch <i class="far fa-play-circle"></i><br /></a></li>
                                                 <li><a class="learn-more" href="#"> Learning Outcomes</a></li>
                                                 <li><a href="/blueSkies">Play <i class="far fa-arrow-alt-circle-right"></i><br /></a></li>
                                             </ul>
@@ -1992,6 +1840,7 @@ padding-bottom:70px;
                     <!-- close content main div -->
                 </div>
             </div>
+
             <div id='av_section_7' class='avia-section av-kvnyzrtj-77aa84de4bc7caed7993edb19b7d23e0 main_color avia-section-default avia-no-border-styling  avia-builder-el-14  el_after_av_section  el_before_av_section  challnges-block card-layout black avia-bg-style-scroll  container_wrap fullsize'>
                 <div class='container av-section-cont-open'>
                     <div class='template-page content  av-content-full alpha units'>
@@ -2006,7 +1855,7 @@ padding-bottom:70px;
                                         </h2>
                                         <div class="btn-group">
                                             <ul>
-                                                <li><a href="#">Watch <i class="far fa-play-circle"></i><br /></a></li>
+                                                <li><a href="#" type="button" data-toggle="modal" data-target="#exampleModal6">Watch <i class="far fa-play-circle"></i><br /></a></li>
                                                 <li><a class="learn-more" href="#"> Learning Outcomes</a></li>
                                                 <li><a href="/lookSideways">Play <i class="far fa-arrow-alt-circle-right"></i><br /></a></li>
                                             </ul>
@@ -2189,42 +2038,131 @@ padding-bottom:70px;
             </div>
             <!-- close default .container_wrap element -->
 
-            <style>
+            <script type='text/javascript' src='//code.jquery.com/jquery-1.11.0.js'></script>
+            <link rel='stylesheet' id='slick-style-css' href='/assets/css/bootstrap_modal.css' type='text/css' media='all' />
+            <script type='text/javascript' src='/assets/js/bootstrap_modal.js'></script>
 
-            </style>
-            <div class="container1" id="a">
-            </div>
+            <!-- Button trigger modal -->
+            <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                Launch demo modal
+            </button> -->
 
-            <div class="modal1" id="b">
-                <div class="header1">
-                    <a href="#" class="cancel1">X</a>
-                </div>
-                <div class="content1">
-                    <center>
-                        <div class="videoWrapperOuter">
-                            <div class="videoWrapperInner">
-                                <!-- <iframe src="//www.youtube.com/embed/C6-TWRn0k4I" frameborder="0" allowfullscreen></iframe> -->
-                                <iframe id="vid1" src="https://www.youtube.com/embed/ZVerihR4Ee4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Connect The Dots</h5>
+                        </div>
+                        <div class="modal-body">
+                            <div class="videoWrapperOuter">
+                                <div class="videoWrapperInner">
+                                    <iframe id="vid1" src="https://www.youtube.com/embed/ZVerihR4Ee4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                </div>
                             </div>
                         </div>
-
-                        <div class="embed-responsive embed-responsive-16by9" style="height: 100%; width: 100%; ">
-                            <!-- <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/LbLB0K-mXMU?start=1841" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0"></iframe> -->
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                         </div>
-                    </center>
+                    </div>
                 </div>
             </div>
-            <script>
-                $("#open1").click(function() {
-                    $("#a").css("display", "block");
-                    $("#b").css("display", "block");
-                });
 
-                $(".cancel1").click(function() {
-                    $("#a").fadeOut();
-                    $("#b").fadeOut();
-                });
-            </script>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal4" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Crazy Combinations</h5>
+                        </div>
+                        <div class="modal-body">
+                            <div class="videoWrapperOuter">
+                                <div class="videoWrapperInner">
+                                    <iframe id="vid1" src="https://www.youtube.com/embed/7-_v8YjoiFA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal5" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Blue Skies</h5>
+                        </div>
+                        <div class="modal-body">
+                            <div class="videoWrapperOuter">
+                                <div class="videoWrapperInner">
+                                    <iframe id="vid1" src="https://www.youtube.com/embed/y3JDyNZPcv4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal6" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">look Sideways</h5>
+                        </div>
+                        <div class="modal-body">
+                            <div class="videoWrapperOuter">
+                                <div class="videoWrapperInner">
+                                    <iframe id="vid1" src="https://www.youtube.com/embed/RxjPScujEcQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal22" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                        </div>
+                        <div class="modal-body">
+                            ...
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
 
             <div class='container_wrap footer_color' id='footer'>
                 <div class='container'>
