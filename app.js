@@ -66,6 +66,11 @@ app.get('/book-a-demo', (req, res) => {
 app.get('/privacy-policy', (req, res) => {
     res.status(200).render('privacy-policy');
 });
+
+app.get('/reImagine1', (req, res) => {
+    res.status(200).render('reimagine/index1');
+});
+
 /*
 app.get('/crazyCombinations', (req, res) => {
     res.status(200).render('crazy-combinations');
