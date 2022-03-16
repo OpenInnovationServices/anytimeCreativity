@@ -353,7 +353,7 @@ textarea {
     .center-image1 {
         max-width: 50% !important;
         max-height: 50% !important;
-        border: red !important;
+        border: 1px solid red !important;
     }
 }
 
