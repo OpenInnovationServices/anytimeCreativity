@@ -324,6 +324,9 @@ textarea {
     max-width: 90%;
 }
 
+
+/* Responsive */
+
 @media (max-width: 767px) {
     .headerModalDiv {
         display: flex;
@@ -337,9 +340,6 @@ textarea {
         -ms-transform: none;
         transform: none;
     }
-    .center-image {
-        max-width: 50%;
-    }
     .logo-div {
         text-align: center !important;
     }
@@ -347,13 +347,8 @@ textarea {
         width: 180px !important;
         height: auto !important;
     }
-}
-
-@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
     .center-image {
-        /* width: 20% !important; */
-        /* height: 20% !important; */
-        border: 1px solid red !important;
+        max-width: 50%;
     }
 }
 
@@ -369,10 +364,10 @@ textarea {
         height: auto;
     }
     .image-text {
-        font-size: 1.5vh !important;
+        font-size: 1vh !important;
     }
     .image-text1 {
-        font-size: 2vh !important;
+        font-size: 1.7vh !important;
     }
     .center-image {
         max-width: 40%;
@@ -390,11 +385,14 @@ textarea {
         width: 120px;
         height: auto;
     }
+    .mn-logo {
+        height: 70px;
+    }
     .image-text {
-        font-size: 1vh !important;
+        font-size: .8vh !important;
     }
     .image-text1 {
-        font-size: 1.5vh !important;
+        font-size: 1.3vh !important;
     }
     .center-image {
         max-width: 110%;
