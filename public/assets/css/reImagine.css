@@ -352,6 +352,7 @@ textarea {
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
     .center-image1 {
         max-width: 50% !important;
+        border: red;
     }
 }
 
