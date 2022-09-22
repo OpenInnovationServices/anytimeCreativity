@@ -1836,6 +1836,16 @@ PLAu:9
                     </div>
                 </div>
 
+                <% function isValidURL(str) {
+                    var pattern = new RegExp('^((ft|htt)ps?:\\/\\/)?'+ // protocol
+                                '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|'+ // domain name and extension
+                                '((\\d{1,3}\\.){3}\\d{1,3}))'+ // OR ip (v4) address
+                                '(\\:\\d+)?'+ // port
+                                '(\\/[-a-z\\d%@_.~+&:]*)*'+ // path
+                                '(\\?[;&a-z\\d%@_.,~+&:=-]*)?'+ // query string
+                                '(\\#[-a-z\\d_]*)?$','i'); // fragment locator
+                    return pattern.test(str);
+                }; %>
                 <div class="row justify-content-center mt-5 mb-5">
                     <div class="col-md-12 col-lg-12 col-xl-11">
                         <%if (data.length < 1) { %>
@@ -1870,9 +1880,11 @@ PLAu:9
                                                     </div>
                                                 </td>
                                                 <td>
-                                                    <a href="<%= data[i].ideaName %>">
+                                                    <% if(isValidURL(data[i].ideaName)) { %>
+                                                    <a href="<%= data[i].ideaName %>" target="__blank">Link</a>
+                                                    <% } else { %>
                                                         <%= data[i].ideaName %>
-                                                    </a>
+                                                    <% } %>
                                                 </td>
                                                 <td>
                                                     <%= data[i].idea %>
