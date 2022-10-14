@@ -1769,6 +1769,15 @@ PLAu:9
                                     </ul>
                                 </div>
                             </div>
+                            <!-- <div class="circleDiv">
+                                <div class="circle">
+                                    <ul id="group5" class="">
+                                        <li class="col col-3 col-sm col-xs p-1">
+                                            <div class="image-div" style="height: 57px;"></div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div> -->
                         </div>
                         <div class="col col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 bg-img1 mb-3">
                             <div class="formDiv">
@@ -1830,9 +1839,19 @@ PLAu:9
                             </div>
                         </div>
                         <div class="col col-12 col-sm-12 col-md-12 col-lg col-xl">
-                            <div class="circleDiv">
+                            <div class="circleDiv circleDiv1">
                                 <div class="circle">
                                     <ul id="group3" class="">
+                                        <li class="col col-3 col-sm col-xs p-1">
+                                            <div class="image-div" style="height: 57px;"></div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="circleDiv circleDiv1">
+                                <div class="circle">
+                                    <ul id="group6" class="">
                                         <li class="col col-3 col-sm col-xs p-1">
                                             <div class="image-div" style="height: 57px;"></div>
                                         </li>
@@ -1976,6 +1995,16 @@ PLAu:9
                     animation: 150,
                     swap: true
                 });
+                // new Sortable(group5, {
+                //     group: 'shared',
+                //     animation: 150,
+                //     swap: true
+                // });
+                new Sortable(group6, {
+                    group: 'shared1',
+                    animation: 150,
+                    swap: true
+                });
                 $('#submitBtn').click(function(e) {
                     e.preventDefault();
                     var user = $("input.teamPlayerName").map(function() {
@@ -1986,9 +2015,16 @@ PLAu:9
                     var idea = document.getElementById("idea").value;
                     var group2 = $('#group2 li').attr('value');
                     var group3 = $('#group3 li').attr('value');
+                    // var group5 = $('#group5 li').attr('value');
+                    var group6 = $('#group6 li').attr('value');
+
                     var group2Text = $('#group2 li').attr('data-text');
                     var group3Text = $('#group3 li').attr('data-text');
-                    if (teamName && user && ideaName && idea && group2 && group3) {
+                    // var group5Text = $('#group5 li').attr('data-text');
+                    var group6Text = $('#group6 li').attr('data-text');
+
+                    //&& group5
+                    if (teamName && user && ideaName && idea && group2 && group3 && group6) {
                         $.ajax({
                             type: 'POST',
                             url: '/api/challenge/',
@@ -1996,8 +2032,12 @@ PLAu:9
                                 teamName: teamName,
                                 mix: group2,
                                 match: group3,
+                                // mix1: group5,
+                                match1: group6,
                                 mix_text: group2Text,
                                 match_text: group3Text,
+                                // mix1_text: group5Text,
+                                match1_text: group6Text,
                                 idea: idea,
                                 penName: user,
                                 ideaName: ideaName,
