@@ -40,9 +40,13 @@ router.post('/', (req, res) => {
     const idea = new challengeModel({
         user: req.body.user,
         mix: req.body.mix,
+        mix1: req.body.mix1,
         match: req.body.match,
+        match1: req.body.match1,
         mix_text: req.body.mix_text,
+        mix1_text: req.body.mix1_text,
         match_text: req.body.match_text,
+        match1_text: req.body.match1_text,
         idea: req.body.idea,
         penName: req.body.penName,
         teamName: req.body.teamName,
