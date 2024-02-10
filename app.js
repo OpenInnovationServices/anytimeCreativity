@@ -12,6 +12,7 @@ const blueSkiesRoutes = require('./routes/blue-skies');
 const lookSidewaysRoutes = require('./routes/look-sideways');
 const reimagineRoutes = require('./routes/reimagine');
 const submitChallengeDataApiRoutes = require('./routes/challenges-data-api');
+const ucdMedicineRoutes = require('./routes/ucd-medicine.js');
 
 //Setting Port
 var port = process.env.PORT || 3000;
@@ -41,6 +42,7 @@ app.use('/madAndNutty', madAndNuttyRoutes);
 app.use('/blueSkies', blueSkiesRoutes);
 app.use('/lookSideways', lookSidewaysRoutes);
 app.use('/reImagine', reimagineRoutes);
+app.use('/connectTheDots/UCDMedicine', ucdMedicineRoutes);
 app.use('/api/challenge', submitChallengeDataApiRoutes);
 
 app.get('/', (req, res) => {
@@ -71,31 +73,6 @@ app.get('/reImagine1', (req, res) => {
     res.status(200).render('reimagine/index1');
 });
 
-/*
-app.get('/crazyCombinations', (req, res) => {
-    res.status(200).render('crazy-combinations');
-});
-
-app.get('/connectTheDots', (req, res) => {
-    res.status(200).render('connect-the-dots');
-});
-
-app.get('/reImagine', (req, res) => {
-    res.status(200).render('re-imagine');
-});
-
-app.get('/madAndNutty', (req, res) => {
-    res.status(200).render('mad-nutty');
-});
-
-app.get('/blueSkies', (req, res) => {
-    res.status(200).render('blue-skies');
-});
-
-app.get('/lookSideways', (req, res) => {
-    res.status(200).render('look-sideways');
-});
-*/
 // Handle 404 - Keep this as a last route
 app.use(function(req, res, next) {
     res.status(404).send('404: File Not Found');
