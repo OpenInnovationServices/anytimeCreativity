@@ -3,7 +3,7 @@ body {
 }
 
 .bg-img {
-    background-image: url('/assets/images/connectTheDots/character.png');
+    background-image: url('/assets/images/mad-nutty/character.png');
     background-repeat: no-repeat;
     background-attachment: scroll;
     background-size: contain;
@@ -11,7 +11,7 @@ body {
 }
 
 .bg-img1 {
-    background-image: url('/assets/images/connectTheDots/character.png');
+    background-image: url('/assets/images/mad-nutty/character.png');
     background-image: none;
     background-repeat: no-repeat;
     background-attachment: scroll;
@@ -323,33 +323,44 @@ textarea {
     margin-bottom: 0px;
 }
 
-#group2 .image-div {
-    box-shadow: none;
-    background: none;
-    border: none
-}
-
-#group2 .p-1,
-.p-2 {
-    padding: 0px;
+.image-div {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .image-div {
     /* box-shadow: 0px 0px 3px #cecece; */
     /* background: #f4f4f4; */
     /* border: 1px solid #f3f3f3; */
-    border-bottom: 1px solid #cecece;
+}
+
+#group2 .image-div {
+    box-shadow: none;
+    background: none;
+    border: none;
+    transform: translate(-50%, 0%);
+}
+
+#group2 .p-1, .p-2 {
+    padding: 0px;
 }
 
 #group3 .image-div {
     box-shadow: none;
     background: none;
-    border: none
+    border: none;
+    transform: translate(-50%, 0%);
 }
 
-#group3 .p-1,
-.p-2 {
+#group3 .p-1, .p-2 {
     padding: 0px;
+}
+
+#group2 > .divBorder, #group3 > .divBorder {
+    border-top: none;
+    border-bottom: none;
 }
 
 .formDiv {
@@ -538,6 +549,11 @@ textarea {
     height: 80px;
 }
 
+.divBorder {
+    border-top: 1px solid #cecece;
+    border-bottom: 1px solid #cecece;
+}
+
 @media (max-width: 767px) {
     .headerModalDiv {
         display: flex;
@@ -588,7 +604,7 @@ textarea {
 
 @media (max-width: 992px) {
     .bg-img1 {
-        background-image: url('/assets/images/connectTheDots/character.png');
+        background-image: url('/assets/images/mad-nutty/character.png');
     }
     .bg-img {
         background-image: none;
