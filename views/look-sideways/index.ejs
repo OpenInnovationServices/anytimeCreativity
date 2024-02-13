@@ -1682,21 +1682,21 @@ PLAu:9
                             <div class="formDivInner">
                                 <form id="lookSidewayForm">
                                     <!-- <div class="form-group text-left">
-                                        <label for="userName" class="custom-label">Team Name:</label>
-                                        <input type="text" class="form-control" maxlength="30" id="userName" name="userName" placeholder="Enter Team Name" required>
+                                        <label for="userName" class="custom-label">Team Number:</label>
+                                        <input type="text" class="form-control" maxlength="30" id="userName" name="userName" placeholder="Enter Team number" required>
                                     </div> -->
 
                                     <div class="form-group row text-left">
-                                        <label for="userName" class="col-sm-4 custom-label">Team Name</label>
+                                        <label for="userName" class="col-sm-4 custom-label">Team Number</label>
                                         <div class="col-sm-8">
-                                            <input type="text" class="form-control" maxlength="20" id="userName" name="userName" placeholder="Enter your team name" required>
+                                            <input type="text" class="form-control" maxlength="20" id="userName" name="userName" placeholder="Enter your team number" required>
                                         </div>
                                     </div>
 
                                     <div class="form-group row text-left">
-                                        <label for="playerName" class="col-sm-4 custom-label ">Player's Name </label>
+                                        <label for="playerName" class="col-sm-4 custom-label ">Player Names</label>
                                         <div class="col-sm-8">
-                                            <span class="text-white pull-right add-more" style="font-size: 1rem; cursor: pointer; position: absolute; right: 17px;" data-toggle="tooltip" data-placement="top" title="Add More Idea">
+                                            <span class="text-white pull-right add-more" style="font-size: 1rem; cursor: pointer; position: absolute; right: 17px;" data-toggle="tooltip" data-placement="top" title="Add extra player">
                                                 <i class="fa fa-plus" aria-hidden="true"></i>
                                             </span>
                                             <input type="text" class="form-control teamPlayerName" id="playerName" maxlength="100" placeholder="Click + to enter each player">
@@ -1712,7 +1712,7 @@ PLAu:9
 
                                     <div class="form-group text-left">
                                         <label for="idea" class="custom-label">Idea Description:</label>
-                                        <textarea class="form-control" rows="3" name="idea" maxlength="150" id="idea" placeholder="Enter Idea Description" required></textarea>
+                                        <textarea class="form-control" rows="3" name="idea" maxlength="250" id="idea" placeholder="Enter Idea Description (max 250 characters)" required></textarea>
                                     </div>
                                     <!--
                                     <div class="form-group">
@@ -1785,6 +1785,7 @@ PLAu:9
                             // alert('Sorry, you can add only 10 players.');
                             // return false;
                         }
+
                         var newRow = `
                             <div class="form-group row text-left remove-div-${count}">
                                 <label for="playerName" class="col-sm-4 custom-label ">Player\'s Name</label>
@@ -1796,6 +1797,7 @@ PLAu:9
                                 </div>
                             </div>
                             `;
+
                         $('#ideaDiv').append(newRow);
                         count++;
                     });
