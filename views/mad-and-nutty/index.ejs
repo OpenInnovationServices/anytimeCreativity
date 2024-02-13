@@ -2071,27 +2071,25 @@ PLAu:9
                     });
 
                     var count = 1;
-
-                    $('.add-more').click(function() {
-                        if (count >= 10) {
-                            alert('Sorry, you can add only 10 players.');
-                            return false;
-                        }
-                        var newRow = `
-                        <div class="form-group row text-left remove-div-${count}">
-                          <label for="playerName" class="col-sm-4 custom-label ">Player\'s Name</label>
-                          <div class="col-sm-8">
-                            <span class="text-white pull-right" style="font-size: 1rem; cursor: pointer; position: absolute; right: 17px;" data-toggle="*" data-placement="top" title="Add More Idea" onclick="abc(${count});">
-                              <i class="fa fa-minus" aria-hidden="true"></i>
-                            </span>
-                            <input type="text" class="form-control teamPlayerName" id="playerName" maxlength="100" placeholder="Click - to remove player">
-                          </div>
-                        </div>
-                        `;
-                        $('#ideaDiv').append(newRow);
-                        count++;
-                    });
-
+					$('.add-more').click(function() {
+					    if (count >= 6) {
+					        alert('Sorry, you can add only 6 players.');
+					        return false;
+					    }
+					    var newRow = `
+							<div class="form-group row text-left remove-div-${count}">
+								<label for="playerName" class="col-sm-4 custom-label ">Player\'s Name</label>
+								<div class="col-sm-8">
+									<span class="text-white pull-right" style="font-size: 1rem; cursor: pointer; position: absolute; right: 17px;" data-toggle="*" data-placement="top" title="Add More Idea" onclick="abc(${count});">
+										<i class="fa fa-minus" aria-hidden="true"></i>
+									</span>
+									<input type="text" class="form-control teamPlayerName" id="playerName" maxlength="100" placeholder="Click - to remove player">
+								</div>
+							</div>
+							`;
+					    $('#ideaDiv').append(newRow);
+					    count++;
+					});
                 });
                 
                 $('#submitBtn').click(function(e) {
