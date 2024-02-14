@@ -1815,19 +1815,19 @@ PLAu:9
                                         <table class="table table-bordered table-hover text-center mb-0">
                                             <thead>
                                                 <th>#</th>
-                                                <th style="width: 230px;">Team</th>
+                                                <th style="width: 230px;">Name</th>
                                                 <th>Idea Name</th>
                                                 <th>Activity</th>
                                                 <th>Tech</th>
                                                 <th>Idea Description</th>
-                                                <th>Likes</th>
+                                                <!-- <th>Likes</th> -->
                                             </thead>
                                             <% for(var i=0; i < data.length; i++) { %>
                                                 <tr>
                                                     <td>
                                                         <%= i+1 %>
                                                     </td>
-                                                    <td width="15%">
+                                                    <!-- <td width="15%">
                                                         <b> <%= data[i].teamName %></b>
                                                         <div class="panel panel-default">
                                                             <div class="panel-heading">
@@ -1840,6 +1840,9 @@ PLAu:9
                                                                 </div>
                                                             </div>
                                                         </div>
+                                                    </td> -->
+                                                    <td width="15%">
+                                                        <%= data[i].name %>
                                                     </td>
                                                     <td>
                                                         <%= data[i].ideaName %>
@@ -1862,9 +1865,9 @@ PLAu:9
                                                     </td>
                                                  
                                                     <td>
-                                                        <%= data[i].idea %>
+                                                        <%= data[i].twist %>
                                                     </td>
-                                                    <td style="padding-top: 1.5rem;">
+                                                     <!--<td style="padding-top: 1.5rem;">
                                                         <div class="d-flex ">
                                                             <div id="ck-button">
                                                                 <label id="label">
@@ -1873,20 +1876,15 @@ PLAu:9
                                                                 </label>
                                                             </div>
                                                         </div>
-                                                        <div class="text-center">
-                                                            <button type="button" class="btn btn-sm btn-warning buildIdeaBtn" style="font-weight: 500;" 
-                                                            data-id="<%= data[i]._id %>"
-                                                            data-idea-name="<%= data[i].ideaName %>"
-                                                            >Build & imporove on this idea</button>
-                                                        </div>
                                                     </td>
+                                                     -->
                                                 </tr>
                                                 <% } %>
                                         </table>
                                     </div>
-                                    <div class="col-12 text-center" style="padding: 1.5rem 0px;">
+                                    <!-- <div class="col-12 text-center" style="padding: 1.5rem 0px;">
                                         <button class="btn btn-warning btn-lg" id="submitBtn">Submit</button>
-                                    </div>
+                                    </div> -->
                             <% } %>
                             <div class="row text-center" id="successMessage" style="display: none;">
                                 <div class="col-xs-12" style="margin: 0 auto;">
@@ -1911,271 +1909,14 @@ PLAu:9
                                     </p>
                                 </div>
                             </div>
-
-                            
                         </div>
                     </div>
                 </form>
             </div>
 
-            <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary d-none" id="exampleModalBtn" data-toggle="modal" data-target="#exampleModal"></button>
-            <!-- Modal -->
-            <div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered modal-lg">
-                    <div class="modal-content">
-                        <div class="modal-body">
-                            <form id="votingForm">
-                                <div class="row justify-content-center">
-                                    <div class="col-md-8 col-sm-12 text-center">
-                                        <strong>Please enter your email address to vote</strong> <br />&nbsp; <br />
-                                        <input type="text" name="voteEmail" class="form-control voteEmail" id="voteEmail" required/>
-                                    </div>
-                                </div>
-                                <hr />
-                                <div class="row justify-content-center">
-                                    <button type="button" class="btn btn-danger" id="exampleModalBtnClose" data-dismiss="modal">Close</button> &nbsp; &nbsp;
-                                    <button type="submit" class="btn btn-success" id="exampleModalBtnSubmit" >Submit</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary d-none" id="buildIdeaModalBtn" data-toggle="modal" data-target="#buildIdeaModal"></button>
-            <!-- Modal -->
-            <div class="modal fade bd-example-modal-lg" id="buildIdeaModal" tabindex="-1" aria-labelledby="buildIdeaModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered modal-lg">
-                    <div class="modal-content">
-                        <div class="modal-body">
-                            <form id="ideaForm">
-                                <input type="hidden" name="id" id="buildIdeaId" class="buildIdeaId" />
-
-                                <div class="row justify-content-center">
-                                    <div class="col-md-12 col-sm-12 text-center">
-                                        <strong>Build on this idea</strong> <br />&nbsp; <br />
-                                        <strong>Submission box</strong> <br />&nbsp; <br />
-                                    </div>
-
-                                    <div class="col-md-8 col-sm-12 text-center" style="border: 1px solid #cdcccc; border-radius: 10px;">
-                                        <br />
-                                        <strong>Build on <span class="buildIdeaName"></span></strong> <br />&nbsp; <br />
-
-                                        <label>Your name</label>
-                                        <input type="text" name="name" class="form-control buildIdeaNewName" id="buildIdeaNewName" required/>
-
-                                        <label>Your twist</label>
-                                        <textarea type="text" name="twist" class="form-control twist" id="twist" required ></textarea>
-                                    </div>
-                                </div>
-
-                                <hr />
-                                <div class="row justify-content-center">
-                                    <button type="button" class="btn btn-danger" id="buildIdeaModalBtnClose" data-dismiss="modal">Close</button> &nbsp; &nbsp;
-                                    <button type="submit" class="btn btn-success" id="buildIdeaModalBtnSubmit" >Submit</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
             <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-            <script>
-                var frm = $('#ctdVoting');
-
-                frm.submit(function(e) {
-                    e.preventDefault();
-                    if ($(":checkbox:checked").length < 3 || $(":checkbox:checked").length > 3) {
-                        // alert("Please Select Any 3 Entities to Submit");
-                        swal("Please Select Any 3 Entities to Submit");
-                        return false;
-                    } else {
-                        $('#exampleModalBtn').trigger('click');
-                        /*
-                        swal({
-                            title: "Are you sure?",
-                            text: "Do you really want to submit the form?",
-                            icon: "warning",
-                            buttons: true,
-                            dangerMode: true,
-                        })
-                        .then((willDelete) => {
-                            if (willDelete) {
-                                $.ajax({
-                                    type: 'POST',
-                                    url: '/api/challenge/vote',
-                                    data: frm.serialize(),
-                                    success: function(data) {
-                                        $('#successMessage').show();
-                                        $('#submitBtn').prop("disabled", true);
-                                    },
-                                    error: function(data) {
-                                        console.log('An error occurred.');
-                                        console.log(data);
-                                    },
-                                });
-                            } else {}
-                        });
-                        */
-                    }
-                });
-
-                $('#votingForm').submit(function() {
-                    const email = $('#voteEmail').val();
-                    const serializeData1 = frm.serialize();
-                    const serializeData2 = frm.serialize() + "&email=" + email + "&code=1002";
-
-                    if(email) {
-                        $.ajax({
-                            type: 'POST',
-                            url: '/api/challenge/voteCheck',
-                            data: serializeData2, 
-                            success: function(data) {
-                                if(data) {
-                                    if(data.status === 'not exists') {
-                                        voteForm(serializeData2, '/api/challenge/VoteAdd')
-
-                                        $('#successMessage').show();
-                                        $('#submitBtn').prop("disabled", true);
-                                        $('#exampleModalBtnClose').trigger('click');
-                                        return false;
-                                    } else if(data.status === 'exists')  {
-                                        swal({
-                                            title: "Your vote already exists?",
-                                            text: "Do you really override it?",
-                                            icon: "warning",
-                                            buttons: true,
-                                            dangerMode: true,
-                                        })
-                                        .then((willDelete) => {
-                                            if (willDelete) {
-                                                voteForm(serializeData2, '/api/challenge/voteRemove')
-
-                                                $('#successMessage').show();
-                                                $('#submitBtn').prop("disabled", true);
-                                                $('#exampleModalBtnClose').trigger('click');
-                                                $('#voteEmail').val('');
-                                                return false;
-                                            }else {
-                                                $('#exampleModalBtnClose').trigger('click')
-                                                $('#voteEmail').val('');
-                                            }
-                                        });
-                                    } else {
-                                        alert('something went wrong!');
-                                    }
-                                } else {
-                                    $('#exampleModalBtnClose').trigger('click');
-                                    $('#voteEmail').val('');
-                                }
-                            },
-                            error: function(data) {
-                                console.log('An error occurred.');
-                                console.log(data);
-                                $('#exampleModalBtnClose').trigger('click');
-                                $('#voteEmail').val('');
-                            },
-                        });
-                        return false;
-                    } else {
-                        swal("Email is required.");
-                        return false;
-                    }
-                });
-
-                $('.checkbox').click(function() {
-                    var count = 0;
-
-                    $('.checkbox').each(function() {
-                        $(this).attr('disabled', false);
-                        if ($(this).is(':checked')) {
-                            count++;
-                        }
-                    });
-
-                    if (count >= 3) {
-                        $('.checkbox').each(function() {
-                            if (!$(this).is(':checked')) {
-                                $(this).attr('disabled', true);
-                            }
-                        });
-                    }
-                });
-
-                $('.buildIdeaBtn').click(function() {
-                    const id = $(this).attr('data-id');
-                    const ideaName = $(this).attr('data-idea-name');
-                    
-                    $('.buildIdeaId').val(id);
-                    $('.buildIdeaName').empty().append(ideaName);
-                    $('#buildIdeaModalBtnSubmit').prop("disabled", false);
-                    $('#buildIdeaModalBtn').trigger('click');
-
-                });
-
-                $('#ideaForm').submit(function() {
-                    const name = $('#buildIdeaNewName').val();
-                    const twist = $('#twist').val();
-                    const serializeData = $(this).serialize() + "&code=1002";
-
-                    $('#buildIdeaModalBtnSubmit').prop("disabled", true);
-
-                    $.ajax({
-                        type: 'POST',
-                        url: '/api/challenge/voteIdea',
-                        data: serializeData, 
-                        success: function(data) {
-                            console.log('data', data);
-                            if (data.status === 'success') {
-                                $('#successMessageIdea').show();
-                                $('#buildIdeaModalBtnSubmit').prop("disabled", false);
-                            } else {
-                                $('#errorMessageIdea').show();
-                            }
-
-                            // const myTimeout =
-                            setTimeout(function() {
-                                $('#buildIdeaModalBtnSubmit').prop("disabled", false);
-                                $('#successMessageIdea').hide();
-                                $('#errorMessageIdea').hide();
-                            }, 5000);
-
-                            // clearTimeout(myTimeout);
-
-                            $('#buildIdeaModalBtnClose').trigger('click');
-                            $('#buildIdeaNewName').val('');
-                            $('#twist').val('');
-                        },
-                        error: function(data) {
-                            console.log('An error occurred.');
-                            $('#buildIdeaModalBtnSubmit').prop("disabled", false);
-                            $('#buildIdeaModalBtnClose').trigger('click');
-                            $('#buildIdeaNewName').val('');
-                            $('#twist').val('');
-                        },
-                    });
-                    return false;               
-                });
-
-                async function voteForm(formData, url) {
-                    $.ajax({
-                        type: 'POST',
-                        url: url,
-                        data: formData,
-                        success: function(data) {
-                            return data;
-                        },
-                        error: function(data) {
-                            console.log('An error occurred.');
-                            console.log(data);
-                            return false;
-                        },
-                    });
-                }
-            </script>
+            <script></script>
 
             <div class='container_wrap footer_color' id='footer'>
                 <div class='container'>

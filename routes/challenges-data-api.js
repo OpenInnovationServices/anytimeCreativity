@@ -3,6 +3,8 @@ const keys = require('../config/keys');
 const MongoClient = require('mongodb').MongoClient;
 const challengeModel = require('../models/genericChallengeModel');
 const challengeDataEmailCollectionModel = require('../models/genericChallengeEmailModel');
+const challengeDataIdeaCollection = require('../models/genericChallengeIdeaModel');
+
 var mongodb = require('mongodb');
 
 // get all data api
@@ -263,6 +265,54 @@ router.post('/voteRemove', async (req, res) => {
         client.close(); 
     }
 });
+
+router.post('/voteIdea', async (req, res) => {
+    let client, db;
+
+    try{
+        const code = req.body.code;
+        const id = req.body.id;
+        const name = req.body.name;
+        const twist = req.body.twist;
+       
+        client = await MongoClient.connect(keys.mongodb.dbURI, {useNewUrlParser: true});
+        db = client.db(keys.mongodb.dbName);
+
+        let ideaCollection = db.collection('challengeDataIdeaCollection');
+        let collection = db.collection('challengeDataCollection');
+
+        var myquery = { _id: new mongodb.ObjectID(id) };
+        const result = await collection.findOne(myquery);
+
+        if(result) {
+            const newModel = new challengeDataIdeaCollection({
+                ...result,
+                id,
+                name,
+                twist,
+                code,
+                _id: new mongodb.ObjectID(),
+            });
+            
+            await ideaCollection.insertOne(newModel);
+
+            res.status(201).json({ 'status': 'success' });
+        } else {
+            res.status(404).json("Result not found");
+        }
+
+        // client.close(); 
+        // console.log('Add Vote --');
+        // res.status(201).redirect('back');
+    } catch (err) {
+        console.error(err); 
+        res.status(400).json("Error Connecting DB");
+    } finally {
+        client.close(); 
+    }
+});
+
+
 
 //## Not using this.
 router.post('/vote', (req, res) => {
