@@ -1814,9 +1814,9 @@ PLAu:9
                                         <thead>
                                             <th>#</th>
                                             <th style="width: 230px;">Team</th>
+                                            <th>Idea Name</th>
                                             <th>Activity</th>
                                             <th>Tech</th>
-                                            <th>Idea Name</th>
                                             <th>Description</th>
                                             <th># Likes</th>
                                         </thead>
@@ -1843,6 +1843,9 @@ PLAu:9
                                                     </div>
                                                 </td>
                                                 <td>
+                                                    <%= data[i].ideaName %>
+                                                </td>
+                                                <td>
                                                     <div class="image-div">
                                                         <img src="/<%= data[i].mix %>" style="max-width: 40px;">
                                                         <p class="image-text">
@@ -1858,9 +1861,7 @@ PLAu:9
                                                         </p>
                                                     </div>
                                                 </td>
-                                                <td>
-                                                    <%= data[i].ideaName %>
-                                                </td>
+                                             
                                                 <td>
                                                     <%= data[i].idea %>
                                                 </td>

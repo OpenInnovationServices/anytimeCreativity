@@ -1594,6 +1594,7 @@ PLAu:9
                 }
                 
                 .form-control {
+                    /* 
                     background-color: transparent !important;
                     border: transparent !important;
                     outline: 0 !important;
@@ -1601,6 +1602,8 @@ PLAu:9
                     border-bottom: 3px solid #f4f4f4 !important;
                     border-width: 0 0 2px !important;
                     color: #fff !important;
+                   */
+                    border: 1px solid #000 !important;
                     border-radius: 0.25rem !important;
                 }
                 
@@ -1813,9 +1816,9 @@ PLAu:9
                                             <thead>
                                                 <th>#</th>
                                                 <th style="width: 230px;">Team</th>
+                                                <th>Idea Name</th>
                                                 <th>Activity</th>
                                                 <th>Tech</th>
-                                                <th>Idea Name</th>
                                                 <th>Idea Description</th>
                                                 <th>Likes</th>
                                             </thead>
@@ -1839,6 +1842,9 @@ PLAu:9
                                                         </div>
                                                     </td>
                                                     <td>
+                                                        <%= data[i].ideaName %>
+                                                    </td>
+                                                    <td>
                                                         <div class="image-div">
                                                             <img src="/<%= data[i].mix %>" style="max-width: 40px;">
                                                             <p class="image-text">
@@ -1854,9 +1860,7 @@ PLAu:9
                                                             </p>
                                                         </div>
                                                     </td>
-                                                    <td>
-                                                        <%= data[i].ideaName %>
-                                                    </td>
+                                                 
                                                     <td>
                                                         <%= data[i].idea %>
                                                     </td>
@@ -1891,6 +1895,31 @@ PLAu:9
                 </form>
             </div>
 
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary d-none" id="exampleModalBtn" data-toggle="modal" data-target="#exampleModal"></button>
+            <!-- Modal -->
+            <div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <form id="votingForm">
+                                <div class="row justify-content-center">
+                                    <div class="col-md-8 col-sm-12 text-center">
+                                        <strong>Please enter your email address to vote</strong> <br />&nbsp; <br />
+                                        <input type="text" name="voteEmail" class="form-control voteEmail" id="voteEmail" required/>
+                                    </div>
+                                </div>
+                                <hr />
+                                <div class="row justify-content-center">
+                                    <button type="button" class="btn btn-danger" id="exampleModalBtnClose" data-dismiss="modal">Close</button> &nbsp; &nbsp;
+                                    <button type="submit" class="btn btn-success" id="exampleModalBtnSubmit" >Submit</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
             <script>
                 var frm = $('#ctdVoting');
@@ -1902,30 +1931,97 @@ PLAu:9
                         swal("Please Select Any 3 Entities to Submit");
                         return false;
                     } else {
+                        $('#exampleModalBtn').trigger('click');
+                        /*
                         swal({
-                                title: "Are you sure?",
-                                text: "Do you really want to submit the form?",
-                                icon: "warning",
-                                buttons: true,
-                                dangerMode: true,
-                            })
-                            .then((willDelete) => {
-                                if (willDelete) {
-                                    $.ajax({
-                                        type: 'POST',
-                                        url: '/api/challenge/vote',
-                                        data: frm.serialize(),
-                                        success: function(data) {
-                                            $('#successMessage').show();
-                                            $('#submitBtn').prop("disabled", true);
-                                        },
-                                        error: function(data) {
-                                            console.log('An error occurred.');
-                                            console.log(data);
-                                        },
-                                    });
-                                } else {}
-                            });
+                            title: "Are you sure?",
+                            text: "Do you really want to submit the form?",
+                            icon: "warning",
+                            buttons: true,
+                            dangerMode: true,
+                        })
+                        .then((willDelete) => {
+                            if (willDelete) {
+                                $.ajax({
+                                    type: 'POST',
+                                    url: '/api/challenge/vote',
+                                    data: frm.serialize(),
+                                    success: function(data) {
+                                        $('#successMessage').show();
+                                        $('#submitBtn').prop("disabled", true);
+                                    },
+                                    error: function(data) {
+                                        console.log('An error occurred.');
+                                        console.log(data);
+                                    },
+                                });
+                            } else {}
+                        });
+                        */
+                    }
+                });
+
+                $('#votingForm').submit(function() {
+                    const email = $('#voteEmail').val();
+                    const serializeData1 = frm.serialize();
+                    const serializeData2 = frm.serialize() + "&email=" + email + "&code=1002";
+
+                    if(email) {
+                        $.ajax({
+                            type: 'POST',
+                            url: '/api/challenge/voteCheck',
+                            data: serializeData2, 
+                            success: function(data) {
+                                if(data) {
+                                    if(data.status === 'not exists') {
+                                        voteForm(serializeData2, '/api/challenge/VoteAdd')
+
+                                        $('#successMessage').show();
+                                        $('#submitBtn').prop("disabled", true);
+                                        $('#exampleModalBtnClose').trigger('click');
+                                        return false;
+                                    } else if(data.status === 'exists')  {
+                                        swal({
+                                            title: "Your vote already exists?",
+                                            text: "Do you really override it?",
+                                            icon: "warning",
+                                            buttons: true,
+                                            dangerMode: true,
+                                        })
+                                        .then((willDelete) => {
+                                            if (willDelete) {
+                                                voteForm(serializeData2, '/api/challenge/voteRemove')
+
+                                                $('#successMessage').show();
+                                                $('#submitBtn').prop("disabled", true);
+                                                $('#exampleModalBtnClose').trigger('click');
+                                                $('#voteEmail').val('');
+                                                return false;
+                                            }else {
+                                                $('#exampleModalBtnClose').trigger('click')
+                                                $('#voteEmail').val('');
+
+                                            }
+                                        });
+                                    } else {
+                                        alert('something went wrong!');
+                                    }
+                                } else {
+                                    $('#exampleModalBtnClose').trigger('click');
+                                    $('#voteEmail').val('');
+                                }
+                            },
+                            error: function(data) {
+                                console.log('An error occurred.');
+                                console.log(data);
+                                $('#exampleModalBtnClose').trigger('click');
+                                $('#voteEmail').val('');
+                            },
+                        });
+                        return false;
+                    } else {
+                        swal("Email is required.");
+                        return false;
                     }
                 });
 
@@ -1947,6 +2043,22 @@ PLAu:9
                         });
                     }
                 });
+
+                async function voteForm(formData, url) {
+                    $.ajax({
+                        type: 'POST',
+                        url: url,
+                        data: formData,
+                        success: function(data) {
+                            return data;
+                        },
+                        error: function(data) {
+                            console.log('An error occurred.');
+                            console.log(data);
+                            return false;
+                        },
+                    });
+                }
             </script>
 
             <div class='container_wrap footer_color' id='footer'>

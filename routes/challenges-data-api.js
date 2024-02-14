@@ -2,6 +2,7 @@ const router = require('express').Router();
 const keys = require('../config/keys');
 const MongoClient = require('mongodb').MongoClient;
 const challengeModel = require('../models/genericChallengeModel');
+const challengeDataEmailCollectionModel = require('../models/genericChallengeEmailModel');
 var mongodb = require('mongodb');
 
 // get all data api
@@ -114,9 +115,157 @@ router.get('/:code', (req, res) => {
 
 });
 
-router.post('/vote', (req, res) => {
+router.post('/voteCheck', async (req, res) => {
+    const email = req.body.email;
+    const code = req.body.code;
+    let client, db;
 
-    console.log(req.body);
+    try{
+        client = await MongoClient.connect(keys.mongodb.dbURI, {useNewUrlParser: true});
+        db = client.db(keys.mongodb.dbName);
+        let collection = db.collection('challengeDataEmailCollection');
+        let result = await collection.findOne({ "code": code, 'email': email });
+       
+        if (result) {
+            res.status(201).json({ 'status': 'exists' });
+        } else {
+            res.status(201).json({ 'status': 'not exists' });
+        }
+
+        // let result = await collection.countDocuments();
+        // return result.toArray();
+    } catch (err) { 
+        console.error(err); 
+        res.status(400).json("Error Connecting DB");
+    } finally {
+        client.close(); 
+    }
+});
+
+router.post('/VoteAdd', async (req, res) => {
+    let client, db;
+
+    try{
+        const email = req.body.email;
+        const code = req.body.code;
+        const ids = [];
+    
+        delete req.body.email;
+        delete req.body.code;
+    
+        for (let i = 0; i < Object.keys(req.body).length; i++) {
+            ids.push(Object.keys(req.body)[i])
+        }
+    
+        const newModel = new challengeDataEmailCollectionModel({
+            email,
+            code,
+            ids,
+        });
+
+        client = await MongoClient.connect(keys.mongodb.dbURI, {useNewUrlParser: true});
+        db = client.db(keys.mongodb.dbName);
+
+        let emailCollection = db.collection('challengeDataEmailCollection');
+        let collection = db.collection('challengeDataCollection');
+
+        for (const id of ids) {
+            var myquery = { _id: new mongodb.ObjectID(id) };
+            const result = await collection.findOne(myquery);
+
+            if(result) {
+                const newCount = (isNaN(result.count) || (result.count < 0) ) ? 0 :  result.count + 1;
+                await collection.updateOne(myquery, { $set: { count: newCount} });
+                // console.log("1 document updated");
+            }
+        }
+
+        await emailCollection.deleteOne({ "code": code, 'email': email });
+        await emailCollection.insertOne(newModel);
+
+        // client.close(); 
+        // console.log('Add Vote --');
+        res.status(201).redirect('back');
+    } catch (err) { 
+        console.error(err); 
+        res.status(400).json("Error Connecting DB");
+    } finally {
+        client.close(); 
+    }
+});
+
+router.post('/voteRemove', async (req, res) => {
+    let client, db;
+
+    try{
+        const email = req.body.email;
+        const code = req.body.code;
+        const ids = [];
+    
+        delete req.body.email;
+        delete req.body.code;
+    
+        for (let i = 0; i < Object.keys(req.body).length; i++) {
+            ids.push(Object.keys(req.body)[i])
+        }
+    
+        const newModel = new challengeDataEmailCollectionModel({
+            email,
+            code,
+            ids,
+        });
+
+        client = await MongoClient.connect(keys.mongodb.dbURI, {useNewUrlParser: true});
+        db = client.db(keys.mongodb.dbName);
+
+        let emailCollection = db.collection('challengeDataEmailCollection');
+        let collection = db.collection('challengeDataCollection');
+
+        let result = await emailCollection.findOne({ "code": code, 'email': email });
+       
+        if (result) {
+            const newIds = result.ids;
+
+            for (const id of newIds) {
+                var myquery = { _id: new mongodb.ObjectID(id) };
+                const result = await collection.findOne(myquery);
+    
+                if(result) {
+                    let newCount = (isNaN(result.count) || (result.count < 0) ) ? 0 :  result.count - 1;
+                    newCount = newCount < 0 ? 0 : newCount;
+                    await collection.updateOne(myquery, { $set: { count: newCount} });
+                    // console.log("1 document updated");
+                }
+            }
+        }
+
+        for (const id of ids) {
+            var myquery = { _id: new mongodb.ObjectID(id) };
+            const result = await collection.findOne(myquery);
+
+            if(result) {
+                const newCount = (isNaN(result.count) || (result.count < 0) ) ? 0 :  result.count + 1;
+                await collection.updateOne(myquery, { $set: { count: newCount} });
+                // console.log("1 document updated");
+            }
+        }
+
+        await emailCollection.deleteOne({ "code": code, 'email': email });
+        await emailCollection.insertOne(newModel);
+
+        // client.close(); 
+        // console.log('Remove Vote --');
+        res.status(201).redirect('back');
+    } catch (err) { 
+        console.error(err); 
+        res.status(400).json("Error Connecting DB");
+    } finally {
+        client.close(); 
+    }
+});
+
+//## Not using this.
+router.post('/vote', (req, res) => {
     MongoClient.connect(keys.mongodb.dbURI, { useNewUrlParser: true }, function(err, db) {
         if (err) throw err;
         for (let i = 0; i < Object.keys(req.body).length; i++) {
