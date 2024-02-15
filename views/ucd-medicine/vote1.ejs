@@ -1971,6 +1971,9 @@ PLAu:9
                                         $('#successMessage').show();
                                         $('#submitBtn').prop("disabled", true);
                                         $('#exampleModalBtnClose').trigger('click');
+
+                                        window.location.href = "/connectTheDots/UCDMedicine/vote2";
+
                                         return false;
                                     } else if(data.status === 'exists')  {
                                         swal({
@@ -1988,6 +1991,8 @@ PLAu:9
                                                 $('#submitBtn').prop("disabled", true);
                                                 $('#exampleModalBtnClose').trigger('click');
                                                 $('#voteEmail').val('');
+
+                                                window.location.href = "/connectTheDots/UCDMedicine/vote2";
                                                 return false;
                                             }else {
                                                 $('#exampleModalBtnSubmit').prop("disabled", false);
