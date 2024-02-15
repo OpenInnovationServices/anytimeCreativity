@@ -1885,7 +1885,7 @@ PLAu:9
                             <div class="row text-center" id="successMessage" style="display: none;">
                                 <div class="col-xs-12" style="margin: 0 auto;">
                                     <p class="alert alert-success">
-                                        <strong>Your 3 votes have been cast successfully</strong>
+                                        <strong>Your vote have been cast successfully</strong>
                                     </p>
                                 </div>
                             </div>
@@ -1923,7 +1923,7 @@ PLAu:9
                                 <div class="row justify-content-center">
                                     <div class="col-md-8 col-sm-12 text-center">
                                         <strong>Please enter your email address to vote</strong> <br />&nbsp; <br />
-                                        <input type="text" name="voteEmail" class="form-control voteEmail" id="voteEmail" required/>
+                                        <input type="email" name="voteEmail" class="form-control voteEmail" id="voteEmail" required/>
                                     </div>
                                 </div>
                                 <hr />
@@ -1943,9 +1943,8 @@ PLAu:9
 
                 frm.submit(function(e) {
                     e.preventDefault();
-                    if ($(":checkbox:checked").length < 3 || $(":checkbox:checked").length > 3) {
-                        // alert("Please Select Any 3 Entities to Submit");
-                        swal("Please Select Any 3 Entities to Submit");
+                    if ($(":checkbox:checked").length < 1 || $(":checkbox:checked").length > 1) {
+                        swal("Please Select Any 1 Entities to Submit");
                         return false;
                     } else {
                         $('#exampleModalBtn').trigger('click');
@@ -1956,6 +1955,8 @@ PLAu:9
                     const email = $('#voteEmail').val();
                     const serializeData1 = frm.serialize();
                     const serializeData2 = frm.serialize() + "&email=" + email + "&code=1002";
+
+                    $('#exampleModalBtnSubmit').prop("disabled", true);
 
                     if(email) {
                         $.ajax({
@@ -1989,19 +1990,23 @@ PLAu:9
                                                 $('#voteEmail').val('');
                                                 return false;
                                             }else {
+                                                $('#exampleModalBtnSubmit').prop("disabled", false);
                                                 $('#exampleModalBtnClose').trigger('click')
                                                 $('#voteEmail').val('');
                                             }
                                         });
                                     } else {
+                                        $('#exampleModalBtnSubmit').prop("disabled", false);
                                         alert('something went wrong!');
                                     }
                                 } else {
+                                    $('#exampleModalBtnSubmit').prop("disabled", false);
                                     $('#exampleModalBtnClose').trigger('click');
                                     $('#voteEmail').val('');
                                 }
                             },
                             error: function(data) {
+                                $('#exampleModalBtnSubmit').prop("disabled", false);
                                 console.log('An error occurred.');
                                 console.log(data);
                                 $('#exampleModalBtnClose').trigger('click');
@@ -2010,6 +2015,7 @@ PLAu:9
                         });
                         return false;
                     } else {
+                        $('#exampleModalBtnSubmit').prop("disabled", false);
                         swal("Email is required.");
                         return false;
                     }
@@ -2025,7 +2031,7 @@ PLAu:9
                         }
                     });
 
-                    if (count >= 3) {
+                    if (count >= 1) {
                         $('.checkbox').each(function() {
                             if (!$(this).is(':checked')) {
                                 $(this).attr('disabled', true);
@@ -2040,11 +2046,13 @@ PLAu:9
                         url: url,
                         data: formData,
                         success: function(data) {
+                            $('#exampleModalBtnSubmit').prop("disabled", false);
                             return data;
                         },
                         error: function(data) {
                             console.log('An error occurred.');
                             console.log(data);
+                            $('#exampleModalBtnSubmit').prop("disabled", false);
                             return false;
                         },
                     });
