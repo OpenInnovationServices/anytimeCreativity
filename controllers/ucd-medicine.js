@@ -23,13 +23,29 @@ exports.dashboard = (req, res, next) => {
     });
 };
 
-exports.vote = (req, res, next) => {
+exports.vote1 = (req, res, next) => {
     MongoClient.connect(keys.mongodb.dbURI, { useUnifiedTopology: true, useNewUrlParser: true }, function(err, db) {
         if (err) throw err;
         var dbo = db.db(keys.mongodb.dbName);
         dbo.collection("challengeDataCollection").find({ "code": "1002" }).toArray(function(err, result) {
             if (err) res.status(400).json("Error Connecting DB");
-            res.render('ucd-medicine/vote', {
+            res.render('ucd-medicine/vote1', {
+                pageTitle: 'Connect The Dots Vote',
+                data: result
+            });
+            db.close();
+        });
+    });
+};
+
+
+exports.vote2 = (req, res, next) => {
+    MongoClient.connect(keys.mongodb.dbURI, { useUnifiedTopology: true, useNewUrlParser: true }, function(err, db) {
+        if (err) throw err;
+        var dbo = db.db(keys.mongodb.dbName);
+        dbo.collection("challengeDataCollection").find({ "code": "1002" }).toArray(function(err, result) {
+            if (err) res.status(400).json("Error Connecting DB");
+            res.render('ucd-medicine/vote2', {
                 pageTitle: 'Connect The Dots Vote',
                 data: result
             });
