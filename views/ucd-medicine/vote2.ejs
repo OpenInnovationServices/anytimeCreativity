@@ -1677,6 +1677,14 @@ PLAu:9
                 .nav-img {
                     height: 80px;
                 }
+
+                .nav-img1 {
+                    width: 100px;
+                    position: relative;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                }
                 
                 .card-body {
                     /* width: 200px; */
@@ -1705,6 +1713,15 @@ PLAu:9
                     .nav-img {
                         width: 180px;
                         height: auto !important;
+                    }
+                    .nav-img1 {
+                        width: 100px;
+                        position: relative;
+                        top: 0;
+                        left: 0;
+                        transform: none;
+                        margin-bottom: 10px;
+                        margin-top: 10px;
                     }
                 }
                 /*## Checkbox */
@@ -1794,17 +1811,19 @@ PLAu:9
                     </div>
 
                     <div class="col-md-8 col-lg-8 col-sm-12 text-center inst-para-outer">
-                        <h1>Voting</h1>
+                        <h1>Build on an Idea</h1>
                     </div>
 
                     <div class="col-md-2 col-lg-1 col-sm-12 text-center p-2 ">
+                        <img src="/assets/images/ucd-medicine/logo.jpeg" class="nav-img1" />
                     </div>
                 </div>
 
                 <form id="ctdVoting">
                     <div class="row justify-content-center mt-5 mb-5">
                         <div class="col-12 text-center mb-3">
-                            <p style="font-size: 24px;">Please like your 3 favourite ideas, scroll down and hit submit</p>
+                            <p style="font-size: 20px;">Step 2 of 2</p>
+                            <p style="font-size: 24px;">Step 2: Reading other people’s ideas can often trigger us to think of ways to amend that idea. Scroll through each submission below and if you can think of a way to improve one of them with your own creative twist, click the ‘Build & Improve on This Idea’ button beside it.</p>
                         </div>
 
                         <div class="col-md-12 col-lg-12 col-xl-11">
@@ -1820,7 +1839,7 @@ PLAu:9
                                                 <th>Activity</th>
                                                 <th>Tech</th>
                                                 <th>Idea Description</th>
-                                                <th>Likes</th>
+                                                <th>Build on an Idea</th>
                                             </thead>
                                             <% for(var i=0; i < data.length; i++) { %>
                                                 <tr>
@@ -1829,7 +1848,7 @@ PLAu:9
                                                     </td>
                                                     <td width="15%">
                                                         <b> <%= data[i].teamName %></b>
-                                                        <div class="panel panel-default">
+                                                        <!-- <div class="panel panel-default">
                                                             <div class="panel-heading">
                                                                 <p class="panel-title h6" data-toggle="collapse" data-target="#collapse<%= i+1 %>">Player Names</p>
                                                             </div>
@@ -1839,7 +1858,7 @@ PLAu:9
                                                                     <%- data[i].penName %>
                                                                 </div>
                                                             </div>
-                                                        </div>
+                                                        </div> -->
                                                     </td>
                                                     <td>
                                                         <%= data[i].ideaName %>
@@ -1868,8 +1887,7 @@ PLAu:9
                                                         <div class="text-center">
                                                             <button type="button" class="btn btn-sm btn-warning buildIdeaBtn" style="font-weight: 500;" 
                                                             data-id="<%= data[i]._id %>"
-                                                            data-idea-name="<%= data[i].ideaName %>"
-                                                            >Build & imporove on this idea</button>
+                                                            data-idea-name="<%= data[i].ideaName %>">Build & Improve on this Idea</button>
                                                         </div>
                                                     </td>
                                                 </tr>
@@ -1907,31 +1925,6 @@ PLAu:9
             </div>
 
             <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary d-none" id="exampleModalBtn" data-toggle="modal" data-target="#exampleModal"></button>
-            <!-- Modal -->
-            <div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered modal-lg">
-                    <div class="modal-content">
-                        <div class="modal-body">
-                            <form id="votingForm">
-                                <div class="row justify-content-center">
-                                    <div class="col-md-8 col-sm-12 text-center">
-                                        <strong>Please enter your email address to vote</strong> <br />&nbsp; <br />
-                                        <input type="text" name="voteEmail" class="form-control voteEmail" id="voteEmail" required/>
-                                    </div>
-                                </div>
-                                <hr />
-                                <div class="row justify-content-center">
-                                    <button type="button" class="btn btn-danger" id="exampleModalBtnClose" data-dismiss="modal">Close</button> &nbsp; &nbsp;
-                                    <button type="submit" class="btn btn-success" id="exampleModalBtnSubmit" >Submit</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Button trigger modal -->
             <button type="button" class="btn btn-primary d-none" id="buildIdeaModalBtn" data-toggle="modal" data-target="#buildIdeaModal"></button>
             <!-- Modal -->
             <div class="modal fade bd-example-modal-lg" id="buildIdeaModal" tabindex="-1" aria-labelledby="buildIdeaModalLabel" aria-hidden="true">
@@ -1943,18 +1936,18 @@ PLAu:9
 
                                 <div class="row justify-content-center">
                                     <div class="col-md-12 col-sm-12 text-center">
-                                        <strong>Build on this idea</strong> <br />&nbsp; <br />
-                                        <strong>Submission box</strong> <br />&nbsp; <br />
+                                        <strong>Build & Improve on This Idea</strong> <br />&nbsp; <br />
+                                        <!-- <strong>Submission box</strong> <br />&nbsp; <br /> -->
                                     </div>
 
                                     <div class="col-md-8 col-sm-12 text-center" style="border: 1px solid #cdcccc; border-radius: 10px;">
                                         <br />
-                                        <strong>Build on <span class="buildIdeaName"></span></strong> <br />&nbsp; <br />
+                                        <strong>Build on '<span class="buildIdeaName"></span>'</strong> <br />&nbsp; <br />
 
-                                        <label>Your name</label>
+                                        <label style="float: left; color: #7c7c7c; font-weight: 600 !important;">Your name</label>
                                         <input type="text" name="name" class="form-control buildIdeaNewName" id="buildIdeaNewName" required/>
 
-                                        <label>Your twist</label>
+                                        <label style="float: left; color: #7c7c7c; font-weight: 600 !important;">Briefly Describe How You Wish to Modify This Idea</label>
                                         <textarea type="text" name="twist" class="form-control twist" id="twist" required ></textarea>
                                     </div>
                                 </div>
