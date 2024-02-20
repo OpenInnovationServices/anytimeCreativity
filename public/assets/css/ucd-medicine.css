@@ -412,7 +412,7 @@ textarea {
     /* height: 100%; */
     margin: 0 auto;
     position: relative;
-    top: 46.5%;
+    top: 44.5%;
 }
 
 .firstArrow {
@@ -702,7 +702,7 @@ textarea {
         font-size: 1.4vh;
     }
     .arrowDiv {
-        top: 46.5%;
+        top: 44.5%;
     }
 }
 
@@ -723,7 +723,7 @@ textarea {
         height: auto !important;
     }
     .arrowDiv {
-        top: 46.5%;
+        top: 44.5%;
     }
 }
 
@@ -741,7 +741,7 @@ textarea {
         height: auto !important;
     }
     .arrowDiv {
-        top: 46.5%;
+        top: 44.5%;
     }
     .nav-img {
         width: 170px;
@@ -759,7 +759,7 @@ textarea {
         margin: auto;
     }
     .arrowDiv {
-        top: 46.5%;
+        top: 44.5%;
     }
 }
 
