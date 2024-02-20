@@ -348,7 +348,7 @@
         }
         
         .html_header_top.html_header_sticky #top #wrap_all #main {
-            padding-top: 0px;
+            padding-top: 0px !important;
         }
         
         #top .social_bookmarks .avia-font-entypo-fontello,
@@ -1677,6 +1677,14 @@ PLAu:9
                 .nav-img {
                     height: 80px;
                 }
+
+                .nav-img1 {
+                    width: 100px;
+                    position: relative;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                }
                 
                 .card-body {
                     /* width: 200px; */
@@ -1705,6 +1713,15 @@ PLAu:9
                     .nav-img {
                         width: 180px;
                         height: auto !important;
+                    }
+                    .nav-img1 {
+                        width: 100px;
+                        position: relative;
+                        top: 0;
+                        left: 0;
+                        transform: none;
+                        margin-bottom: 10px;
+                        margin-top: 10px;
                     }
                 }
                 /*## Checkbox */
@@ -1797,14 +1814,16 @@ PLAu:9
                         <h1>Voting</h1>
                     </div>
 
-                    <div class="col-md-2 col-lg-1 col-sm-12 text-center p-2 ">
+                    <div class="col-md-2 col-lg-2 col-sm-12 logo-div">
+                        <img src="/assets/images/ucd-medicine/logo.jpeg" class="nav-img1" />
                     </div>
                 </div>
 
                 <form id="ctdVoting">
                     <div class="row justify-content-center mt-5 mb-5">
                         <div class="col-12 text-center mb-3">
-                            <p style="font-size: 24px;">Please like your 3 favourite ideas, scroll down and hit submit</p>
+                            <p style="font-size: 20px;">Step 1 of 2</p>
+                            <p style="font-size: 24px;">Step 1: Scroll Through Each of the Ideas and Vote for Your Favourite One by Clicking the Medal emoji to the right of your idea of choice.</p>
                         </div>
 
                         <div class="col-md-12 col-lg-12 col-xl-11">
@@ -1829,6 +1848,7 @@ PLAu:9
                                                     </td>
                                                     <td width="15%">
                                                         <b> <%= data[i].teamName %></b>
+                                                        <!--
                                                         <div class="panel panel-default">
                                                             <div class="panel-heading">
                                                                 <p class="panel-title h6" data-toggle="collapse" data-target="#collapse<%= i+1 %>">Player Names</p>
@@ -1840,6 +1860,7 @@ PLAu:9
                                                                 </div>
                                                             </div>
                                                         </div>
+                                                        -->
                                                     </td>
                                                     <td>
                                                         <%= data[i].ideaName %>
@@ -1879,7 +1900,7 @@ PLAu:9
                                         </table>
                                     </div>
                                     <div class="col-12 text-center" style="padding: 1.5rem 0px;">
-                                        <button class="btn btn-warning btn-lg" id="submitBtn">Submit</button>
+                                        <button class="btn btn-warning btn-lg d-none" id="submitBtn">Submit</button>
                                     </div>
                             <% } %>
                             <div class="row text-center" id="successMessage" style="display: none;">
@@ -1905,8 +1926,6 @@ PLAu:9
                                     </p>
                                 </div>
                             </div>
-
-                            
                         </div>
                     </div>
                 </form>
@@ -1980,8 +1999,9 @@ PLAu:9
                                             title: "Your vote already exists?",
                                             text: "Do you really override it?",
                                             icon: "warning",
-                                            buttons: true,
                                             dangerMode: true,
+                                            // buttons: true,
+                                            buttons: ['No', 'Yes']
                                         })
                                         .then((willDelete) => {
                                             if (willDelete) {
@@ -1998,6 +2018,11 @@ PLAu:9
                                                 $('#exampleModalBtnSubmit').prop("disabled", false);
                                                 $('#exampleModalBtnClose').trigger('click')
                                                 $('#voteEmail').val('');
+
+                                                $('.checkbox').each(function() {
+                                                    $(this).prop('checked', false); 
+                                                    $(this).attr('disabled', false);
+                                                });
                                             }
                                         });
                                     } else {
@@ -2042,8 +2067,36 @@ PLAu:9
                                 $(this).attr('disabled', true);
                             }
                         });
+
+                        swal({
+                            title: "Are you sure ?",
+                            text: "You Want to Submit This As Your Favourite Idea ?",
+                            icon: "warning",
+                            dangerMode: true,
+                            // buttons: true,
+                            buttons: ['No', 'Yes'] 
+                        })
+                        .then((willDelete) => {
+                            if(willDelete) {
+                                $('#ctdVoting').submit();
+                            }else {
+                                $('.checkbox').each(function() {
+                                    $(this).prop('checked', false); 
+                                    $(this).attr('disabled', false);
+                                });
+                            }
+                        });
                     }
                 });
+
+                $('#exampleModalBtnClose').click(function() {
+                    $('.checkbox').each(function() {
+                        $(this).prop('checked', false); 
+                        $(this).attr('disabled', false);
+                    });
+                });
+
+                
 
                 async function voteForm(formData, url) {
                     $.ajax({
