@@ -2021,7 +2021,7 @@ PLAu:9
                             var queryString = {id: id};
                             $.post("/api/challenge/delete_build", queryString, function (data) {
                                 if(data.status === 'success') {
-                                    window.location.href = "/connectTheDots/UCDMedicine/challenge/result";
+                                    window.location.href = "/connectTheDots/UCDMedicine/challenge/results";
                                 }
                             }, "json");
                             return false;
