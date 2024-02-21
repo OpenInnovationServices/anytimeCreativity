@@ -313,6 +313,20 @@ router.post('/voteIdea', async (req, res) => {
 });
 
 
+router.post('/delete_build', (req, res) => {
+    MongoClient.connect(keys.mongodb.dbURI, { useNewUrlParser: true }, function(err, db) {
+        if (err) throw err;
+        var dbo = db.db(keys.mongodb.dbName);
+        var myquery = { _id: new mongodb.ObjectID(req.body.id) };
+        dbo.collection("challengeDataIdeaCollection").deleteOne(myquery, function(err, obj) {
+            if (err) throw err;
+            console.log("1 document deleted");
+            res.status(201).json({ 'status': 'success' });
+            db.close();
+        });
+    });
+});
+
 
 //## Not using this.
 router.post('/vote', (req, res) => {

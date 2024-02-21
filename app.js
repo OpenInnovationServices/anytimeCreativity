@@ -42,7 +42,7 @@ app.use('/madAndNutty', madAndNuttyRoutes);
 app.use('/blueSkies', blueSkiesRoutes);
 app.use('/lookSideways', lookSidewaysRoutes);
 app.use('/reImagine', reimagineRoutes);
-app.use('/connectTheDots/UCDMedicine', ucdMedicineRoutes);
+app.use('/connectTheDots/UCDMedicine/challenge', ucdMedicineRoutes);
 app.use('/api/challenge', submitChallengeDataApiRoutes);
 
 app.get('/', (req, res) => {

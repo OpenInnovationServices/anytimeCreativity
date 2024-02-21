@@ -1682,7 +1682,7 @@ PLAu:9
                 }
 
                 .nav-img1 {
-                    width: 100px;
+                    width: 200px;
                     position: relative;
                     top: 50%;
                     left: 50%;
@@ -1718,7 +1718,7 @@ PLAu:9
                         height: auto !important;
                     }
                     .nav-img1 {
-                        width: 100px;
+                        width: 200px;
                         position: relative;
                         top: 0;
                         left: 0;
@@ -1805,6 +1805,27 @@ PLAu:9
                 .image-text {
                     margin-bottom: .2rem;
                 }
+
+                th {
+                    text-transform: none;
+                }
+                /*                 
+                th {
+                    text-transform: lowercase !important;
+                }
+
+                th:first-letter {
+                    text-transform: uppercase !important;
+                } */
+
+                .swal-icon img {
+                    width: 5rem !important;
+                }
+
+                .swal-footer {
+                    text-align: center;
+                }
+
             </style>
 
             <div class="container-fluid">
@@ -1818,17 +1839,17 @@ PLAu:9
                     </div>
 
                     <div class="col-md-2 col-lg-2 col-sm-12 logo-div">
-                        <img src="/assets/images/ucd-medicine/logo.jpeg" class="nav-img1" />
+                        <img src="/assets/images/ucd-medicine/logo.png" class="nav-img1" />
                     </div>
                 </div>
 
                 <div class="row justify-content-center">
                     <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
                         <li class="nav-item pr-1" role="presentation">
-                          <button class="nav-link active" id="pills-home-tab" data-toggle="pill" data-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true" style="border: 1px solid #cecece;">Vote 1 Result</button>
+                          <button class="nav-link active" id="pills-home-tab" data-toggle="pill" data-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true" style="border: 1px solid #cecece;">Results</button>
                         </li>
                         <li class="nav-item pl-1" role="presentation">
-                          <button class="nav-link" id="pills-profile-tab" data-toggle="pill" data-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false" style="border: 1px solid #cecece;">Vote 2 Result</button>
+                          <button class="nav-link" id="pills-profile-tab" data-toggle="pill" data-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false" style="border: 1px solid #cecece;">Builds</button>
                         </li>
                     </ul>
                 </div>
@@ -1846,12 +1867,12 @@ PLAu:9
                                             <table class="table table-bordered table-hover text-center mb-0">
                                                 <thead>
                                                     <!-- <th width="5%">#</th> -->
-                                                    <th width="15%">Team</th>
-                                                    <th width="15%">Idea Name</th>
-                                                    <th width="12%">Activity</th>
-                                                    <th width="12%">Tech</th>
-                                                    <th width="31%" width="">Description</th>
-                                                    <th width="15%"># Likes</th>
+                                                    <th width="10%">Team #</th>
+                                                    <th width="12%">EMA Objective</th>
+                                                    <th width="12%">Enabler</th>
+                                                    <th width="20%">Idea Name</th>
+                                                    <th width="31%">Idea Description</th>
+                                                    <th width="15%"># Vote</th>
                                                 </thead>
         
                                                 <% for(var i=0; i < data.result1.length; i++) { %>
@@ -1875,9 +1896,7 @@ PLAu:9
                                                                 </div>
                                                             </div>
                                                         </td>
-                                                        <td>
-                                                            <%= data.result1[i].ideaName %>
-                                                        </td>
+                                                      
                                                         <td>
                                                             <div class="image-div">
                                                                 <img src="/<%= data.result1[i].mix %>" style="max-width: 40px;">
@@ -1895,6 +1914,9 @@ PLAu:9
                                                             </div>
                                                         </td>
                                                         
+                                                        <td>
+                                                            <%= data.result1[i].ideaName %>
+                                                        </td>
                                                         <td>
                                                             <%= data.result1[i].idea %>
                                                         </td>
@@ -1923,10 +1945,11 @@ PLAu:9
                                                     <!-- <th width="5%">#</th> -->
                                                     <!-- <th width="15%">Team</th> -->
                                                     <th width="15%">Original Idea Name</th>
-                                                    <th width="15%">Activity</th>
-                                                    <th width="15%">Tech</th>
+                                                    <th width="15%">EMA Objective</th>
+                                                    <th width="15%">Enabler</th>
                                                     <th width="30%">Original Idea Description </th>
-                                                    <th width="30%" >Build on this Idea Description</th>
+                                                    <th width="30%" >Build Description</th>
+                                                    <th width="5%" >Action</th>
                                                 </thead>
         
                                                 <% for(var i=0; i < data.result2.length; i++) { %>
@@ -1938,7 +1961,6 @@ PLAu:9
                                                             <%= data.result2[i].name %>
                                                         </td>
                                                         -->
-                                                    
                                                         <td>
                                                             <%= data.result2[i].ideaName %>
                                                         </td>
@@ -1958,7 +1980,6 @@ PLAu:9
                                                                 </p>
                                                             </div>
                                                         </td>
-                                                     
                                                         <td>
                                                             <%= data.result2[i].idea %>
                                                         </td>
@@ -1966,7 +1987,12 @@ PLAu:9
                                                         <td>
                                                             <%= data.result2[i].twist %>
                                                         </td>
-                                                       
+                                                        <td>
+                                                            <!-- <form method="POST" action="/api/challenge/delete/id"> -->
+                                                                <!-- <input type="hidden" value="<%= data.result2[i]._id %>" name="id"> -->
+                                                                <button type="submit" class="btn btn-outline-danger deleteBtn" data-id="<%= data.result2[i]._id %>"><i class="fas fa-trash"></i></button>
+                                                            <!-- </form> -->
+                                                        </td>
                                                     </tr>
                                                 <% } %>
                                             </table>
@@ -1978,6 +2004,34 @@ PLAu:9
                     </div>
                 </div>
             </div>
+
+            <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+            <script> 
+                $('.deleteBtn').click(function() {
+                    var id = $(this).attr('data-id');
+                    swal({
+                        title: "Confirm",
+                        text: "Are you sure want to delete this idea?",
+                        icon: "/assets/images/ucd-medicine/question_mark.webp",
+                        buttons: {
+                            confirm : {text:'Yes', className:'btn-success'},
+                            cancel : "No",
+                        },
+                    })
+                    .then((willDelete) => {
+                        if(willDelete) {
+                            var queryString = {id: id};
+                            $.post("/api/challenge/delete_build", queryString, function (data) {
+                                if(data.status === 'success') {
+                                    window.location.href = "/connectTheDots/UCDMedicine/challenge/result";
+                                }
+                            }, "json");
+                            return false;
+                        }else {}
+                    });
+
+                });
+            </script>
 
             <div class='container_wrap footer_color' id='footer'>
                 <div class='container'>
