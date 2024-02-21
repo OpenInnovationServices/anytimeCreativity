@@ -1845,20 +1845,20 @@ PLAu:9
                                         <div class="table-responsive">
                                             <table class="table table-bordered table-hover text-center mb-0">
                                                 <thead>
-                                                    <th width="5%">#</th>
+                                                    <!-- <th width="5%">#</th> -->
                                                     <th width="15%">Team</th>
                                                     <th width="15%">Idea Name</th>
                                                     <th width="12%">Activity</th>
                                                     <th width="12%">Tech</th>
                                                     <th width="31%" width="">Description</th>
-                                                    <th width="10%"># Likes</th>
+                                                    <th width="15%"># Likes</th>
                                                 </thead>
         
                                                 <% for(var i=0; i < data.result1.length; i++) { %>
                                                     <tr>
-                                                        <td>
+                                                        <!-- <td>
                                                             <%= i+1 %>
-                                                        </td>
+                                                        </td> -->
                                                         <td>
                                                             <b> <%= data.result1[i].teamName %> </b>
                                                             <div class="panel panel-default">
@@ -1920,22 +1920,25 @@ PLAu:9
                                         <div class="table-responsive">
                                             <table class="table table-bordered table-hover text-center mb-0">
                                                 <thead>
-                                                    <th width="5%">#</th>
-                                                    <th width="15%">Team</th>
-                                                    <th width="15%">Idea Name</th>
+                                                    <!-- <th width="5%">#</th> -->
+                                                    <!-- <th width="15%">Team</th> -->
+                                                    <th width="15%">Original Idea Name</th>
                                                     <th width="15%">Activity</th>
                                                     <th width="15%">Tech</th>
-                                                    <th width="35%" width="">Idea Description</th>
+                                                    <th width="30%">Original Idea Description </th>
+                                                    <th width="30%" >Build on this Idea Description</th>
                                                 </thead>
         
                                                 <% for(var i=0; i < data.result2.length; i++) { %>
                                                     <tr>
-                                                        <td>
+                                                        <!-- <td>
                                                             <%= i+1 %>
-                                                        </td>
+                                                        </td> 
                                                         <td width="15%">
                                                             <%= data.result2[i].name %>
                                                         </td>
+                                                        -->
+                                                    
                                                         <td>
                                                             <%= data.result2[i].ideaName %>
                                                         </td>
@@ -1956,6 +1959,10 @@ PLAu:9
                                                             </div>
                                                         </td>
                                                      
+                                                        <td>
+                                                            <%= data.result2[i].idea %>
+                                                        </td>
+                                                       
                                                         <td>
                                                             <%= data.result2[i].twist %>
                                                         </td>

@@ -95,7 +95,7 @@ exports.result = async (req, res, next) => {
         let collection = db.collection('challengeDataCollection');
         let ideaCollection = db.collection('challengeDataIdeaCollection');
 
-        const result1 = await collection.find({ "code": "1002" }).toArray()
+        const result1 = await collection.find({ "code": "1002" }).sort( { count: -1 } ).toArray()
         const result2 = await ideaCollection.find({ "code": "1002" }).toArray()
 
         res.render('ucd-medicine/vote-result', {
