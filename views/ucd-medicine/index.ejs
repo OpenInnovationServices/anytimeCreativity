@@ -1697,6 +1697,24 @@
 						</div>
 					</div>
 				</div>
+
+				<!-- Button trigger modal -->
+				<button type="button" class="btn btn-primary d-none" id="videoModalBtn" data-toggle="modal" data-target="#videoModal"></button>
+				<!-- Modal -->
+				<div class="modal fade bd-example-modal-lg" id="videoModal" tabindex="-1" data-backdrop="static" data-keyboard="false" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+					<div class="modal-dialog modal-dialog-centered modal-lg">
+						<div class="modal-content">
+							<div class="modal-body">
+								<iframe id="youtube_player" class="yt_player_iframe" width="100%" height="315" src="https://www.youtube.com/embed/b2Z59wtg46Q?si=KXWTBm3--4XSD3K0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+								<hr />
+								<div class="row justify-content-center">
+									<button type="button" class="btn btn-danger" id="videoModalBtnClose" data-dismiss="modal">Close</button> &nbsp; &nbsp;
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
 				<!-- Modal -->
 				<!-- SortableJS CDN -->
 				<!-- <script src="https://raw.githack.com/SortableJS/Sortable/master/Sortable.js"></script> -->
@@ -1801,6 +1819,13 @@
 						$('.remove-div-'+id).remove();
 					    count--;
 					}
+
+					$('#videoModalBtnClose').click(function() {
+						$('.yt_player_iframe').each(function(){
+							var el_src = $(this).attr("src");
+							$(this).attr("src",el_src);
+						});
+					});
 				</script>
 				<!-- close default .container_wrap element -->
 				<!-- end main -->
@@ -1848,6 +1873,8 @@
 		<script>
 			$(".pre-loader").fadeOut("slow");
 			// $(window).load(function() {});
+
+			$('#videoModalBtn').trigger('click');
 		</script>
 	</body>
 </html>
