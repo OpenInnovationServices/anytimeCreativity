@@ -1806,9 +1806,9 @@ PLAu:9
                     margin-bottom: .2rem;
                 }
 
-                th {
+                /* th {
                     text-transform: none;
-                }
+                } */
                 /*                 
                 th {
                     text-transform: lowercase !important;
@@ -1872,7 +1872,7 @@ PLAu:9
                                                     <th width="12%">Enabler</th>
                                                     <th width="20%">Idea Name</th>
                                                     <th width="31%">Idea Description</th>
-                                                    <th width="15%"># Vote</th>
+                                                    <th width="15%"># Votes</th>
                                                 </thead>
         
                                                 <% for(var i=0; i < data.result1.length; i++) { %>
@@ -1884,9 +1884,7 @@ PLAu:9
                                                             <b> <%= data.result1[i].teamName %> </b>
                                                             <div class="panel panel-default">
                                                                 <div class="panel-heading">
-                                                                    <p class="panel-title h6" data-toggle="collapse" data-target="#collapse<%= i+1 %>">
-                                                                        Player Names
-                                                                    </p>
+                                                                    <p class="panel-title h6" data-toggle="collapse" data-target="#collapse<%= i+1 %>">Names</p>
                                                                 </div>
         
                                                                 <div id="collapse<%= i+1 %>" class="panel-collapse collapse">
@@ -1943,7 +1941,7 @@ PLAu:9
                                             <table class="table table-bordered table-hover text-center mb-0">
                                                 <thead>
                                                     <!-- <th width="5%">#</th> -->
-                                                    <!-- <th width="15%">Team</th> -->
+                                                    <th width="15%">Build Player Name</th>
                                                     <th width="15%">Original Idea Name</th>
                                                     <th width="15%">EMA Objective</th>
                                                     <th width="15%">Enabler</th>
@@ -1957,10 +1955,10 @@ PLAu:9
                                                         <!-- <td>
                                                             <%= i+1 %>
                                                         </td> 
-                                                        <td width="15%">
+                                                        -->
+                                                        <td>
                                                             <%= data.result2[i].name %>
                                                         </td>
-                                                        -->
                                                         <td>
                                                             <%= data.result2[i].ideaName %>
                                                         </td>
