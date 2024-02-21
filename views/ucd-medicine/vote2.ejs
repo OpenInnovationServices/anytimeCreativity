@@ -1803,9 +1803,9 @@ PLAu:9
                     margin-bottom: .2rem;
                 }
                 
-                th {
+                /* th {
                     text-transform: none;
-                }
+                } */
                 /*                 
                 th {
                     text-transform: lowercase !important;
@@ -1826,14 +1826,14 @@ PLAu:9
                         <h1>Build</h1>
                     </div>
 
-                    <div class="col-md-2 col-lg-1 col-sm-12 text-center p-2 ">
+                    <div class="col-md-2 col-lg-2 col-sm-12 logo-div">
                         <img src="/assets/images/ucd-medicine/logo.png" class="nav-img1" />
                     </div>
                 </div>
 
                 <form id="ctdVoting">
                     <div class="row justify-content-center mt-5 mb-5">
-                        <div class="col-12 text-center mb-3">
+                        <div class="col-md-12 col-lg-12 col-xl-11 text-center mb-3">
                             <p style="font-size: 20px;">Step 2 of 2</p>
                             <p style="font-size: 24px;">Building, combining & improving on the ideas of others is a key innovation skill. Read through the submissions below and improve one of the ideas by adding your own creative twist to it. Click the ‘Build & Improve on this Idea’ button beside it to submit your suggested improvement.</p>
                         </div>
@@ -2002,7 +2002,6 @@ PLAu:9
                         url: '/api/challenge/voteIdea',
                         data: serializeData, 
                         success: function(data) {
-                            console.log('data', data);
                             if (data.status === 'success') {
                                 $('#successMessageIdea').show();
                                 $('#buildIdeaModalBtnSubmit').prop("disabled", false);
@@ -2010,14 +2009,11 @@ PLAu:9
                                 $('#errorMessageIdea').show();
                             }
 
-                            // const myTimeout =
                             setTimeout(function() {
                                 $('#buildIdeaModalBtnSubmit').prop("disabled", false);
                                 $('#successMessageIdea').hide();
                                 $('#errorMessageIdea').hide();
                             }, 5000);
-
-                            // clearTimeout(myTimeout);
 
                             $('#buildIdeaModalBtnClose').trigger('click');
                             $('#buildIdeaNewName').val('');
