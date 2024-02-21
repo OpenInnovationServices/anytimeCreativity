@@ -1679,7 +1679,7 @@ PLAu:9
                 }
 
                 .nav-img1 {
-                    width: 100px;
+                    width: 200px;
                     position: relative;
                     top: 50%;
                     left: 50%;
@@ -1715,7 +1715,7 @@ PLAu:9
                         height: auto !important;
                     }
                     .nav-img1 {
-                        width: 100px;
+                        width: 200px;
                         position: relative;
                         top: 0;
                         left: 0;
@@ -1802,6 +1802,26 @@ PLAu:9
                 .image-text {
                     margin-bottom: .2rem;
                 }
+                
+                th {
+                    text-transform: none;
+                }
+                /*                 
+                th {
+                    text-transform: lowercase !important;
+                }
+
+                th:first-letter {
+                    text-transform: uppercase !important;
+                } */
+
+                .swal-icon img {
+                    width: 5rem !important;
+                }
+
+                .swal-footer {
+                    text-align: center;
+                }
             </style>
 
             <div class="container-fluid">
@@ -1811,11 +1831,11 @@ PLAu:9
                     </div>
 
                     <div class="col-md-8 col-lg-8 col-sm-12 text-center inst-para-outer">
-                        <h1>Voting</h1>
+                        <h1>Vote</h1>
                     </div>
 
                     <div class="col-md-2 col-lg-2 col-sm-12 logo-div">
-                        <img src="/assets/images/ucd-medicine/logo.jpeg" class="nav-img1" />
+                        <img src="/assets/images/ucd-medicine/logo.png" class="nav-img1" />
                     </div>
                 </div>
 
@@ -1823,7 +1843,7 @@ PLAu:9
                     <div class="row justify-content-center mt-5 mb-5">
                         <div class="col-12 text-center mb-3">
                             <p style="font-size: 20px;">Step 1 of 2</p>
-                            <p style="font-size: 24px;">Step 1: Scroll Through Each of the Ideas and Vote for Your Favourite One by Clicking the Medal emoji to the right of your idea of choice.</p>
+                            <p style="font-size: 24px;">Step 1: Scroll through each of the ideas and vote for your favourite one by clicking the medal emoji to the right of your idea of choice.</p>
                         </div>
 
                         <div class="col-md-12 col-lg-12 col-xl-11">
@@ -1833,20 +1853,19 @@ PLAu:9
                                     <div class="table-responsive">
                                         <table class="table table-bordered table-hover text-center mb-0">
                                             <thead>
-                                                <!-- <th>#</th> -->
-                                                <th style="width: 230px;">Team</th>
-                                                <th>Idea Name</th>
-                                                <th>Activity</th>
-                                                <th>Tech</th>
-                                                <th>Idea Description</th>
-                                                <th>Likes</th>
+                                                <th width="10%">Team #</th>
+                                                <th width="12%">EMA Objective</th>
+                                                <th width="12%">Enabler</th>
+                                                <th width="20%">Idea Name</th>
+                                                <th width="31%">Idea Description</th>
+                                                <th width="15%">Vote</th>
                                             </thead>
                                             <% for(var i=0; i < data.length; i++) { %>
                                                 <tr>
                                                     <!-- <td>
                                                         <%= i+1 %>
                                                     </td> -->
-                                                    <td width="15%">
+                                                    <td>
                                                         <b> <%= data[i].teamName %></b>
                                                         <!--
                                                         <div class="panel panel-default">
@@ -1862,9 +1881,7 @@ PLAu:9
                                                         </div>
                                                         -->
                                                     </td>
-                                                    <td>
-                                                        <%= data[i].ideaName %>
-                                                    </td>
+                                                  
                                                     <td>
                                                         <div class="image-div">
                                                             <img src="/<%= data[i].mix %>" style="max-width: 40px;">
@@ -1882,6 +1899,10 @@ PLAu:9
                                                         </div>
                                                     </td>
                                                  
+                                                    <td>
+                                                        <%= data[i].ideaName %>
+                                                    </td>
+                                                    
                                                     <td>
                                                         <%= data[i].idea %>
                                                     </td>
@@ -1991,17 +2012,18 @@ PLAu:9
                                         $('#submitBtn').prop("disabled", true);
                                         $('#exampleModalBtnClose').trigger('click');
 
-                                        window.location.href = "/connectTheDots/UCDMedicine/vote2";
+                                        window.location.href = "/connectTheDots/UCDMedicine/challenge/vote2";
 
                                         return false;
                                     } else if(data.status === 'exists')  {
                                         swal({
                                             title: "Your vote already exists?",
                                             text: "Do you really override it?",
-                                            icon: "warning",
-                                            dangerMode: true,
-                                            // buttons: true,
-                                            buttons: ['No', 'Yes']
+                                            icon: "/assets/images/ucd-medicine/question_mark.webp",
+                                            buttons: {
+                                                confirm : {text:'Yes', className:'btn-success'},
+                                                cancel : "No",
+                                            },
                                         })
                                         .then((willDelete) => {
                                             if (willDelete) {
@@ -2012,7 +2034,7 @@ PLAu:9
                                                 $('#exampleModalBtnClose').trigger('click');
                                                 $('#voteEmail').val('');
 
-                                                window.location.href = "/connectTheDots/UCDMedicine/vote2";
+                                                window.location.href = "/connectTheDots/UCDMedicine/challenge/vote2";
                                                 return false;
                                             }else {
                                                 $('#exampleModalBtnSubmit').prop("disabled", false);
@@ -2069,12 +2091,15 @@ PLAu:9
                         });
 
                         swal({
-                            title: "Are you sure ?",
-                            text: "You Want to Submit This As Your Favourite Idea ?",
-                            icon: "warning",
-                            dangerMode: true,
-                            // buttons: true,
-                            buttons: ['No', 'Yes'] 
+                            title: "Confirm Selection",
+                            text: "Vote for this as your favourite idea?",
+                            icon: "/assets/images/ucd-medicine/question_mark.webp",
+
+                            buttons: {
+                                confirm : {text:'Yes', className:'btn-success'},
+                                cancel : "No",
+                            },
+                            
                         })
                         .then((willDelete) => {
                             if(willDelete) {

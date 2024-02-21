@@ -1679,7 +1679,7 @@ PLAu:9
                 }
 
                 .nav-img1 {
-                    width: 100px;
+                    width: 200px;
                     position: relative;
                     top: 50%;
                     left: 50%;
@@ -1715,7 +1715,7 @@ PLAu:9
                         height: auto !important;
                     }
                     .nav-img1 {
-                        width: 100px;
+                        width: 200px;
                         position: relative;
                         top: 0;
                         left: 0;
@@ -1802,6 +1802,18 @@ PLAu:9
                 .image-text {
                     margin-bottom: .2rem;
                 }
+                
+                th {
+                    text-transform: none;
+                }
+                /*                 
+                th {
+                    text-transform: lowercase !important;
+                }
+
+                th:first-letter {
+                    text-transform: uppercase !important;
+                } */
             </style>
 
             <div class="container-fluid">
@@ -1811,11 +1823,11 @@ PLAu:9
                     </div>
 
                     <div class="col-md-8 col-lg-8 col-sm-12 text-center inst-para-outer">
-                        <h1>Build on an Idea</h1>
+                        <h1>Build</h1>
                     </div>
 
                     <div class="col-md-2 col-lg-1 col-sm-12 text-center p-2 ">
-                        <img src="/assets/images/ucd-medicine/logo.jpeg" class="nav-img1" />
+                        <img src="/assets/images/ucd-medicine/logo.png" class="nav-img1" />
                     </div>
                 </div>
 
@@ -1823,7 +1835,7 @@ PLAu:9
                     <div class="row justify-content-center mt-5 mb-5">
                         <div class="col-12 text-center mb-3">
                             <p style="font-size: 20px;">Step 2 of 2</p>
-                            <p style="font-size: 24px;">Step 2: Reading other people’s ideas can often trigger us to think of ways to amend that idea. Scroll through each submission below and if you can think of a way to improve one of them with your own creative twist, click the ‘Build & Improve on This Idea’ button beside it.</p>
+                            <p style="font-size: 24px;">Step 2: Building, combining & improving on the ideas of others is a key innovation skill. Read through the submissions below and improve one of the ideas by adding your own creative twist to it. Click the ‘Build & Improve on this Idea’ button beside it to submit your suggested improvement.</p>
                         </div>
 
                         <div class="col-md-12 col-lg-12 col-xl-11">
@@ -1834,21 +1846,22 @@ PLAu:9
                                         <table class="table table-bordered table-hover text-center mb-0">
                                             <thead>
                                                 <!-- <th>#</th> -->
-                                                <th style="width: 230px;">Team</th>
+                                                <!-- <th>Team #</th> -->
+                                                <th>EMA Objective</th>
+                                                <th>Enabler</th>
                                                 <th>Idea Name</th>
-                                                <th>Activity</th>
-                                                <th>Tech</th>
                                                 <th>Idea Description</th>
-                                                <th>Build on an Idea</th>
+                                                <th>Build</th>
                                             </thead>
                                             <% for(var i=0; i < data.length; i++) { %>
                                                 <tr>
                                                     <!-- <td>
                                                         <%= i+1 %>
                                                     </td> -->
+                                                     <!-- 
                                                     <td width="15%">
                                                         <b> <%= data[i].teamName %></b>
-                                                        <!-- <div class="panel panel-default">
+                                                       <div class="panel panel-default">
                                                             <div class="panel-heading">
                                                                 <p class="panel-title h6" data-toggle="collapse" data-target="#collapse<%= i+1 %>">Player Names</p>
                                                             </div>
@@ -1858,11 +1871,10 @@ PLAu:9
                                                                     <%- data[i].penName %>
                                                                 </div>
                                                             </div>
-                                                        </div> -->
+                                                        </div>
                                                     </td>
-                                                    <td>
-                                                        <%= data[i].ideaName %>
-                                                    </td>
+                                                     -->
+                                                   
                                                     <td>
                                                         <div class="image-div">
                                                             <img src="/<%= data[i].mix %>" style="max-width: 40px;">
@@ -1879,7 +1891,9 @@ PLAu:9
                                                             </p>
                                                         </div>
                                                     </td>
-                                                 
+                                                    <td>
+                                                        <%= data[i].ideaName %>
+                                                    </td>
                                                     <td>
                                                         <%= data[i].idea %>
                                                     </td>
@@ -1948,7 +1962,7 @@ PLAu:9
                                         <input type="text" name="name" class="form-control buildIdeaNewName" id="buildIdeaNewName" required/>
 
                                         <label style="float: left; color: #7c7c7c; font-weight: 600 !important;">Briefly Describe How You Wish to Modify This Idea</label>
-                                        <textarea type="text" name="twist" class="form-control twist" id="twist" required ></textarea>
+                                        <textarea type="text" name="twist" class="form-control twist" id="twist" required maxlength="200" placeholder="Max 200 characters"></textarea>
                                     </div>
                                 </div>
 
