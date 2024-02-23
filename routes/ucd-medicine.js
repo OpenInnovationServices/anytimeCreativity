@@ -8,4 +8,5 @@ router.get('/build', controller.vote2);
 router.get('/vote/dashboard', controller.voteDashboard);
 router.get('/idea', controller.idea);
 router.get('/results', controller.result);
+router.get('/results/dashboard', controller.resultDashboard);
 module.exports = router;

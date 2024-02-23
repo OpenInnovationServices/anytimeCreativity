@@ -110,3 +110,29 @@ exports.result = async (req, res, next) => {
         client.close(); 
     }
 };
+
+exports.resultDashboard = async (req, res, next) => {
+    let client, db;
+
+    try{
+        client = await MongoClient.connect(keys.mongodb.dbURI, { useNewUrlParser: true });
+        db = client.db(keys.mongodb.dbName);
+
+        let collection = db.collection('challengeDataCollection');
+        let ideaCollection = db.collection('challengeDataIdeaCollection');
+
+        const result1 = await collection.find({ "code": "1002" }).sort( { count: -1 } ).toArray()
+        const result2 = await ideaCollection.find({ "code": "1002" }).toArray()
+
+        res.render('ucd-medicine/vote-result-dashboard', {
+            pageTitle: 'UCD Medicine Idea',
+            data: { result1, result2 }
+        });
+
+    } catch (err) { 
+        console.error(err); 
+        res.status(400).json("Error Connecting DB");
+    } finally {
+        client.close(); 
+    }
+};

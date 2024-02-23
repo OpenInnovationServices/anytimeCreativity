@@ -1945,8 +1945,9 @@ PLAu:9
                                                     <th width="12%">Original Idea Name</th>
                                                     <th width="10%">EMA Objective</th>
                                                     <th width="10%">Enabler</th>
-                                                    <th width="28%">Original Idea Description </th>
-                                                    <th width="28%" >Build Description</th>
+                                                    <th width="26%">Original Idea Description </th>
+                                                    <th width="27%" >Build Description</th>
+                                                    <th width="3%" >Action</th>
                                                 </thead>
         
                                                 <% for(var i=0; i < data.result2.length; i++) { %>
@@ -1984,7 +1985,12 @@ PLAu:9
                                                         <td>
                                                             <%= data.result2[i].twist %>
                                                         </td>
-                                                       
+                                                        <td>
+                                                            <!-- <form method="POST" action="/api/challenge/delete/id"> -->
+                                                                <!-- <input type="hidden" value="<%= data.result2[i]._id %>" name="id"> -->
+                                                                <button type="submit" class="btn btn-outline-danger deleteBtn" data-id="<%= data.result2[i]._id %>"><i class="fas fa-trash"></i></button>
+                                                            <!-- </form> -->
+                                                        </td>
                                                     </tr>
                                                 <% } %>
                                             </table>
@@ -1996,6 +2002,34 @@ PLAu:9
                     </div>
                 </div>
             </div>
+
+            <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+            <script> 
+                $('.deleteBtn').click(function() {
+                    var id = $(this).attr('data-id');
+                    swal({
+                        title: "Confirm",
+                        text: "Are you sure want to delete this idea?",
+                        icon: "/assets/images/ucd-medicine/question_mark.webp",
+                        buttons: {
+                            confirm : {text:'Yes', className:'btn-success'},
+                            cancel : "No",
+                        },
+                    })
+                    .then((willDelete) => {
+                        if(willDelete) {
+                            var queryString = {id: id};
+                            $.post("/api/challenge/delete_build", queryString, function (data) {
+                                if(data.status === 'success') {
+                                    window.location.href = "/connectTheDots/UCDMedicine/challenge/results";
+                                }
+                            }, "json");
+                            return false;
+                        }else {}
+                    });
+
+                });
+            </script>
 
             <div class='container_wrap footer_color' id='footer'>
                 <div class='container'>
