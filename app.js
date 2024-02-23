@@ -13,6 +13,9 @@ const lookSidewaysRoutes = require('./routes/look-sideways');
 const reimagineRoutes = require('./routes/reimagine');
 const submitChallengeDataApiRoutes = require('./routes/challenges-data-api');
 const ucdMedicineRoutes = require('./routes/ucd-medicine.js');
+const ucdMedicine1Routes = require('./routes/ucd-medicine1.js');
+const ucdMedicine2Routes = require('./routes/ucd-medicine2.js');
+const ucdMedicine3Routes = require('./routes/ucd-medicine3.js');
 
 //Setting Port
 var port = process.env.PORT || 3000;
@@ -43,9 +46,9 @@ app.use('/blueSkies', blueSkiesRoutes);
 app.use('/lookSideways', lookSidewaysRoutes);
 app.use('/reImagine', reimagineRoutes);
 app.use('/ConnectTheDots/UCDMedicine/challenge', ucdMedicineRoutes);
-app.use('/ConnectTheDots/UCDMedicine1/challenge', ucdMedicineRoutes);
-app.use('/ConnectTheDots/UCDMedicine2/challenge', ucdMedicineRoutes);
-app.use('/ConnectTheDots/UCDMedicine3/challenge', ucdMedicineRoutes);
+app.use('/ConnectTheDots/UCDMedicine1/challenge', ucdMedicine1Routes);
+app.use('/ConnectTheDots/UCDMedicine2/challenge', ucdMedicine2Routes);
+app.use('/ConnectTheDots/UCDMedicine3/challenge', ucdMedicine3Routes);
 app.use('/api/challenge', submitChallengeDataApiRoutes);
 
 app.get('/', (req, res) => {

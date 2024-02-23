@@ -2026,7 +2026,7 @@ PLAu:9
                 $('#votingForm').submit(function() {
                     const email = $('#voteEmail').val();
                     const serializeData1 = frm.serialize();
-                    const serializeData2 = frm.serialize() + "&email=" + email + "&code=1002";
+                    const serializeData2 = frm.serialize() + "&email=" + email + "&code=1003";
 
                     if(email) {
                         $.ajax({
@@ -2119,7 +2119,7 @@ PLAu:9
                 $('#ideaForm').submit(function() {
                     const name = $('#buildIdeaNewName').val();
                     const twist = $('#twist').val();
-                    const serializeData = $(this).serialize() + "&code=1002";
+                    const serializeData = $(this).serialize() + "&code=1003";
 
                     $('#buildIdeaModalBtnSubmit').prop("disabled", true);
 

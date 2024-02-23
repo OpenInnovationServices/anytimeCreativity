@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const controller = require('../controllers/ucd-medicine');
+const controller = require('../controllers/ucd-medicine3');
 
 router.get('/', controller.index);
 router.get('/dashboard', controller.dashboard);
