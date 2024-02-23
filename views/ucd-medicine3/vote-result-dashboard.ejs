@@ -1872,7 +1872,8 @@ PLAu:9
                                                     <th width="12%">Enabler</th>
                                                     <th width="12%">Idea Name</th>
                                                     <th width="39%">Idea Description</th>
-                                                    <th width="15%"># Votes</th>
+                                                    <th width="12%"># Votes</th>
+                                                    <th width="3%" >Action</th>
                                                 </thead>
         
                                                 <% for(var i=0; i < data.result1.length; i++) { %>
@@ -1920,6 +1921,9 @@ PLAu:9
                                                         </td>
                                                         <td>
                                                             <%= data.result1[i].count %>
+                                                        </td>
+                                                        <td>
+                                                            <button type="submit" class="btn btn-outline-danger deleteBtn1" data-id="<%= data.result1[i]._id %>"><i class="fas fa-trash"></i></button>
                                                         </td>
                                                     </tr>
                                                 <% } %>
@@ -2021,13 +2025,36 @@ PLAu:9
                             var queryString = {id: id};
                             $.post("/api/challenge/delete_build", queryString, function (data) {
                                 if(data.status === 'success') {
-                                    window.location.href = "/connectTheDots/UCDMedicine/challenge/results";
+                                    window.location.href = "/connectTheDots/UCDMedicine3/challenge/results/dashboard";
                                 }
                             }, "json");
                             return false;
                         }else {}
                     });
-
+                });
+                
+                $('.deleteBtn1').click(function() {
+                    var id = $(this).attr('data-id');
+                    swal({
+                        title: "Confirm",
+                        text: "Are you sure want to delete this idea?",
+                        icon: "/assets/images/ucd-medicine/question_mark.webp",
+                        buttons: {
+                            confirm : {text:'Yes', className:'btn-success'},
+                            cancel : "No",
+                        },
+                    })
+                    .then((willDelete) => {
+                        if(willDelete) {
+                            var queryString = {id: id};
+                            $.post("/api/challenge/delete/id", queryString, function (data) {
+                                window.location.href = "/connectTheDots/UCDMedicine3/challenge/results/dashboard";
+                                // if(data.status === 'success') {
+                                // }
+                            }); //, "json"
+                            return false;
+                        }else {}
+                    });
                 });
             </script>
 
