@@ -43,6 +43,9 @@ app.use('/blueSkies', blueSkiesRoutes);
 app.use('/lookSideways', lookSidewaysRoutes);
 app.use('/reImagine', reimagineRoutes);
 app.use('/ConnectTheDots/UCDMedicine/challenge', ucdMedicineRoutes);
+app.use('/ConnectTheDots/UCDMedicine1/challenge', ucdMedicineRoutes);
+app.use('/ConnectTheDots/UCDMedicine2/challenge', ucdMedicineRoutes);
+app.use('/ConnectTheDots/UCDMedicine3/challenge', ucdMedicineRoutes);
 app.use('/api/challenge', submitChallengeDataApiRoutes);
 
 app.get('/', (req, res) => {
