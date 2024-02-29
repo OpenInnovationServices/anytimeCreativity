@@ -356,6 +356,14 @@ textarea {
     .center-image {
         max-width: 50%;
     }
+
+    .image-text1 {
+        font-size: 2.3vh !important;
+    }
+
+    .image-text2 {
+        font-size: 1.7vh !important;
+    }
 }
 
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
@@ -373,8 +381,12 @@ textarea {
         font-size: 1vh !important;
     }
     .image-text1 {
-        font-size: 1.7vh !important;
+        /* font-size: 2vh !important; */
     }
+    .image-text2 {
+        /* font-size: 1.4vh !important; */
+    }
+
     .center-image {
         max-width: 40%;
     }
@@ -398,7 +410,10 @@ textarea {
         font-size: .8vh !important;
     }
     .image-text1 {
-        font-size: 1.3vh !important;
+        font-size: 1vh !important;
+    }
+    .image-text2 {
+        font-size: 0.7vh !important;
     }
     .center-image {
         max-width: 110%;
@@ -436,13 +451,21 @@ textarea {
     }
 }
 
-@media screen and (min-width: 1000px) and (max-width: 1099px) {
+@media screen and (min-width: 1000px) and (max-width: 1099px) and (orientation: landscape) {
     .headerModalDiv .inst-para {
         font-size: 1.4vh;
     }
     .nav-img {
         width: 155px;
         height: auto !important;
+    }
+    
+    .image-text1 {
+        font-size: 1.8vh !important;
+    }
+
+    .image-text2 {
+        font-size: 1.1vh !important;
     }
 }
 
@@ -456,6 +479,48 @@ textarea {
         height: auto !important;
     }
 }
+
+@media screen and (min-width: 1200px) and (max-width: 1299px) {
+    .image-text1 {
+        font-size: 2vh !important;
+    }
+
+    .image-text2 {
+        font-size: 1.4vh !important;
+    }
+}
+
+@media screen and (min-width: 1300px) and (max-width: 1399px) {
+    .image-text1 {
+        font-size: 2.1vh !important;
+    }
+
+    .image-text2 {
+        font-size: 1.5vh !important;
+    }
+}
+
+@media screen and (min-width: 1500px) and (max-width: 1699px) {
+    .image-text1 {
+        font-size: 2.3vh !important;
+    }
+
+    .image-text2 {
+        font-size: 1.7vh !important;
+    }
+}
+
+
+@media screen and (min-width: 1700px) and (max-width: 1820px) {
+    .image-text1 {
+        font-size: 2.1vh !important;
+    }
+
+    .image-text2 {
+        font-size: 1.5vh !important;
+    }
+}
+
 
 @media (max-width: 1448px) {
     .inst-para {
@@ -574,10 +639,17 @@ textarea {
 }
 
 .image-text1 {
-    color: #656565;
-    font-weight: 500;
+    color: #353434;
+    font-weight: 600;
     line-height: 1.2;
-    font-size: 2.6vh;
+    font-size: 3vh;
+}
+
+.image-text2 {
+    color: #4a4949;
+    font-weight: 500;
+    line-height: 1.4;
+    font-size: 1.9vh;
 }
 
 .ring {
