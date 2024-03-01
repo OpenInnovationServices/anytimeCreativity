@@ -492,32 +492,32 @@ textarea {
 
 @media screen and (min-width: 1300px) and (max-width: 1399px) {
     .image-text1 {
-        font-size: 2.1vh !important;
+        font-size: 2.8vh !important;
     }
 
     .image-text2 {
-        font-size: 1.5vh !important;
+        font-size: 2.1vh !important;
     }
 }
 
 @media screen and (min-width: 1500px) and (max-width: 1699px) {
     .image-text1 {
-        font-size: 2.3vh !important;
+        font-size: 2.9vh !important;
     }
 
     .image-text2 {
-        font-size: 1.7vh !important;
+        font-size: 2.1vh !important;
     }
 }
 
 
 @media screen and (min-width: 1700px) and (max-width: 1820px) {
     .image-text1 {
-        font-size: 2.1vh !important;
+        font-size: 3.1vh !important;
     }
 
     .image-text2 {
-        font-size: 1.5vh !important;
+        font-size: 2.3vh !important;
     }
 }
 
