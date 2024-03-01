@@ -2046,7 +2046,7 @@ PLAu:9
                     })
                     .then((willDelete) => {
                         if(willDelete) {
-                            var queryString = {id: id};
+                            var queryString = {id: id, "ideaDelete": 1};
                             $.post("/api/challenge/delete/id", queryString, function (data) {
                                 window.location.href = "/connectTheDots/UCDMedicine/challenge/results/dashboard";
                                 // if(data.status === 'success') {

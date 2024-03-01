@@ -19,7 +19,8 @@ const challengeDataIdeaCollectionSchema = new Schema({
     count: 0,
     newIdea: String,
     name: String,
-    twist: String
+    twist: String,
+    id: String,
 });
 
 module.exports = mongoose.model('challengeDataIdeaCollection', challengeDataIdeaCollectionSchema);
