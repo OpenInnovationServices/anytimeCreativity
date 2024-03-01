@@ -88,18 +88,46 @@ router.post('/delete', (req, res) => {
     });
 });
 
-router.post('/delete/id', (req, res) => {
-    MongoClient.connect(keys.mongodb.dbURI, { useNewUrlParser: true }, function(err, db) {
-        if (err) throw err;
-        var dbo = db.db(keys.mongodb.dbName);
-        var myquery = { _id: new mongodb.ObjectID(req.body.id) };
-        dbo.collection("challengeDataCollection").deleteOne(myquery, function(err, obj) {
+router.post('/delete/id', async (req, res) => {
+    /*
+        MongoClient.connect(keys.mongodb.dbURI, { useNewUrlParser: true }, function(err, db) {
             if (err) throw err;
-            console.log("1 document deleted");
-            res.status(200).redirect('back');
-            db.close();
+            var dbo = db.db(keys.mongodb.dbName);
+            var myquery = { _id: new mongodb.ObjectID(req.body.id) };
+            dbo.collection("challengeDataCollection").deleteOne(myquery, function(err, obj) {
+                if (err) throw err;
+                console.log("1 document deleted");
+                res.status(200).redirect('back');
+                db.close();
+            });
         });
-    });
+    */
+
+    let client, db;
+
+    try{
+        const id = req.body.id;
+
+        client = await MongoClient.connect(keys.mongodb.dbURI, {useNewUrlParser: true});
+        db = client.db(keys.mongodb.dbName);
+
+        let ideaCollection = db.collection('challengeDataIdeaCollection');
+        let collection = db.collection('challengeDataCollection');
+        
+        await collection.deleteOne({ _id: new mongodb.ObjectID(id) });
+
+        if(req.body && req.body.ideaDelete) {
+            await ideaCollection.deleteMany({ "id": id });
+        }
+
+        console.log("1 document deleted");
+        res.status(200).redirect('back');
+    } catch (err) { 
+        console.error(err); 
+        res.status(400).json("Error Connecting DB");
+    } finally {
+        client.close(); 
+    }
 });
 
 router.get('/:code', (req, res) => {
