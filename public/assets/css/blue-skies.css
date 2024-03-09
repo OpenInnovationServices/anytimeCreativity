@@ -279,14 +279,14 @@ input[type="file"] {
 
 .title1 {
     /* font-family: cursive; */
-    font-weight: 600;
+    font-weight: 700;
     color: #fff;
     font-size: 2rem;
     margin-bottom: 0rem;
 }
 
 .title2 {
-    font-weight: 600;
+    font-weight: 450;
     color: #fff;
     font-size: 1.5rem;
     margin-bottom: .5rem;
