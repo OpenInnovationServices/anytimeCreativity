@@ -17,6 +17,8 @@ const ucdMedicineRoutes = require('./routes/ucd-medicine.js');
 const ucdMedicine1Routes = require('./routes/ucd-medicine1.js');
 const ucdMedicine2Routes = require('./routes/ucd-medicine2.js');
 const ucdMedicine3Routes = require('./routes/ucd-medicine3.js');
+const fortuneTellersRoutes = require('./routes/fortune-tellers');
+
 
 //Setting Port
 var port = process.env.PORT || 3000;
@@ -52,6 +54,8 @@ app.use('/ConnectTheDots/UCDMedicine1/challenge', ucdMedicine1Routes);
 app.use('/ConnectTheDots/UCDMedicine2/challenge', ucdMedicine2Routes);
 app.use('/ConnectTheDots/UCDMedicine3/challenge', ucdMedicine3Routes);
 app.use('/api/challenge', submitChallengeDataApiRoutes);
+app.use('/fortuneTellers', fortuneTellersRoutes);
+
 
 app.get('/', (req, res) => {
     res.status(200).render('index');
