@@ -21,7 +21,7 @@ const fortuneTellersRoutes = require('./routes/fortune-tellers');
 
 
 //Setting Port
-var port = process.env.PORT || 3000;
+var port = process.env.PORT || 3030;
 
 app.all("/*", function(req, res, next) {
     res.header('Access-Control-Allow-Origin', '*');
